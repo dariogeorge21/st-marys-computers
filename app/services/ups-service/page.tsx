@@ -6,46 +6,46 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UPS Sales & Service in Laxmi Nagar, New Delhi | St Mary's Computers",
+  title: "UPS Sales & Service in Laxmi Nagar, Delhi-NCR | St Mary's Computers",
   description: "UPS sales, installation, repair & battery replacement in Laxmi Nagar. Power backup solutions for home & office. APC, Luminous, Microtek UPS service. Call +91 99108 36286",
-  keywords: "UPS repair Laxmi Nagar, UPS battery replacement Delhi, power backup solutions, APC UPS service, Luminous UPS repair",
+  keywords: "UPS repair Laxmi Nagar, UPS repair Gurugram, UPS repair Delhi-NCR, UPS battery replacement Delhi, power backup solutions, APC UPS service, Luminous UPS repair",
 };
 
 const services = [
   {
     title: "UPS Sales & Installation",
     description: "Wide range of UPS systems for home and office with professional installation service.",
-    price: "Starting ₹2,500"
+    price: ""
   },
   {
     title: "UPS Battery Replacement",
-    description: "Genuine UPS battery replacement for all brands with 1-year warranty on batteries.",
-    price: "Starting ₹1,200"
+    description: "Genuine UPS battery replacement for all brands with quality assurance.",
+    price: ""
   },
   {
     title: "UPS Repair & Maintenance",
     description: "Professional UPS repair service and preventive maintenance for optimal performance.",
-    price: "Starting ₹800"
+    price: ""
   },
   {
     title: "Power Backup Solutions",
     description: "Custom power backup solutions for offices, shops, and critical equipment protection.",
-    price: "Contact for quote"
+    price: ""
   },
   {
     title: "UPS Testing & Diagnostics",
     description: "Complete UPS testing, load testing, and performance diagnostics service.",
-    price: "Starting ₹500"
+    price: ""
   },
   {
-    title: "Emergency UPS Service",
-    description: "24/7 emergency UPS repair service for critical business operations.",
-    price: "Starting ₹1,500"
+    title: "Urgent UPS Service",
+    description: "Quickest UPS repair service for critical business operations.",
+    price: ""
   }
 ];
 
 const brands = [
-  "APC", "Luminous", "Microtek", "Numeric", "Intex", "iBall", "Zebronics", "Artis"
+  "APC", "Nexus", "Microtek" 
 ];
 
 const faqs = [
@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     question: "Do you provide on-site UPS installation?",
-    answer: "Yes, we provide on-site UPS installation and setup service across Delhi. This includes proper grounding, connection, and testing to ensure optimal performance."
+    answer: "Yes, we provide on-site UPS installation and setup service across Delhi-NCR. This includes proper grounding, connection, and testing to ensure optimal performance."
   },
   {
     question: "How often should UPS be serviced?",
@@ -84,7 +84,7 @@ export default function UPSServicePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                UPS Sales & Service in Laxmi Nagar
+                UPS Sales & Service with St Mary's Computers
               </h1>
               <p className="text-xl text-gray-700 mb-8">
                 Complete UPS solutions for home and office. Sales, installation, repair, and battery replacement 
@@ -95,7 +95,7 @@ export default function UPSServicePage() {
                 <Button size="lg" className="bg-yellow-600 hover:bg-yellow-700" asChild>
                   <a href="tel:+919910836286" className="flex items-center gap-2">
                     <Phone className="w-5 h-5" />
-                    Call for UPS Service
+                    Call for UPS Sales & Service
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
@@ -114,15 +114,15 @@ export default function UPSServicePage() {
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <Clock className="w-8 h-8 text-yellow-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium">Same Day Service</p>
+                  <p className="text-sm font-medium">Quick Service</p>
                 </div>
                 <div>
                   <Shield className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium">1-Year Warranty</p>
+                  <p className="text-sm font-medium">Quality Service</p>
                 </div>
                 <div>
                   <Star className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium">All Brands</p>
+                  <p className="text-sm font-medium">All Major Brands</p>
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function UPSServicePage() {
                     {service.price}
                   </div>
                   <Button className="w-full" asChild>
-                    <a href="tel:+919910836286">Get Quote</a>
+                    <a href="tel:+919910836286">Call Now</a>
                   </Button>
                 </CardContent>
               </Card>
@@ -190,7 +190,7 @@ export default function UPSServicePage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              UPS Service FAQ
+              UPS Services FAQ
             </h2>
             <p className="text-lg text-gray-600">
               Common questions about UPS sales, service, and maintenance
@@ -219,14 +219,14 @@ export default function UPSServicePage() {
             Need UPS Sales or Service?
           </h2>
           <p className="text-xl mb-8">
-            Contact St Mary's Computers for reliable UPS solutions in Laxmi Nagar. 
-            Sales, service, and emergency support available.
+            Contact St Mary's Computers for reliable UPS solutions in Delhi-NCR. 
+            Sales, service, and urgent support available.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <a href="tel:+919910836286">Call +91 99108 36286</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-yellow-600" asChild>
+            <Button size="lg" variant="outline" className="text-yellow-600 border-white hover:bg-yellow-100 hover:text-yellow-600" asChild>
               <Link href="/contact">Get UPS Quote</Link>
             </Button>
           </div>
