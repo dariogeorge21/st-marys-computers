@@ -1,4 +1,4 @@
-import { HardDrive, Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-react";
+import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -6,41 +6,41 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Computer Accessories & Upgrades in Laxmi Nagar | St Mary's Computers",
-  description: "Computer accessories, hardware upgrades, RAM, SSD, graphics cards in Laxmi Nagar. Custom PC builds, performance upgrades. Call +91 99108 36286",
-  keywords: "computer accessories Laxmi Nagar, RAM upgrade Delhi, SSD installation, graphics card upgrade, custom PC build",
+  title: "Computer Accessories & Upgrades in Laxmi Nagar, New Delhi | St Mary's Computers",
+  description: "Computer accessories, hardware upgrades, RAM, SSD, graphics cards in Laxmi Nagar, New Delhi. Custom PC builds, performance upgrades. Call +91 99108 36286",
+  keywords: "computer accessories Laxmi Nagar, New Delhi, RAM upgrade Delhi, SSD installation, graphics card upgrade, custom PC build",
 };
 
 const services = [
   {
     title: "RAM Upgrades",
     description: "Memory upgrades for laptops and desktops to improve performance and multitasking.",
-    price: "Starting ₹2,000"
+    price: ""
   },
   {
     title: "SSD Installation",
     description: "Solid State Drive installation for faster boot times and improved system performance.",
-    price: "Starting ₹3,500"
+    price: ""
   },
   {
     title: "Graphics Card Upgrade",
     description: "Graphics card upgrades for gaming, video editing, and professional applications.",
-    price: "Starting ₹8,000"
+    price: ""
   },
   {
     title: "Custom PC Builds",
     description: "Custom desktop computer builds tailored to your specific requirements and budget.",
-    price: "Starting ₹25,000"
+    price: ""
   },
   {
     title: "Accessories Sales",
     description: "Wide range of computer accessories including keyboards, mice, speakers, and cables.",
-    price: "Starting ₹200"
+    price: ""
   },
   {
     title: "Performance Optimization",
     description: "Hardware and software optimization to maximize your computer's performance.",
-    price: "Starting ₹1,000"
+    price: ""
   }
 ];
 
@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     question: "Do you build custom gaming PCs?",
-    answer: "Yes, we specialize in custom gaming PC builds. We'll help you choose components based on your budget, gaming requirements, and performance goals. All builds come with warranty and support."
+    answer: "Yes, we specialize in custom gaming PC builds. We'll help you choose components based on your budget, gaming requirements, and performance goals. All builds come with quality assurance and support."
   },
   {
     question: "What accessories do you stock?",
@@ -85,7 +85,7 @@ export default function AccessoriesPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Computer Accessories & Upgrades in Laxmi Nagar
+                Computer Accessories & Upgrades in New Delhi
               </h1>
               <p className="text-xl text-gray-700 mb-8">
                 Boost your computer's performance with professional hardware upgrades. RAM, SSD, graphics cards, 
@@ -110,12 +110,23 @@ export default function AccessoriesPage() {
                     WhatsApp Chat
                   </a>
                 </Button>
+                <Button size="lg" variant="outline" asChild>
+                    <a 
+                      href="mailto:stmaryscomputers@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Mail className="w-5 h-5" />
+                      Email US
+                    </a>
+                  </Button>
               </div>
               
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <Clock className="w-8 h-8 text-indigo-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium">Same Day Service</p>
+                  <p className="text-sm font-medium">Quick Service</p>
                 </div>
                 <div>
                   <Shield className="w-8 h-8 text-blue-600 mx-auto mb-2" />
@@ -177,7 +188,7 @@ export default function AccessoriesPage() {
                     {service.price}
                   </div>
                   <Button className="w-full" asChild>
-                    <a href="tel:+919910836286">Get Quote</a>
+                    <a href="tel:+919910836286">Call Now</a>
                   </Button>
                 </CardContent>
               </Card>
@@ -220,14 +231,14 @@ export default function AccessoriesPage() {
             Ready to Upgrade Your Computer?
           </h2>
           <p className="text-xl mb-8">
-            Contact St Mary's Computers for professional computer upgrades and accessories in Laxmi Nagar. 
+            Contact St Mary's Computers for professional computer upgrades and accessories across New Delhi. 
             Expert installation and genuine parts guaranteed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <a href="tel:+919910836286">Call +91 99108 36286</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-indigo-600" asChild>
+            <Button size="lg" variant="outline" className="text-indigo-700 border-white hover:bg-indigo-100 hover:text-indigo-600" asChild>
               <Link href="/contact">Get Upgrade Quote</Link>
             </Button>
           </div>
