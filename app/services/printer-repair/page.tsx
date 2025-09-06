@@ -1,4 +1,4 @@
-import { Printer, Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-react";
+import { Printer, Phone, MessageCircle, CheckCircle, Clock, Shield, Star, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Printer Repair & Installation in Laxmi Nagar, New Delhi | St Mary's Computers",
-  description: "Professional printer repair, installation & setup in Laxmi Nagar. HP, Canon, Epson printer service. Network setup, cartridge replacement. Call +91 99108 36286",
+  description: "Professional printer repair, installation & setup in Laxmi Nagar, New Delhi, Delhi-NCR. HP, Canon, Epson printer service. Network setup, cartridge replacement. Call +91 99108 36286",
   keywords: "printer repair Laxmi Nagar, printer installation Delhi, HP printer service, Canon printer repair, network printer setup",
 };
 
@@ -15,32 +15,32 @@ const services = [
   {
     title: "Printer Installation & Setup",
     description: "Complete printer installation, driver setup, and network configuration for home and office.",
-    price: "Starting ₹500"
+    price: ""
   },
   {
     title: "Cartridge Replacement",
     description: "Genuine ink cartridge replacement and refilling services for all printer brands.",
-    price: "Starting ₹300"
+    price: ""
   },
   {
     title: "Network Printer Setup",
     description: "WiFi and network printer configuration for multiple users and devices.",
-    price: "Starting ₹800"
+    price: ""
   },
   {
     title: "Scanner Configuration",
     description: "Scanner setup, document scanning, and scan-to-email configuration.",
-    price: "Starting ₹400"
+    price: ""
   },
   {
     title: "Printer Repair & Maintenance",
     description: "Professional printer repair, cleaning, and preventive maintenance services.",
-    price: "Starting ₹1,200"
+    price: ""
   },
   {
     title: "Print Quality Issues",
     description: "Fixing print quality problems, alignment issues, and color correction.",
-    price: "Starting ₹600"
+    price: ""
   }
 ];
 
@@ -51,11 +51,11 @@ const brands = [
 const faqs = [
   {
     question: "Which printer brands do you service?",
-    answer: "We service all major printer brands including HP, Canon, Epson, Brother, Samsung, Xerox, Ricoh, and Kyocera. Our technicians are trained on both inkjet and laser printers."
+    answer: "We service all major printer brands including HP, Canon, Epson, Brother. Our technicians are trained on both inkjet and laser printers."
   },
   {
     question: "How much does printer repair typically cost?",
-    answer: "Repair costs vary depending on the issue. Simple problems like cartridge replacement start at ₹300, while complex repairs may cost ₹1,200-₹2,500. We provide free diagnosis and transparent pricing."
+    answer: "Repair costs vary depending on the issue. Simple problems like cartridge replacement start at low price, while complex repairs may cost a fair amount of price. We provide low cost diagnosis and transparent pricing."
   },
   {
     question: "Can you setup wireless printing from multiple devices?",
@@ -80,7 +80,7 @@ export default function PrinterRepairPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Printer Repair and Installation Services",
-    "description": "Professional printer repair, installation, and setup services in Laxmi Nagar, New Delhi for all major brands",
+    "description": "Professional printer repair, installation, and setup services across New Delhi for all major brands",
     "provider": {
       "@type": "LocalBusiness",
       "name": "St Mary's Computers",
@@ -110,11 +110,11 @@ export default function PrinterRepairPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Printer Repair & Installation in Laxmi Nagar
+                  Printer Repair & Installation across Delhi NCR
                 </h1>
                 <p className="text-xl text-gray-700 mb-8">
                   Professional printer repair, installation, and network setup services for all major brands. 
-                  Same-day service for homes and offices across Delhi.
+                  Quick services for homes and offices across Delhi.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -135,12 +135,23 @@ export default function PrinterRepairPage() {
                       WhatsApp Chat
                     </a>
                   </Button>
+                  <Button size="lg" variant="outline" asChild>
+                    <a 
+                      href="mailto:stmaryscomputers@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Mail className="w-5 h-5" />
+                      Email US
+                    </a>
+                  </Button>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
                     <Clock className="w-8 h-8 text-purple-600 mx-auto mb-2" />
-                    <p className="text-sm font-medium">Same Day Service</p>
+                    <p className="text-sm font-medium">Quick Service</p>
                   </div>
                   <div>
                     <Shield className="w-8 h-8 text-blue-600 mx-auto mb-2" />
@@ -245,15 +256,15 @@ export default function PrinterRepairPage() {
               Need Printer Repair or Setup?
             </h2>
             <p className="text-xl mb-8">
-              Contact St Mary's Computers for professional printer services in Laxmi Nagar. 
+              Contact St Mary's Computers for professional printer services in Delhi-NCR. 
               All brands serviced with same-day support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
                 <a href="tel:+919910836286">Call +91 99108 36286</a>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-purple-600" asChild>
-                <Link href="/contact">Book Service Online</Link>
+              <Button size="lg" variant="outline" className="text-purple-600 border-white hover:bg-purple-100 hover:text-purple-600" asChild>
+                <Link href="/contact">Request Services</Link>
               </Button>
             </div>
           </div>
