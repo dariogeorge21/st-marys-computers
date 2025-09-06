@@ -1,4 +1,4 @@
-import { Monitor, Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-react";
+import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Laptop Repair Services in Laxmi Nagar, New Delhi | St Mary's Computers",
-  description: "Professional laptop repair in Laxmi Nagar - screen replacement, battery issues, motherboard repair. Same-day service, 30-day warranty. Call +91 99108 36286",
+  description: "Professional laptop repair in Laxmi Nagar - screen replacement, battery issues, motherboard repair. Same-day service, quality guarantee. Call +91 99108 36286",
   keywords: "laptop repair Laxmi Nagar, laptop screen replacement Delhi, laptop battery replacement, motherboard repair New Delhi",
 };
 
@@ -15,43 +15,43 @@ const services = [
   {
     title: "Screen & LCD Replacement",
     description: "Professional laptop screen replacement for all brands including Dell, HP, Lenovo, ASUS.",
-    price: "Starting ₹3,500"
+    price: ""
   },
   {
     title: "Battery Replacement",
-    description: "Genuine laptop battery replacement with 6-month warranty on battery.",
-    price: "Starting ₹2,500"
+    description: "Genuine laptop battery replacement with quality assurance.",
+    price: ""
   },
   {
     title: "Motherboard Repair",
     description: "Expert motherboard repair and component-level troubleshooting.",
-    price: "Starting ₹4,500"
+    price: ""
   },
   {
     title: "Keyboard & Trackpad Repair",
     description: "Keyboard replacement and trackpad repair for all laptop models.",
-    price: "Starting ₹1,500"
+    price: ""
   },
   {
     title: "Performance Upgrades",
     description: "RAM upgrades, SSD installation, and performance optimization.",
-    price: "Starting ₹2,000"
+    price: ""
   },
   {
     title: "Virus Removal & Software Issues",
-    description: "Complete virus removal, OS installation, and software troubleshooting.",
-    price: "Starting ₹800"
+    description: "Complete virus removal, OS installation, antivirus installation and software troubleshooting.",
+    price: ""
   }
 ];
 
 const faqs = [
   {
     question: "How long does laptop screen replacement take?",
-    answer: "Most laptop screen replacements are completed within 2-4 hours if the screen is in stock. For special orders, it may take 1-2 days. We'll provide an accurate timeline after diagnosis."
+    answer: "Most laptop screen replacements are completed within 6-8 hours if the screen is in stock. For special orders, it may take 1-2 days. We'll provide an accurate timeline after diagnosis."
   },
   {
     question: "Do you use genuine laptop parts?",
-    answer: "Yes, we use only genuine OEM parts or high-quality compatible parts. All parts come with warranty and we never compromise on quality to save costs."
+    answer: "Yes, we use only genuine OEM parts or high-quality compatible parts. All parts are quality tested and we never compromise on quality to save costs."
   },
   {
     question: "What if my laptop is not worth repairing?",
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     question: "What brands of laptops do you repair?",
-    answer: "We repair all major laptop brands including Dell, HP, Lenovo, ASUS, Acer, Samsung, Apple MacBook, MSI, and more. Our technicians are experienced with all models."
+    answer: "We repair all major laptop brands including Dell, HP, Lenovo, ASUS, Acer, Samsung, Apple MacBook, MSI, and more."
   }
 ];
 
@@ -126,14 +126,14 @@ export default function LaptopRepairPage() {
                 </h1>
                 <p className="text-xl text-gray-700 mb-8">
                   Expert laptop repair services for all brands. Screen replacement, battery issues, 
-                  motherboard repair, and more. Same-day service available with 30-day warranty.
+                  motherboard repair, and more. Same-day service available with quality guarantee.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
                     <a href="tel:+919910836286" className="flex items-center gap-2">
                       <Phone className="w-5 h-5" />
-                      Call for Free Diagnosis
+                      Call for Diagnosis
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
@@ -147,16 +147,27 @@ export default function LaptopRepairPage() {
                       WhatsApp Chat
                     </a>
                   </Button>
+                  <Button size="lg" variant="outline" asChild>
+                    <a 
+                      href="mailto:stmaryscomputers@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Mail className="w-5 h-5" />
+                      Email US
+                    </a>
+                  </Button>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
                     <Clock className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                    <p className="text-sm font-medium">Same Day Service</p>
+                    <p className="text-sm font-medium">Quick Service</p>
                   </div>
                   <div>
                     <Shield className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                    <p className="text-sm font-medium">30-Day Warranty</p>
+                    <p className="text-sm font-medium">Quality Service</p>
                   </div>
                   <div>
                     <Star className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
@@ -197,7 +208,7 @@ export default function LaptopRepairPage() {
                 Laptop Repair Services & Pricing
               </h2>
               <p className="text-lg text-gray-600">
-                Transparent pricing with no hidden charges. Free diagnosis for all laptop issues.
+                Transparent pricing with no hidden charges. Quick diagnosis for all laptop issues.
               </p>
             </div>
             
@@ -213,7 +224,7 @@ export default function LaptopRepairPage() {
                       {service.price}
                     </div>
                     <Button className="w-full" asChild>
-                      <a href="tel:+919910836286">Get Quote</a>
+                      <a href="tel:+919910836286">Call Now</a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -256,15 +267,15 @@ export default function LaptopRepairPage() {
               Ready to Fix Your Laptop?
             </h2>
             <p className="text-xl mb-8">
-              Contact St Mary's Computers for professional laptop repair in Laxmi Nagar.
-              Free diagnosis and transparent pricing.
+              Contact St Mary's Computers for professional laptop repair in Delhi-NCR.
+              Quick diagnosis and transparent pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
                 <a href="tel:+919910836286">Call +91 99108 36286</a>
               </Button>
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600" asChild>
-                <Link href="/contact">Book Repair Online</Link>
+                <Link href="/contact">Ask Repair Online</Link>
               </Button>
             </div>
           </div>
