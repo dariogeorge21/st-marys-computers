@@ -1,4 +1,4 @@
-import { Monitor, Wrench, Printer, Zap, Home, HardDrive, Phone, MessageCircle } from "lucide-react";
+import { Monitor, Wrench, Printer, Zap, Home, HardDrive, Phone, MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -6,9 +6,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Computer Repair Services in Laxmi Nagar, New Delhi | St Mary's Computers",
-  description: "Professional laptop, desktop, printer repair services in Laxmi Nagar. On-site computer repair across Delhi. Free diagnostics, genuine parts, 30-day warranty.",
-  keywords: "computer repair Laxmi Nagar, laptop repair new delhi, printer repair Delhi, on-site computer repair, desktop repair services",
+  title: "Computer Repair Services in Laxmi Nagar, Delhi-NCR | St Mary's Computers",
+  description: "Professional laptop, desktop, printer repair services in Delhi-NCR. On-site computer repair across Delhi. Diagnostics, genuine parts.",
+  keywords: "computer repair Laxmi Nagar, laptop repair Delhi, laptop repair Delhi-NCR, laptop repair Gurugram, printer repair Delhi, on-site computer repair, desktop repair services",
 };
 
 const services = [
@@ -68,12 +68,8 @@ const faqs = [
     answer: "Most laptop repairs are completed within 24-48 hours. Simple issues like software problems or battery replacement can often be done the same day. Complex repairs like motherboard issues may take 2-3 days."
   },
   {
-    question: "Do you provide warranty on repairs?",
-    answer: "Yes, we provide a 30-day warranty on all repair work. This covers the specific issue that was repaired. We use only genuine parts to ensure long-lasting repairs."
-  },
-  {
     question: "What areas do you cover for on-site service?",
-    answer: "We provide on-site computer repair services across New Delhi, including Laxmi Nagar, East Delhi, Central Delhi, and surrounding areas. Emergency service is available for urgent issues."
+    answer: "We provide on-site computer repair services across Delhi-NCR, New Delhi, East Delhi, Central Delhi, and surrounding areas. Quick service is available for urgent issues."
   },
   {
     question: "Do you repair all computer brands?",
@@ -81,7 +77,7 @@ const faqs = [
   },
   {
     question: "How much do repairs typically cost?",
-    answer: "Repair costs vary depending on the issue and parts required. We provide free diagnostics and transparent pricing before starting any work. Contact us for a quote specific to your problem."
+    answer: "Repair costs vary depending on the issue and parts required. We provide good diagnostics and transparent pricing before starting any work. Contact us for a quote specific to your problem."
   }
 ];
 
@@ -92,17 +88,17 @@ export default function ServicesPage() {
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Computer Repair Services in Laxmi Nagar
+            Computer & Accesories Repair Services across New Delhi
           </h1>
           <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            Professional laptop, desktop, and printer repair services with same-day support. 
-            Personal service from George CV with 30-day warranty on all repairs.
+            Professional laptop, desktop, and printer repair services with quick support. 
+            Personal service from St Mary's Computers in Delhi-NCR
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
               <a href="tel:+919910836286" className="flex items-center gap-2">
                 <Phone className="w-5 h-5" />
-                Call for Free Diagnosis
+                Call Us
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
@@ -114,6 +110,17 @@ export default function ServicesPage() {
               >
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp Chat
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a 
+                href="mailto:stmaryscomputers@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Mail className="w-5 h-5" />
+                Email US
               </a>
             </Button>
           </div>
@@ -195,7 +202,7 @@ export default function ServicesPage() {
             <Button size="lg" variant="secondary" asChild>
               <a href="tel:+919910836286">Call +91 99108 36286</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600" asChild>
+            <Button size="lg" variant="outline" className="text-blue-600 border-white hover:bg-blue-100 hover:text-blue-600" asChild>
               <Link href="/contact">Book Repair Online</Link>
             </Button>
           </div>
