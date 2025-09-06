@@ -1,4 +1,4 @@
-import { Wrench, Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-react";
+import { Wrench, Phone, MessageCircle, CheckCircle, Clock, Shield, Star, Mail} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -8,39 +8,39 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Desktop Computer Repair in Laxmi Nagar, New Delhi | St Mary's Computers",
   description: "Professional desktop PC repair in Laxmi Nagar - hardware upgrades, virus removal, performance optimization. Same-day service. Call +91 99108 36286",
-  keywords: "desktop repair Laxmi Nagar, PC repair New Delhi, computer hardware upgrade, virus removal Delhi",
+  keywords: "desktop repair Laxmi Nagar, New Delhi, desktop PC repair New Delhi, computer hardware upgrade, virus removal Delhi",
 };
 
 const services = [
   {
     title: "Hardware Diagnostics",
     description: "Complete hardware testing and fault identification for all desktop components.",
-    price: "Free with repair"
+    price: ""
   },
   {
     title: "Component Replacement",
     description: "Motherboard, RAM, hard drive, power supply, and graphics card replacement.",
-    price: "Starting ₹1,500"
+    price: ""
   },
   {
     title: "Performance Upgrades",
     description: "RAM upgrades, SSD installation, graphics card upgrades for better performance.",
-    price: "Starting ₹2,500"
+    price: ""
   },
   {
     title: "Virus Removal & Cleanup",
     description: "Complete virus removal, malware cleanup, and system optimization.",
-    price: "Starting ₹800"
+    price: ""
   },
   {
     title: "Operating System Installation",
     description: "Fresh Windows installation, driver setup, and software configuration.",
-    price: "Starting ₹1,000"
+    price: ""
   },
   {
     title: "Data Recovery",
     description: "Professional data recovery from failed hard drives and corrupted systems.",
-    price: "Starting ₹2,000"
+    price: ""
   }
 ];
 
@@ -106,18 +106,18 @@ export default function DesktopRepairPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Desktop Computer Repair in Laxmi Nagar
+                  Desktop Computer Repair across Delhi-NCR
                 </h1>
                 <p className="text-xl text-gray-700 mb-8">
                   Professional desktop PC repair and upgrade services. Hardware diagnostics, 
-                  component replacement, performance optimization, and virus removal with same-day service.
+                  component replacement, performance optimization, and virus removal with quick service.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
                     <a href="tel:+919910836286" className="flex items-center gap-2">
                       <Phone className="w-5 h-5" />
-                      Call for Free Diagnosis
+                      Call for Diagnosis
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
@@ -131,16 +131,27 @@ export default function DesktopRepairPage() {
                       WhatsApp Chat
                     </a>
                   </Button>
+                  <Button size="lg" variant="outline" asChild>
+                    <a 
+                      href="mailto:stmaryscomputers@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Mail className="w-5 h-5" />
+                      Email US
+                    </a>
+                  </Button>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
                     <Clock className="w-8 h-8 text-green-600 mx-auto mb-2" />
-                    <p className="text-sm font-medium">Same Day Service</p>
+                    <p className="text-sm font-medium">Quick Service</p>
                   </div>
                   <div>
                     <Shield className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                    <p className="text-sm font-medium">30-Day Warranty</p>
+                    <p className="text-sm font-medium">Quality Service</p>
                   </div>
                   <div>
                     <Star className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
@@ -197,7 +208,7 @@ export default function DesktopRepairPage() {
                       {service.price}
                     </div>
                     <Button className="w-full" asChild>
-                      <a href="tel:+919910836286">Get Quote</a>
+                      <a href="tel:+919910836286">Call Now</a>
                     </Button>
                   </CardContent>
                 </Card>
@@ -214,7 +225,7 @@ export default function DesktopRepairPage() {
                 Desktop Repair FAQ
               </h2>
               <p className="text-lg text-gray-600">
-                Common questions about desktop computer repair in Laxmi Nagar
+                Common questions about desktop computer repairs
               </p>
             </div>
             
@@ -240,15 +251,15 @@ export default function DesktopRepairPage() {
               Need Desktop Computer Repair?
             </h2>
             <p className="text-xl mb-8">
-              Contact St Mary's Computers for professional desktop repair in Laxmi Nagar. 
-              Free diagnosis and expert service.
+              Contact St Mary's Computers for professional desktop repair at Delhi-NCR. 
+              Quick diagnosis and expert service.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
                 <a href="tel:+919910836286">Call +91 99108 36286</a>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-green-600" asChild>
-                <Link href="/contact">Book Repair Online</Link>
+              <Button size="lg" variant="outline" className="text-green-600 border-white hover:bg-green-100 hover:text-green-600" asChild>
+                <Link href="/contact">Ask Repair Online</Link>
               </Button>
             </div>
           </div>
