@@ -1,4 +1,4 @@
-import { Home, Phone, MessageCircle, CheckCircle, Clock, Shield, Star, MapPin } from "lucide-react";
+import { Home, Phone, MessageCircle, CheckCircle, Clock, Shield, Star, MapPin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -14,33 +14,33 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Home Computer Repair",
-    description: "Convenient computer repair service at your home across Delhi with same-day availability.",
-    price: "Starting ₹500 + repair cost"
+    description: "Convenient computer repair service at your home across Delhi with earliest availability.",
+    price: ""
   },
   {
     title: "Office IT Support",
     description: "Professional on-site IT support for offices including network setup and maintenance.",
-    price: "Starting ₹800 + repair cost"
+    price: ""
   },
   {
-    title: "Emergency Repair Service",
-    description: "24/7 emergency on-site repair service for critical computer and network issues.",
-    price: "Starting ₹1,200 + repair cost"
+    title: "Urgent Repair Service",
+    description: "Urgent on-site repair service for critical computer and network issues.",
+    price: ""
   },
   {
     title: "Network Setup & Configuration",
     description: "Complete network setup, WiFi configuration, and printer sharing at your location.",
-    price: "Starting ₹1,000"
+    price: ""
   },
   {
     title: "Data Recovery On-site",
     description: "Professional data recovery service performed at your location for security and convenience.",
-    price: "Starting ₹2,000"
+    price: ""
   },
   {
     title: "System Setup & Installation",
     description: "New computer setup, software installation, and system configuration at your place.",
-    price: "Starting ₹600"
+    price: ""
   }
 ];
 
@@ -56,15 +56,15 @@ const faqs = [
   },
   {
     question: "What are the charges for on-site computer repair?",
-    answer: "On-site service charges start from ₹500 for home visits and ₹800 for office visits, plus the actual repair cost. Emergency service charges are higher. We provide transparent pricing before starting work."
+    answer: "On-site service charges start at a cheap price for home visits and office visits, plus the actual repair cost. Urgent service charges are higher. We provide transparent pricing before starting work."
   },
   {
-    question: "How quickly can you reach for emergency repairs?",
-    answer: "For emergency on-site repairs, we aim to reach within 2-4 hours during business hours and within 6-8 hours for after-hours emergencies, depending on your location and traffic conditions."
+    question: "How quickly can you reach for urgent repairs?",
+    answer: "For urgent on-site repairs, we aim to reach within 2-4 hours during business hours, depending on your location and traffic conditions."
   },
   {
     question: "Do you carry spare parts for on-site repairs?",
-    answer: "Yes, our technicians carry common spare parts and tools for most repairs. For specific parts, we may need to schedule a follow-up visit or you can visit our shop for faster service."
+    answer: "Yes, we carry common spare parts and tools for most repairs. For specific parts, we may need to schedule a follow-up visit or you can visit our shop for faster service."
   },
   {
     question: "Can you setup new computers and networks on-site?",
@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     question: "Is on-site service available on weekends?",
-    answer: "Yes, we provide on-site service on weekends and holidays. Weekend service may have slightly higher charges. Emergency service is available 24/7."
+    answer: "Yes, we provide on-site service on weekends and holidays. Weekend service may have slightly higher charges."
   }
 ];
 
@@ -85,7 +85,7 @@ export default function OnsiteRepairPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                On-site Computer Repair Across Delhi
+                On-site Computer Repair Across Delhi-NCR
               </h1>
               <p className="text-xl text-gray-700 mb-8">
                 Professional computer repair service at your home or office. We come to you with 
@@ -96,7 +96,7 @@ export default function OnsiteRepairPage() {
                 <Button size="lg" className="bg-red-600 hover:bg-red-700" asChild>
                   <a href="tel:+919910836286" className="flex items-center gap-2">
                     <Phone className="w-5 h-5" />
-                    Call for Home Service
+                    Call for Services
                   </a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
@@ -110,12 +110,23 @@ export default function OnsiteRepairPage() {
                     WhatsApp Chat
                   </a>
                 </Button>
+                <Button size="lg" variant="outline" asChild>
+                    <a 
+                      href="mailto:stmaryscomputers@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <Mail className="w-5 h-5" />
+                      Email US
+                    </a>
+                  </Button>
               </div>
               
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <Clock className="w-8 h-8 text-red-600 mx-auto mb-2" />
-                  <p className="text-sm font-medium">Same Day Service</p>
+                  <p className="text-sm font-medium">Quick Service</p>
                 </div>
                 <div>
                   <Shield className="w-8 h-8 text-blue-600 mx-auto mb-2" />
@@ -123,7 +134,7 @@ export default function OnsiteRepairPage() {
                 </div>
                 <div>
                   <Star className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
-                  <p className="text-sm font-medium">Expert Technicians</p>
+                  <p className="text-sm font-medium">Expert Technician</p>
                 </div>
               </div>
             </div>
@@ -221,13 +232,13 @@ export default function OnsiteRepairPage() {
           </h2>
           <p className="text-xl mb-8">
             Contact St Mary's Computers for professional on-site computer repair across Delhi. 
-            We come to your home or office with same-day service.
+            We come to your home or office with the quick service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <a href="tel:+919910836286">Call +91 99108 36286</a>
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-red-600" asChild>
+            <Button size="lg" variant="outline" className="text-red-600 border-white hover:bg-red-100 hover:text-red-600" asChild>
               <Link href="/contact">Schedule Visit</Link>
             </Button>
           </div>
