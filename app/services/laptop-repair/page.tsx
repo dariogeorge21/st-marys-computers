@@ -2,6 +2,7 @@ import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star, Mail } from "lu
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { BrandLogos } from "@/components/brand-logos";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -59,7 +60,7 @@ const faqs = [
   },
   {
     question: "Can you repair water-damaged laptops?",
-    answer: "Yes, we specialize in liquid damage repair. Success depends on the extent of damage and how quickly you bring it in. We recommend immediate shutdown and bringing it to us ASAP."
+    answer: "Yes, we specialize in liquid damage repair. Success depends on the extent of damage and how quickly we can service it. We recommend immediate shutdown and calling us for emergency pickup service."
   },
   {
     question: "Do you provide pickup and delivery service?",
@@ -122,7 +123,7 @@ export default function LaptopRepairPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Professional Laptop Repair in Laxmi Nagar
+                  Professional Laptop Repair in Delhi-NCR
                 </h1>
                 <p className="text-xl text-gray-700 mb-8">
                   Expert laptop repair services for all brands. Screen replacement, battery issues, 
@@ -233,6 +234,17 @@ export default function LaptopRepairPage() {
           </div>
         </section>
 
+        {/* Brand Logos Section */}
+        <section className="py-12 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <BrandLogos
+              title="Laptop Brands We Service"
+              brands={['Dell', 'HP', 'Lenovo', 'ASUS', 'Acer', 'Apple', 'Samsung', 'Toshiba', 'Sony', 'MSI', 'Compaq']}
+              category="laptop"
+            />
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
@@ -274,7 +286,7 @@ export default function LaptopRepairPage() {
               <Button size="lg" variant="secondary" asChild>
                 <a href="tel:+919910836286">Call +91 99108 36286</a>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600" asChild>
+              <Button size="lg" variant="outline" className="text-blue-600 border-white hover:bg-blue-100 hover:text-blue-600" asChild>
                 <Link href="/contact">Ask Repair Online</Link>
               </Button>
             </div>
