@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
+import { BrandLogos } from "@/components/brand-logos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -214,6 +215,17 @@ export default function DesktopRepairPage() {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Brand Logos Section */}
+        <section className="py-12 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <BrandLogos
+              title="Desktop Brands We Service"
+              brands={['Dell', 'HP', 'Lenovo', 'Compaq']}
+              category="desktop"
+            />
           </div>
         </section>
 
