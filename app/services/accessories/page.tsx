@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
+import { BrandLogos } from "@/components/brand-logos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -196,6 +197,17 @@ export default function AccessoriesPage() {
           </div>
         </div>
       </section>
+
+      {/* Brand Logos Section */}
+        <section className="py-12 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <BrandLogos
+              title="Accessories Brands We Service"
+              brands={['Dell', 'HP', 'Lenovo', 'Adata', 'Samsung', 'Crucial', 'WD', 'SanDisk', 'Seagate', 'Kingston', 'ADATA', 'Intel', 'AMD', 'Gigabyte']}
+              category="laptop"
+            />
+          </div>
+        </section>
 
       {/* FAQ Section */}
       <section className="py-16 px-4 bg-gray-50">
