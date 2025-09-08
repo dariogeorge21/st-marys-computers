@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 
 const metadata: Metadata = {
   title: "Contact St Mary's Computers - Computer Repair in Laxmi Nagar, Delhi",
-  description: "Contact St Mary's Computers for computer repair, laptop service, printer setup in Laxmi Nagar. Call +91 99108 36286 or visit our shop in New Delhi.",
+  description: "Contact St Mary's Computers for computer repair, laptop service, printer setup in Laxmi Nagar. Call +91 99108 36286 for on-site service in New Delhi.",
   keywords: "contact computer repair Laxmi Nagar, St Mary's Computers address, computer service Delhi contact",
 };
 
@@ -204,9 +204,9 @@ export default function ContactPage() {
                       <MapPin className="w-6 h-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Visit Our Shop</h3>
+                      <h3 className="font-semibold">Service Dispatch Location</h3>
                       <p className="text-gray-600">Laxmi Nagar, New Delhi - 110092</p>
-                      <p className="text-sm text-gray-500">Near Laxmi Nagar Metro Station</p>
+                      <p className="text-sm text-gray-500">We come to you for service</p>
                     </div>
                   </div>
                   
