@@ -2,6 +2,7 @@ import { Monitor, Wrench, Printer, Zap, Home, HardDrive, Phone, MessageCircle, M
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { BrandLogos } from "@/components/brand-logos";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -161,6 +162,18 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+       {/* Brand Logos Section */}
+            <section className="py-12 px-4 bg-gray-50">
+              <div className="max-w-6xl mx-auto">
+                <BrandLogos
+                  title="Brands We Use"
+                  brands={['Dell', 'HP', 'Lenovo', 'ASUS', 'Acer', 'Canon', 'Epson', 'Crucial', 'Samsung', 'Kingston', 'ADATA', 'SanDisk', 'WD', 'Seagate', 'Apple', 'MSI', 'Compaq', 'Nexus', 'APC', 'Microtek', 'Gigabyte', 'Intel', 'AMD', 'Toshiba',]}
+                  category="general"
+                />
+              </div>
+            </section>
+      
 
       {/* FAQ Section */}
       <section className="py-16 px-4 bg-gray-50">
