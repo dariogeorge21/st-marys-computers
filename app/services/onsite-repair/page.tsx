@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "On-site Computer Repair in Delhi | St Mary's Computers",
-  description: "Professional on-site computer repair service across Delhi. Home & office visits for laptop, desktop, printer repair. Same-day service. Call +91 99108 36286",
+  description: "Professional on-site computer repair service across Delhi. We come to your home & office for laptop, desktop, printer repair. Same-day service. Call +91 99108 36286",
   keywords: "on-site computer repair Delhi, home computer repair, office computer service, laptop repair at home Delhi",
 };
 
@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     question: "What are the charges for on-site computer repair?",
-    answer: "On-site service charges start at a cheap price for home visits and office visits, plus the actual repair cost. Urgent service charges are higher. We provide transparent pricing before starting work."
+    answer: "On-site service includes our technician coming to your location plus the actual repair cost. Emergency service charges are higher. We provide transparent pricing before starting work."
   },
   {
     question: "How quickly can you reach for urgent repairs?",
@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     question: "Do you carry spare parts for on-site repairs?",
-    answer: "Yes, we carry common spare parts and tools for most repairs. For specific parts, we may need to schedule a follow-up visit or you can visit our shop for faster service."
+    answer: "Yes, we carry common spare parts and tools for most repairs. For specific parts, we may need to schedule a follow-up visit or arrange for part delivery."
   },
   {
     question: "Can you setup new computers and networks on-site?",
@@ -232,14 +232,14 @@ export default function OnsiteRepairPage() {
           </h2>
           <p className="text-xl mb-8">
             Contact St Mary's Computers for professional on-site computer repair across Delhi. 
-            We come to your home or office with the quick service.
+            We come to your home or office with quick, professional service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <a href="tel:+919910836286">Call +91 99108 36286</a>
             </Button>
             <Button size="lg" variant="outline" className="text-red-600 border-white hover:bg-red-100 hover:text-red-600" asChild>
-              <Link href="/contact">Schedule Visit</Link>
+              <Link href="/contact">Schedule Service</Link>
             </Button>
           </div>
         </div>
