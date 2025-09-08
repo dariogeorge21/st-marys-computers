@@ -91,8 +91,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-blue-300">
-                  Blog
+                <Link href="/about" className="hover:text-blue-300">
+                  About
                 </Link>
               </li>
               <li>
@@ -103,6 +103,11 @@ export function Footer() {
               <li>
                 <Link href="/about" className="hover:text-blue-300">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-blue-300">
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
@@ -129,6 +134,12 @@ export function Footer() {
                 className="text-blue-400 hover:text-blue-300"
               >
                 <Phone className="w-6 h-6" />
+              </a>
+              <a 
+                href="mailto:stmaryscomputers@gmail.com"
+                className="text-red-400 hover:text-red-300"
+              >
+                <Mail className="w-6 h-6" />
               </a>
             </div>
           </div>
