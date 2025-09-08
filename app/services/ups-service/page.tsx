@@ -2,6 +2,7 @@ import { Zap, Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "luc
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { BrandLogos } from "@/components/brand-logos";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -182,6 +183,17 @@ export default function UPSServicePage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Brand Logos Section */}
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <BrandLogos
+            title="UPS Brands We Service"
+            brands={['APC', 'Microtek', 'Nexus']}
+            category="ups"
+          />
         </div>
       </section>
 
