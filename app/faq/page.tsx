@@ -131,7 +131,7 @@ export default function FAQPage() {
           {/* Quick Contact */}
           <div className="bg-blue-50 p-6 rounded-lg">
             <p className="text-gray-700 mb-4">
-              Can't find what you're looking for? Contact us directly:
+              Can&apos;t find what you&apos;re looking for? Contact us directly:
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-green-600 hover:bg-green-700" asChild>

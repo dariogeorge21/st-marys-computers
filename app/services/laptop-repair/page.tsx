@@ -279,7 +279,7 @@ export default function LaptopRepairPage() {
               Ready to Fix Your Laptop?
             </h2>
             <p className="text-xl mb-8">
-              Contact St Mary's Computers for professional laptop repair in Delhi-NCR.
+              Contact St Mary&apos;s Computers for professional laptop repair in Delhi-NCR.
               Quick diagnosis and transparent pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

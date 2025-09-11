@@ -121,30 +121,30 @@ export default function AboutPage() {
           
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 mb-6">
-              St Mary's Computers was founded by George CV in 2004 with a simple mission: to provide 
+              St Mary&apos;s Computers was founded by George CV in 2004 with a simple mission: to provide
               honest, reliable, and professional computer repair services to the people of Delhi. 
               What started as a small repair service in Laxmi Nagar has grown into one of the most 
               trusted names in computer repair across the region.
             </p>
             
             <p className="text-gray-700 mb-6">
-              George's journey in technology began in the early 2000s when computers were just becoming 
+              George&apos;s journey in technology began in the early 2000s when computers were just becoming
               common in Indian households. Recognizing the growing need for reliable repair services, 
               he dedicated himself to mastering every aspect of computer hardware and software. His 
               commitment to continuous learning has kept him at the forefront of technology trends.
             </p>
             
             <p className="text-gray-700 mb-6">
-              Over the years, St Mary's Computers has evolved from a traditional repair shop to a 
+              Over the years, St Mary&apos;s Computers has evolved from a traditional repair shop to a
               comprehensive computer service provider. We now offer on-site repairs, bringing our 
               expertise directly to your home or office. This approach ensures your convenience while 
               maintaining the highest standards of service quality.
             </p>
             
             <p className="text-gray-700">
-              Today, George continue to serve the community with the same dedication and 
-              integrity that built our reputation. Whether you're a student needing a laptop repair, 
-              a business requiring IT support, or a family dealing with a computer emergency, we're 
+              Today, George continue to serve the community with the same dedication and
+              integrity that built our reputation. Whether you&apos;re a student needing a laptop repair,
+              a business requiring IT support, or a family dealing with a computer emergency, we&apos;re
               here to help with professional, reliable service.
             </p>
           </div>
@@ -154,7 +154,7 @@ export default function AboutPage() {
       {/* Achievements Section */}
       <section className="bg-gray-50 py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose St Mary's Computers</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose St Mary&apos;s Computers</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
@@ -197,8 +197,8 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Our Service Philosophy</h2>
           <p className="text-xl mb-8">
-            "Every customer deserves honest advice, quality service, and fair pricing. We treat 
-            every computer repair as if it were our own family's device."
+            &ldquo;Every customer deserves honest advice, quality service, and fair pricing. We treat
+            every computer repair as if it were our own family&apos;s device.&rdquo;
           </p>
           <p className="text-lg italic">- George CV, Founder</p>
         </div>
@@ -209,7 +209,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Experience the Difference?</h2>
           <p className="text-xl text-gray-700 mb-8">
-            Join thousands of satisfied customers who trust St Mary's Computers for all their 
+            Join thousands of satisfied customers who trust St Mary&apos;s Computers for all their
             computer repair and service needs. Contact us today for professional, reliable service.
           </p>
           

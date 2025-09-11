@@ -93,7 +93,7 @@ export default function ServicesPage() {
           </h1>
           <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
             Professional laptop, desktop, and printer repair services with quick support. 
-            Personal service from St Mary's Computers in Delhi-NCR
+            Personal service from St Mary&apos;s Computers in Delhi-NCR
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
@@ -206,10 +206,10 @@ export default function ServicesPage() {
       <section className="py-16 px-4 bg-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Need Computer Repair? We're Here to Help!
+            Need Computer Repair? We&apos;re Here to Help!
           </h2>
           <p className="text-xl mb-8">
-            Contact St Mary's Computers for fast, reliable computer repair services in Laxmi Nagar, New Delhi.
+            Contact St Mary&apos;s Computers for fast, reliable computer repair services in Laxmi Nagar, New Delhi.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

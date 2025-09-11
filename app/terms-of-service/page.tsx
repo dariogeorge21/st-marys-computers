@@ -17,7 +17,7 @@ export default function TermsOfServicePage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
           <p className="text-xl text-gray-600">
-            Terms and conditions for St Mary's Computers services
+            Terms and conditions for St Mary&apos;s Computers services
           </p>
           <p className="text-sm text-gray-500 mt-2">
             Last updated: January 2025
@@ -43,7 +43,7 @@ export default function TermsOfServicePage() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-700">
-              These Terms of Service ("Terms") govern your use of St Mary's Computers services 
+              These Terms of Service (&ldquo;Terms&rdquo;) govern your use of St Mary&apos;s Computers services
               and website. By engaging our services, visiting our website, or communicating with 
               us, you agree to be bound by these Terms. If you do not agree with any part of 
               these terms, please do not use our services.
@@ -168,7 +168,7 @@ export default function TermsOfServicePage() {
               <p className="text-gray-700">
                 We stand behind our work and strive to provide quality service. If you experience 
                 issues related to our repair work within a reasonable time after service, we will 
-                review and address the problem at no additional charge if it's determined to be 
+                review and address the problem at no additional charge if it&apos;s determined to be
                 related to our work.
               </p>
             </div>
@@ -230,7 +230,7 @@ export default function TermsOfServicePage() {
             <p className="text-gray-700">
               We may update these Terms of Service periodically to reflect changes in our 
               services or legal requirements. Updated terms will be posted on our website 
-              with a new "Last updated" date. Continued use of our services after changes 
+              with a new &ldquo;Last updated&rdquo; date. Continued use of our services after changes
               constitutes acceptance of the updated terms.
             </p>
           </CardContent>
@@ -255,7 +255,7 @@ export default function TermsOfServicePage() {
                 <span>stmaryscomputers@gmail.com</span>
               </div>
               <p className="text-sm text-gray-600 mt-4">
-                St Mary's Computers<br />
+                St Mary&apos;s Computers<br />
                 Laxmi Nagar, New Delhi - 110092
               </p>
             </div>

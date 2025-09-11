@@ -104,7 +104,7 @@ export default function HomePage() {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-lg font-semibold mb-4">Why Choose St Mary's Computers?</h3>
+                <h3 className="text-lg font-semibold mb-4">Why Choose St Mary&apos;s Computers?</h3>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-blue-600" />
@@ -501,7 +501,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Computer Accessories & Upgrades</h3>
               <p className="text-gray-600 mb-4">
-                Boost your computer's performance with our upgrade services and accessories. From RAM upgrades 
+                Boost your computer&apos;s performance with our upgrade services and accessories. From RAM upgrades
                 to SSD installations, we help you get the most out of your existing hardware with professional 
                 upgrade services.
               </p>

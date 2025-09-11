@@ -9,7 +9,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold text-blue-400 mb-4">
-              St Mary's Computers
+              St Mary&apos;s Computers
             </h3>
             <p className="text-gray-300 mb-6 max-w-md">
               Your trusted computer repair expert in New Delhi. Personal service from owner George CV
@@ -118,7 +118,7 @@ export function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2025 St Mary's Computers. All rights reserved.
+              © 2025 St Mary&apos;s Computers. All rights reserved.
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <a 

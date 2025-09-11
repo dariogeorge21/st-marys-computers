@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-700">
-              St Mary's Computers ("we," "our," or "us") is committed to protecting your privacy and 
+              St Mary&apos;s Computers (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy and
               personal information. This Privacy Policy explains how we collect, use, and safeguard 
               your information when you visit our website or use our computer repair services.
             </p>
@@ -139,8 +139,8 @@ export default function PrivacyPolicyPage() {
               <h3 className="text-lg font-semibold mb-2">Google Analytics</h3>
               <p className="text-gray-700">
                 We use Google Analytics to understand website usage and improve our services. 
-                Google Analytics may collect anonymous usage data. You can opt-out using 
-                Google's opt-out tools.
+                Google Analytics may collect anonymous usage data. You can opt-out using
+                Google&apos;s opt-out tools.
               </p>
             </div>
             
@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
               <h3 className="text-lg font-semibold mb-2">WhatsApp Business</h3>
               <p className="text-gray-700">
                 We use WhatsApp Business for customer communication. Messages sent through 
-                WhatsApp are subject to WhatsApp's privacy policy and terms of service.
+                WhatsApp are subject to WhatsApp&apos;s privacy policy and terms of service.
               </p>
             </div>
             
@@ -247,7 +247,7 @@ export default function PrivacyPolicyPage() {
             <p className="text-gray-700">
               We may update this Privacy Policy periodically to reflect changes in our practices 
               or legal requirements. We will notify you of significant changes by posting the 
-              updated policy on our website with a new "Last updated" date. Your continued use 
+              updated policy on our website with a new &ldquo;Last updated&rdquo; date. Your continued use
               of our services after such changes constitutes acceptance of the updated policy.
             </p>
           </CardContent>

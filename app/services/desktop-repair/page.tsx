@@ -1,4 +1,4 @@
-import { Wrench, Phone, MessageCircle, CheckCircle, Clock, Shield, Star, Mail} from "lucide-react";
+import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star, Mail} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -263,7 +263,7 @@ export default function DesktopRepairPage() {
               Need Desktop Computer Repair?
             </h2>
             <p className="text-xl mb-8">
-              Contact St Mary's Computers for professional desktop repair at Delhi-NCR. 
+              Contact St Mary&apos;s Computers for professional desktop repair at Delhi-NCR.
               Quick diagnosis and expert service.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -89,7 +89,7 @@ export default function AccessoriesPage() {
                 Computer Accessories & Upgrades in New Delhi
               </h1>
               <p className="text-xl text-gray-700 mb-8">
-                Boost your computer's performance with professional hardware upgrades. RAM, SSD, graphics cards, 
+                Boost your computer&apos;s performance with professional hardware upgrades. RAM, SSD, graphics cards,
                 custom PC builds, and a wide range of computer accessories.
               </p>
               
@@ -243,7 +243,7 @@ export default function AccessoriesPage() {
             Ready to Upgrade Your Computer?
           </h2>
           <p className="text-xl mb-8">
-            Contact St Mary's Computers for professional computer upgrades and accessories across New Delhi. 
+            Contact St Mary&apos;s Computers for professional computer upgrades and accessories across New Delhi.
             Expert installation and genuine parts guaranteed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

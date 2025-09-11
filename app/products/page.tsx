@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Monitor, Laptop, Zap, Phone, MessageCircle, Star, Shield, CheckCircle, Mail, Filter, Search, Grid, List } from "lucide-react";
+import Image from "next/image";
+import { Monitor, Phone, MessageCircle, Star, Shield, CheckCircle, Mail, Grid, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,7 +11,14 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BrandLogos } from "@/components/brand-logos";
 
-const laptops = [
+interface Product {
+  id: number;
+  brand: string;
+  serviceGuarantee: string;
+  image: string;
+}
+
+const laptops: Product[] = [
   {
     id: 1,
     brand: "Dell",
@@ -43,7 +51,7 @@ const laptops = [
   }
 ];
 
-const desktops = [
+const desktops: Product[] = [
   {
     id: 1,
     brand: "Dell",
@@ -64,7 +72,7 @@ const desktops = [
   }
 ];
 
-const upsUnits = [
+const upsUnits: Product[] = [
   {
     id: 1,
     brand: "Nexus",
@@ -85,7 +93,7 @@ const upsUnits = [
   }
 ];
 
-const accessories = [
+const accessories: Product[] = [
   {
     id: 1,
     brand: "Kingston",
@@ -169,7 +177,7 @@ export default function ProductsPage() {
   const [filterBy, setFilterBy] = useState("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
-  const ProductCard = ({ product, type }: { product: any; type: string }) => (
+  const ProductCard = ({ product, type }: { product: Product; type: string }) => (
     <Card className="hover:shadow-lg transition-shadow">
       <CardHeader>
         <div className="flex justify-between items-start">
@@ -183,9 +191,11 @@ export default function ProductsPage() {
         </div>
       </CardHeader>
       <CardContent>
-        <img
+        <Image
           src={product.image}
           alt={`${product.brand} ${type}`}
+          width={400}
+          height={192}
           className="w-full h-48 object-cover mb-4 rounded-md"
         />
         <div className="space-y-3">
@@ -451,10 +461,10 @@ export default function ProductsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Choose St Mary's Computers?
+              Why Choose St Mary&apos;s Computers?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We don't just sell products - we provide complete solutions with ongoing support
+              We don&apos;t just sell products - we provide complete solutions with ongoing support
               to ensure you get the most value from your investment.
             </p>
           </div>
@@ -578,7 +588,7 @@ export default function ProductsPage() {
             <h3 className="text-xl font-semibold mb-4">Product Consultation Service</h3>
             <p className="text-gray-600 mb-6">
               Not sure which product is right for you? Schedule a free consultation with us.
-              We'll help you choose the perfect solution for your needs and budget.
+              We&apos;ll help you choose the perfect solution for your needs and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>

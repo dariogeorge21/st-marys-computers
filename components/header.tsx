@@ -55,7 +55,7 @@ export function Header() {
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <div className="text-2xl font-bold text-blue-600">
-              St Mary's Computers
+              St Mary&apos;s Computers
             </div>
           </Link>
 

@@ -1,4 +1,4 @@
-import { Home, Phone, MessageCircle, CheckCircle, Clock, Shield, Star, MapPin, Mail } from "lucide-react";
+import { Phone, MessageCircle, Clock, Shield, Star, MapPin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -231,7 +231,7 @@ export default function OnsiteRepairPage() {
             Need On-site Computer Repair?
           </h2>
           <p className="text-xl mb-8">
-            Contact St Mary's Computers for professional on-site computer repair across Delhi. 
+            Contact St Mary&apos;s Computers for professional on-site computer repair across Delhi.
             We come to your home or office with quick, professional service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

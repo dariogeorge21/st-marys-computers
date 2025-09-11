@@ -1,4 +1,4 @@
-import { Zap, Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-react";
+import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -85,7 +85,7 @@ export default function UPSServicePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                UPS Sales & Service with St Mary's Computers
+                UPS Sales &amp; Service with St Mary&apos;s Computers
               </h1>
               <p className="text-xl text-gray-700 mb-8">
                 Complete UPS solutions for home and office. Sales, installation, repair, and battery replacement 
@@ -231,7 +231,7 @@ export default function UPSServicePage() {
             Need UPS Sales or Service?
           </h2>
           <p className="text-xl mb-8">
-            Contact St Mary's Computers for reliable UPS solutions in Delhi-NCR. 
+            Contact St Mary&apos;s Computers for reliable UPS solutions in Delhi-NCR.
             Sales, service, and urgent support available.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

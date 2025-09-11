@@ -8,13 +8,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import type { Metadata } from "next";
-
-const metadata: Metadata = {
-  title: "Contact St Mary's Computers - Computer Repair in Laxmi Nagar, Delhi",
-  description: "Contact St Mary's Computers for computer repair, laptop service, printer setup in Laxmi Nagar. Call +91 99108 36286 for on-site service in New Delhi.",
-  keywords: "contact computer repair Laxmi Nagar, St Mary's Computers address, computer service Delhi contact",
-};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -43,11 +36,11 @@ export default function ContactPage() {
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Contact St Mary's Computers
+            Contact St Mary&apos;s Computers
           </h1>
           <p className="text-xl text-gray-700 mb-8">
             Get in touch for computer repair, laptop service, or any technical support. 
-            We're here to help with fast and reliable service.
+            We&apos;re here to help with fast and reliable service.
           </p>
         </div>
       </section>
@@ -62,7 +55,7 @@ export default function ContactPage() {
                 <CardHeader>
                   <CardTitle className="text-2xl">Send us a Message</CardTitle>
                   <CardDescription>
-                    Fill out the form below and we'll get back to you as soon as possible.
+                    Fill out the form below and we&apos;ll get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

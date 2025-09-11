@@ -6,7 +6,7 @@ interface BrandLogosProps {
   category: 'laptop' | 'printer' | 'ups' | 'general' | 'desktop';
 }
 
-export function BrandLogos({ title, brands, category }: BrandLogosProps) {
+export function BrandLogos({ title, brands }: BrandLogosProps) {
   const getBrandLogo = (brand: string) => {
     // Format the brand name to lowercase for file naming consistency
     const brandLower = brand.toLowerCase();
