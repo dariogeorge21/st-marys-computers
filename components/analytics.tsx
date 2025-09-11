@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect } from 'react';
+
 import Script from 'next/script';
 
 // Replace with actual Google Analytics 4 Measurement ID
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+const GA_MEASUREMENT_ID = 'G-E2ES8E031';
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
+    gtag: (command: string, targetId: string, config?: Record<string, unknown>) => void;
   }
 }
 
@@ -35,7 +35,7 @@ export function GoogleAnalytics() {
 }
 
 // Analytics event tracking functions
-export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
+export const trackEvent = (eventName: string, parameters?: Record<string, string | number | boolean>) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, parameters);
   }
@@ -92,8 +92,7 @@ export function TrackablePhoneLink({
   children: React.ReactNode;
   source: string;
   className?: string;
-  [key: string]: any;
-}) {
+} & React.HTMLAttributes<HTMLElement>) {
   const handleClick = () => {
     trackPhoneClick(source);
   };
@@ -122,8 +121,7 @@ export function TrackableWhatsAppLink({
   source: string;
   message?: string;
   className?: string;
-  [key: string]: any;
-}) {
+} & React.HTMLAttributes<HTMLElement>) {
   const handleClick = () => {
     trackWhatsAppClick(source);
   };
