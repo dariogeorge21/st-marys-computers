@@ -32,7 +32,7 @@ const faqCategories = [
     faqs: [
       {
         question: "Do you offer pickup and delivery service?",
-        answer: "Yes, we provide free pickup and delivery service within Laxmi Nagar and nearby areas. For other parts of Delhi, a nominal charge may apply. We'll arrange a convenient time that works for your schedule."
+        answer: "Yes, we provide free pickup and delivery service across Delhi NCR. We'll arrange a convenient time that works for your schedule."
       },
       {
         question: "How do you ensure my device is safe during transport?",
