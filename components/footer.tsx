@@ -212,7 +212,7 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-2 text-gray-500 text-sm">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              <span>Service Available 24/7</span>
+              <span>Service Available</span>
             </div>
           </div>
         </div>
