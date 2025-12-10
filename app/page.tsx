@@ -7,7 +7,7 @@ export default function HomePage() {
     "@type": "LocalBusiness",
     "name": "St Mary's Computers",
     "image": "https://stmaryscomputers.com/images/shop-front.jpg",
-    "description": "Fast & reliable laptop, desktop and printer repair in Laxmi Nagar. On-site service across New Delhi.",
+    "description": "Fast & reliable laptop, desktop and printer repair in New Delhi & Delhi-NCR. On-site service across New Delhi.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Laxmi Nagar",
