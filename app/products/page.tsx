@@ -89,7 +89,7 @@ const upsUnits: Product[] = [
     id: 3,
     brand: "APC",
     serviceGuarantee: "Professional installation included",
-    image: "/products//ups/apc.webp"
+    image: "/products/ups/apc.webp"
   }
 ];
 
@@ -243,63 +243,64 @@ export default function ProductsPage() {
         </div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-fade-in">
             Quality Computer Products in Delhi-NCR
           </h1>
-          <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-100">
+          <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-100 px-4">
             Discover our comprehensive range of laptops, desktops, UPS systems, and accessories. 
             All products are quality tested with professional service support and expert guidance.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in animation-delay-200">
-            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
-              <a href="tel:+919910836286" className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 animate-fade-in animation-delay-200 px-4">
+            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
+              <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
-                Call +91 99108 36286
+                <span className="hidden sm:inline">Call +91 99108 36286</span>
+                <span className="sm:hidden">Call Now</span>
               </a>
             </Button>
-            <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+            <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
               <a 
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20your%20products" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2"
+                className="flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-5 h-5" />
-                WhatsApp Inquiry
+                <span>WhatsApp</span>
               </a>
             </Button>
-            <Button size="lg" className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+            <Button size="lg" className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
               <a 
                 href="mailto:stmaryscomputers@gmail.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2"
+                className="flex items-center justify-center gap-2"
               >
                 <Mail className="w-5 h-5" />
-                Email Us
+                <span>Email</span>
               </a>
             </Button>
           </div>
 
-          <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-white/20 animate-fade-in animation-delay-300">
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-6">Why Buy From Us?</h3>
-            <div className="grid grid-cols-2 gap-5">
+          <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-white/20 animate-fade-in animation-delay-300 px-4">
+            <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-6">Why Buy From Us?</h3>
+            <div className="grid grid-cols-2 gap-4 sm:gap-5">
               <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-sm">Quality tested products</span>
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span className="text-gray-700 font-medium text-xs sm:text-sm">Quality tested products</span>
               </div>
               <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <Shield className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-sm">Service support included</span>
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
+                <span className="text-gray-700 font-medium text-xs sm:text-sm">Service support included</span>
               </div>
               <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <Star className="w-5 h-5 text-yellow-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-sm">Expert guidance</span>
+                <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500 flex-shrink-0" />
+                <span className="text-gray-700 font-medium text-xs sm:text-sm">Expert guidance</span>
               </div>
               <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <Phone className="w-5 h-5 text-purple-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-sm">Complete setup service</span>
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0" />
+                <span className="text-gray-700 font-medium text-xs sm:text-sm">Complete setup service</span>
               </div>
             </div>
           </div>
@@ -313,12 +314,12 @@ export default function ProductsPage() {
           <div className="absolute top-20 left-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10 px-4 sm:px-0">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Product Categories
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Browse our comprehensive selection of computer products. Each category offers 
               quality options with professional service support.
             </p>
@@ -326,8 +327,8 @@ export default function ProductsPage() {
           </div>
 
           {/* Filters and Search */}
-          <div className="flex flex-col md:flex-row gap-4 mb-8 animate-fade-in animation-delay-100">
-            <div className="flex-1">
+          <div className="flex flex-col gap-4 mb-8 animate-fade-in animation-delay-100">
+            <div className="w-full">
               <Input
                 placeholder="Search products..."
                 value={searchTerm}
@@ -335,53 +336,57 @@ export default function ProductsPage() {
                 className="w-full border-2 border-gray-200 hover:border-blue-400 focus:border-blue-600 transition-colors"
               />
             </div>
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-full md:w-48 border-2 border-gray-200">
-                <SelectValue placeholder="Sort by" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="brand">Sort by Brand</SelectItem>
-                <SelectItem value="condition">Sort by Condition</SelectItem>
-                <SelectItem value="category">Sort by Category</SelectItem>
-              </SelectContent>
-            </Select>
-            <Select value={filterBy} onValueChange={setFilterBy}>
-              <SelectTrigger className="w-full md:w-48 border-2 border-gray-200">
-                <SelectValue placeholder="Filter by" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Products</SelectItem>
-                <SelectItem value="new">New Only</SelectItem>
-                <SelectItem value="refurbished">Refurbished Only</SelectItem>
-              </SelectContent>
-            </Select>
-            <div className="flex gap-2">
-              <Button
-                variant={viewMode === "grid" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setViewMode("grid")}
-                className="hover:shadow-lg transition-all"
-              >
-                <Grid className="w-4 h-4" />
-              </Button>
-              <Button
-                variant={viewMode === "list" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setViewMode("list")}
-                className="hover:shadow-lg transition-all"
-              >
-                <List className="w-4 h-4" />
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+              <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger className="w-full sm:flex-1 border-2 border-gray-200 text-sm">
+                  <SelectValue placeholder="Sort by" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="brand">Sort by Brand</SelectItem>
+                  <SelectItem value="condition">Sort by Condition</SelectItem>
+                  <SelectItem value="category">Sort by Category</SelectItem>
+                </SelectContent>
+              </Select>
+              <Select value={filterBy} onValueChange={setFilterBy}>
+                <SelectTrigger className="w-full sm:flex-1 border-2 border-gray-200 text-sm">
+                  <SelectValue placeholder="Filter by" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Products</SelectItem>
+                  <SelectItem value="new">New Only</SelectItem>
+                  <SelectItem value="refurbished">Refurbished Only</SelectItem>
+                </SelectContent>
+              </Select>
+              <div className="flex gap-2 w-full sm:w-auto">
+                <Button
+                  variant={viewMode === "grid" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setViewMode("grid")}
+                  className="flex-1 sm:flex-none hover:shadow-lg transition-all"
+                  title="Grid view"
+                >
+                  <Grid className="w-4 h-4" />
+                </Button>
+                <Button
+                  variant={viewMode === "list" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setViewMode("list")}
+                  className="flex-1 sm:flex-none hover:shadow-lg transition-all"
+                  title="List view"
+                >
+                  <List className="w-4 h-4" />
+                </Button>
+              </div>
             </div>
           </div>
 
           <Tabs defaultValue="laptops" className="w-full">
-            <TabsList className="grid w-full grid-cols-5 mb-8 bg-gradient-to-r from-gray-100 to-gray-50 p-1">
-              <TabsTrigger value="laptops" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all">Laptops</TabsTrigger>
-              <TabsTrigger value="desktops" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all">Desktops</TabsTrigger>
-              <TabsTrigger value="ups" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all">UPS Systems</TabsTrigger>
-              <TabsTrigger value="accessories" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all">Accessories</TabsTrigger>
-              <TabsTrigger value="printers" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all">Printers</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 mb-8 bg-gradient-to-r from-gray-100 to-gray-50 p-1 gap-1 h-auto">
+              <TabsTrigger value="laptops" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm">Laptops</TabsTrigger>
+              <TabsTrigger value="desktops" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm">Desktops</TabsTrigger>
+              <TabsTrigger value="ups" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm">UPS</TabsTrigger>
+              <TabsTrigger value="accessories" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm hidden sm:block">Accessories</TabsTrigger>
+              <TabsTrigger value="printers" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm hidden lg:block">Printers</TabsTrigger>
             </TabsList>
             
             <TabsContent value="laptops" className="mt-8">
@@ -484,80 +489,80 @@ export default function ProductsPage() {
           <div className="absolute top-0 right-0 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
         
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10 px-4 sm:px-0">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Why Choose St Mary&apos;s Computers?
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               We don&apos;t just sell products - we provide complete solutions with ongoing support
               to ensure you get the most value from your investment.
             </p>
             <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group bg-blue-50 hover:bg-blue-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-blue-100">
-              <div className="w-16 h-16 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <CheckCircle className="w-8 h-8 text-blue-600" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="group bg-blue-50 hover:bg-blue-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-blue-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Quality Testing & Assurance</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Quality Testing & Assurance</h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 Every product undergoes rigorous testing to ensure optimal performance. We stand
                 behind the quality of everything we sell with comprehensive service support.
               </p>
             </div>
 
-            <div className="group bg-green-50 hover:bg-green-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-green-100">
-              <div className="w-16 h-16 bg-green-100 group-hover:bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <Shield className="w-8 h-8 text-green-600" />
+            <div className="group bg-green-50 hover:bg-green-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-green-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 group-hover:bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Expert Guidance & Support</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Expert Guidance & Support</h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 Our experienced team helps you choose the right products for your needs and budget.
                 Ongoing technical support ensures you get maximum value from your purchase.
               </p>
             </div>
 
-            <div className="group bg-purple-50 hover:bg-purple-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-purple-100">
-              <div className="w-16 h-16 bg-purple-100 group-hover:bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <Phone className="w-8 h-8 text-purple-600" />
+            <div className="group bg-purple-50 hover:bg-purple-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-purple-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 group-hover:bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Complete Setup Service</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Complete Setup Service</h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 Professional installation and setup service included. We ensure your new equipment
                 is properly configured and optimized for your specific requirements.
               </p>
             </div>
 
-            <div className="group bg-yellow-50 hover:bg-yellow-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-yellow-100">
-              <div className="w-16 h-16 bg-yellow-100 group-hover:bg-yellow-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <Star className="w-8 h-8 text-yellow-600" />
+            <div className="group bg-yellow-50 hover:bg-yellow-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-yellow-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 group-hover:bg-yellow-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <Star className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Competitive Pricing</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Competitive Pricing</h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 Fair and transparent pricing with no hidden costs. We work with you to find
                 solutions that fit your budget without compromising on quality.
               </p>
             </div>
 
-            <div className="group bg-red-50 hover:bg-red-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-red-100">
-              <div className="w-16 h-16 bg-red-100 group-hover:bg-red-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <MessageCircle className="w-8 h-8 text-red-600" />
+            <div className="group bg-red-50 hover:bg-red-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-red-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 group-hover:bg-red-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Local Service & Support</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Local Service & Support</h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 Based in Laxmi Nagar with deep understanding of local needs. Quick response times
                 and personalized service you can count on.
               </p>
             </div>
 
-            <div className="group bg-indigo-50 hover:bg-indigo-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-indigo-100">
-              <div className="w-16 h-16 bg-indigo-100 group-hover:bg-indigo-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <Monitor className="w-8 h-8 text-indigo-600" />
+            <div className="group bg-indigo-50 hover:bg-indigo-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-indigo-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-indigo-100 group-hover:bg-indigo-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <Monitor className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Upgrade & Trade-in Options</h3>
-              <p className="text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Upgrade & Trade-in Options</h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 Flexible upgrade paths and trade-in options for your existing equipment. We help
                 you stay current with technology while maximizing your investment.
               </p>
@@ -573,72 +578,72 @@ export default function ProductsPage() {
           <div className="absolute top-0 left-0 w-80 h-80 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center relative z-10 px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
             Ready to Find Your Perfect Computer Solution?
           </h2>
-          <p className="text-lg text-gray-600 mb-12 animate-fade-in animation-delay-100">
+          <p className="text-base sm:text-lg text-gray-600 mb-12 animate-fade-in animation-delay-100">
             Contact us today for personalized product recommendations and competitive pricing.
             Our experts are ready to help you find exactly what you need.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16 animate-fade-in animation-delay-200">
-            <div className="group bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-blue-100">
-              <div className="w-16 h-16 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <Phone className="w-8 h-8 text-blue-600" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 animate-fade-in animation-delay-200">
+            <div className="group bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-blue-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">Call for Pricing</h3>
-              <p className="text-gray-600 mb-4">Speak with our product experts</p>
+              <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-900">Call for Pricing</h3>
+              <p className="text-gray-600 mb-4 text-sm">Speak with our product experts</p>
               <a
                 href="tel:+919910836286"
-                className="text-blue-600 hover:text-blue-700 font-medium text-lg"
+                className="text-blue-600 hover:text-blue-700 font-medium text-base"
               >
                 +91 99108 36286
               </a>
             </div>
 
-            <div className="group bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-green-100">
-              <div className="w-16 h-16 bg-green-100 group-hover:bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <MessageCircle className="w-8 h-8 text-green-600" />
+            <div className="group bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-green-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 group-hover:bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">WhatsApp Inquiry</h3>
-              <p className="text-gray-600 mb-4">Quick product information</p>
+              <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-900">WhatsApp Inquiry</h3>
+              <p className="text-gray-600 mb-4 text-sm">Quick product information</p>
               <a
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20your%20products"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-600 hover:text-green-700 font-medium text-lg"
+                className="text-green-600 hover:text-green-700 font-medium text-base"
               >
                 Chat Now
               </a>
             </div>
 
-            <div className="group bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-purple-100">
-              <div className="w-16 h-16 bg-purple-100 group-hover:bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors">
-                <Mail className="w-8 h-8 text-purple-600" />
+            <div className="group bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-purple-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 group-hover:bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
+                <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">Email Inquiry</h3>
-              <p className="text-gray-600 mb-4">Detailed product information</p>
+              <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-900">Email Inquiry</h3>
+              <p className="text-gray-600 mb-4 text-sm">Detailed product information</p>
               <a
                 href="mailto:stmaryscomputers@gmail.com"
-                className="text-purple-600 hover:text-purple-700 font-medium text-lg"
+                className="text-purple-600 hover:text-purple-700 font-medium text-base"
               >
                 Send Email
               </a>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-200 animate-fade-in animation-delay-300">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900">Product Consultation Service</h3>
-            <p className="text-gray-600 mb-8 text-lg">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-blue-200 animate-fade-in animation-delay-300">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-gray-900">Product Consultation Service</h3>
+            <p className="text-gray-600 mb-8 text-base">
               Not sure which product is right for you? Schedule a free consultation with us.
               We&apos;ll help you choose the perfect solution for your needs and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all w-full sm:w-auto" asChild>
                 <a href="tel:+919910836286">Call Now</a>
               </Button>
-              <Button size="lg" className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold shadow-md hover:shadow-lg transition-all" asChild>
+              <Button size="lg" className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold shadow-md hover:shadow-lg transition-all w-full sm:w-auto" asChild>
                 <a href="/contact">Contact Us</a>
               </Button>
             </div>
