@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About St Mary's Computers - 20 Years Computer Repair Experience in Delhi",
-  description: "Learn about George CV and St Mary's Computers - over 20 years of trusted computer repair service in Laxmi Nagar, New Delhi. Professional, reliable, and customer-focused.",
-  keywords: "about St Mary's Computers, George CV, computer repair experience Delhi, trusted technician Laxmi Nagar",
+  description: "Learn about George CV and St Mary's Computers - over 20 years of trusted computer repair service in New Delhi and Delhi-NCR. Professional, reliable, and customer-focused.",
+  keywords: "about St Mary's Computers, George CV, computer repair experience Delhi, trusted technician across Delhi, computer service Delhi-NCR, professional computer repair, reliable computer technician, Delhi computer repair history, St Mary's Computers story, computer repair values, customer-focused service",
 };
 
 const achievements = [
@@ -18,7 +18,7 @@ const achievements = [
   {
     icon: Users,
     title: "5000+ Happy Customers",
-    description: "Thousands of satisfied customers across Delhi and NCR region"
+    description: "Thousands of satisfied customers across Delhi NCR region"
   },
   {
     icon: Shield,
@@ -55,27 +55,32 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 py-20 px-4 overflow-hidden">
+        {/* Animated background blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Meet George CV - Your Trusted Computer Expert
+            <div className="animate-fade-in">
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+                Trusted Computer Repair for Over 20 Years
               </h1>
-              <p className="text-xl text-gray-700 mb-8">
-                With over 20 years of experience in computer repair and service, George CV has been 
-                the go-to technician for thousands of customers across Delhi. From simple software 
-                issues to complex hardware repairs, no problem is too big or too small.
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                With over 20 years of professional expertise, George CV has been the trusted technician for thousands of customers across Delhi. From simple software issues to complex hardware repairs, we handle every challenge with dedication and integrity.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
+                <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
                   <a href="tel:+919910836286" className="flex items-center gap-2">
                     <Phone className="w-5 h-5" />
                     Call George Now
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
                   <a 
                     href="https://wa.me/919910836286?text=Hi%20George%2C%20I%20need%20computer%20repair%20service" 
                     target="_blank" 
@@ -89,24 +94,32 @@ export default function AboutPage() {
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Facts</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-blue-600" />
-                  <span>Based in Laxmi Nagar, New Delhi</span>
+            <div className="animate-fade-in animation-delay-300 bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-white/20 hover:shadow-2xl transition-all duration-300">
+              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-8">Quick Facts</h3>
+              <div className="space-y-5">
+                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Based in Laxmi Nagar, New Delhi</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-green-600" />
-                  <span>Mon-Sat: 10AM-8PM</span>
+                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-green-50 transition-colors">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-green-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">Mon-Sat: 10AM-8PM</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-purple-600" />
-                  <span>+91 99108 36286</span>
+                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-purple-50 transition-colors">
+                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">+91 99108 36286</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Award className="w-5 h-5 text-yellow-600" />
-                  <span>20+ Years Experience</span>
+                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-yellow-50 transition-colors">
+                  <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                    <Award className="w-5 h-5 text-yellow-600" />
+                  </div>
+                  <span className="text-gray-700 font-medium">20+ Years Experience</span>
                 </div>
               </div>
             </div>
@@ -115,56 +128,84 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Story</h2>
+      <section className="relative py-20 px-4 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-20 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Story</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto"></div>
+          </div>
           
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 mb-6">
-              St Mary&apos;s Computers was founded by George CV in 2004 with a simple mission: to provide
-              honest, reliable, and professional computer repair services to the people of Delhi. 
-              What started as a small repair service in Laxmi Nagar has grown into one of the most 
-              trusted names in computer repair across the region.
-            </p>
+          <div className="space-y-8">
+            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100/50 animate-fade-in animation-delay-100">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                St Mary&apos;s Computers was founded by George CV with a simple mission: to provide
+                honest, reliable, and professional computer repair services to the people of Delhi. 
+                What started as a small repair service in Laxmi Nagar has grown into one of the most 
+                trusted names in computer repair across the region.
+              </p>
+            </div>
             
-            <p className="text-gray-700 mb-6">
-              George&apos;s journey in technology began in the early 2000s when computers were just becoming
-              common in Indian households. Recognizing the growing need for reliable repair services, 
-              he dedicated himself to mastering every aspect of computer hardware and software. His 
-              commitment to continuous learning has kept him at the forefront of technology trends.
-            </p>
+            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-indigo-100/50 animate-fade-in animation-delay-200">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                St Mary&apos;s Computers&apos; journey in technology began in the early 2000s when computers were just becoming
+                common in Indian households. Recognizing the growing need for reliable repair services, 
+                the team dedicated themselves to mastering every aspect of computer hardware and software. Their
+                commitment to continuous learning has kept them at the forefront of technology trends.
+              </p>
+            </div>
             
-            <p className="text-gray-700 mb-6">
-              Over the years, St Mary&apos;s Computers has evolved from a traditional repair shop to a
-              comprehensive computer service provider. We now offer on-site repairs, bringing our 
-              expertise directly to your home or office. This approach ensures your convenience while 
-              maintaining the highest standards of service quality.
-            </p>
+            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-purple-100/50 animate-fade-in animation-delay-300">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Over the years, St Mary&apos;s Computers has evolved from a traditional repair shop to a
+                comprehensive computer service provider. We now offer on-site repairs, bringing our 
+                expertise directly to your home or office. This approach ensures your convenience while 
+                maintaining the highest standards of service quality.
+              </p>
+            </div>
             
-            <p className="text-gray-700">
-              Today, George continue to serve the community with the same dedication and
-              integrity that built our reputation. Whether you&apos;re a student needing a laptop repair,
-              a business requiring IT support, or a family dealing with a computer emergency, we&apos;re
-              here to help with professional, reliable service.
-            </p>
+            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-green-100/50 animate-fade-in animation-delay-400">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                St Mary&apos;s Computers continues to serve the community with the same dedication and
+                integrity that built our reputation. Whether you&apos;re a student needing a laptop repair,
+                a business requiring IT support, or a family dealing with a computer emergency, we&apos;re
+                here to help with professional, reliable service. With over 5000 satisfied customers
+                and a 4.8★ rating, we&apos;re honored to be your trusted technology partner.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Achievements Section */}
-      <section className="bg-gray-50 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose St Mary&apos;s Computers</h2>
+      <section className="relative bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 py-20 px-4 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose St Mary&apos;s Computers</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Proven expertise and dedication to excellence</p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-4"></div>
+          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <achievement.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
-                  <CardTitle className="text-lg">{achievement.title}</CardTitle>
+              <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-8px] overflow-hidden animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <achievement.icon className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <CardTitle className="text-lg font-bold text-gray-900">{achievement.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{achievement.description}</p>
+                  <p className="text-gray-600 text-center leading-relaxed">{achievement.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -173,18 +214,27 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Values & Principles</h2>
+      <section className="relative py-20 px-4 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-20 left-0 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Values & Principles</h2>
+            <p className="text-xl text-gray-600">The foundation of our service excellence</p>
+            <div className="h-1 w-20 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mt-4"></div>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="text-xl text-blue-600">{value.title}</CardTitle>
+              <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group overflow-hidden animate-fade-in hover:translate-y-[-4px]" style={{animationDelay: `${index * 100}ms`}}>
+                <CardHeader className="bg-gradient-to-r from-indigo-50 to-purple-50 border-b">
+                  <CardTitle className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">{value.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">{value.description}</p>
+                <CardContent className="pt-6">
+                  <p className="text-gray-700 leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -193,34 +243,47 @@ export default function AboutPage() {
       </section>
 
       {/* Service Philosophy Section */}
-      <section className="bg-blue-600 text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Our Service Philosophy</h2>
-          <p className="text-xl mb-8">
-            &ldquo;Every customer deserves honest advice, quality service, and fair pricing. We treat
-            every computer repair as if it were our own family&apos;s device.&rdquo;
-          </p>
-          <p className="text-lg italic">- George CV, Founder</p>
+      <section className="relative bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white py-20 px-4 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Service Philosophy</h2>
+          <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 shadow-xl">
+            <p className="text-2xl mb-8 leading-relaxed font-light italic">
+              &ldquo;Every customer deserves honest advice, quality service, and fair pricing. We treat
+              every computer repair as if it were our own family&apos;s device.&rdquo;
+            </p>
+            <p className="text-lg font-semibold">- George CV, Founder St Mary&apos;s Computers</p>
+          </div>
         </div>
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Experience the Difference?</h2>
-          <p className="text-xl text-gray-700 mb-8">
+      <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">Ready to Experience the Difference?</h2>
+          <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto animate-fade-in animation-delay-100">
             Join thousands of satisfied customers who trust St Mary&apos;s Computers for all their
             computer repair and service needs. Contact us today for professional, reliable service.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-200">
+            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
               <a href="tel:+919910836286" className="flex items-center gap-2">
                 <Phone className="w-5 h-5" />
                 Call +91 99108 36286
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
               <a 
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services" 
                 target="_blank" 
