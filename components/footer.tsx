@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, MapPin, Mail, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -16,9 +17,13 @@ export function Footer() {
             {/* Company Info */}
             <div className="md:col-span-2 animate-fade-in">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                  <span className="text-xl font-bold">SMC</span>
-                </div>
+                <Image
+                  src="/blackLogo.png"
+                  alt="St Mary's Computers Logo"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
                 <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
                   St Mary&apos;s Computers
                 </h3>
