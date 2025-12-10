@@ -33,9 +33,16 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+      <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 py-20 px-4 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
             Contact St Mary&apos;s Computers
           </h1>
           <p className="text-xl text-gray-700 mb-8">
@@ -46,20 +53,25 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-4 bg-gradient-to-b from-white via-gray-50 to-gray-100 relative">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-0 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute bottom-20 left-0 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Send us a Message</CardTitle>
-                  <CardDescription>
+              <Card className="border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:shadow-2xl transition-shadow">
+                <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b">
+                  <CardTitle className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">Send us a Message</CardTitle>
+                  <CardDescription className="text-gray-600">
                     Fill out the form below and we&apos;ll get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6 mt-6">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name">Full Name *</Label>
@@ -137,21 +149,21 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Get in Touch</CardTitle>
-                  <CardDescription>
+              <Card className="border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:shadow-2xl transition-shadow">
+                <CardHeader className="bg-gradient-to-r from-indigo-50 to-purple-50 border-b">
+                  <CardTitle className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Get in Touch</CardTitle>
+                  <CardDescription className="text-gray-600">
                     Multiple ways to reach us for computer repair and support
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 mt-6">
                     <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                       <Phone className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold">Call Us</h3>
-                      <p className="text-gray-600">Speak directly with George CV</p>
+                      <p className="text-gray-600">Speak with our expert</p>
                       <a href="tel:+919910836286" className="text-green-600 hover:text-green-700 font-medium">
                         +91 99108 36286
                       </a>
@@ -197,8 +209,8 @@ export default function ContactPage() {
                       <MapPin className="w-6 h-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Service Dispatch Location</h3>
-                      <p className="text-gray-600">Laxmi Nagar, New Delhi - 110092</p>
+                      <h3 className="font-semibold">Service Areas</h3>
+                      <p className="text-gray-600">New Delhi & NCR</p>
                       <p className="text-sm text-gray-500">We come to you for service</p>
                     </div>
                   </div>
@@ -210,22 +222,25 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold">Business Hours</h3>
                       <p className="text-gray-600">Monday - Saturday: 10:00 AM - 8:00 PM</p>
-                      <p className="text-sm text-gray-500">Sunday: Closed (Emergency service available)</p>
+                      <p className="text-sm text-gray-500">Sunday: Closed (Urgent services available)</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Emergency Service</CardTitle>
+              <Card className="border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:shadow-2xl transition-shadow overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-red-50 to-orange-50 border-b">
+                  <CardTitle className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-600">Urgent Service Available</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    Same-day emergency support for critical issues
+                  </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pt-6">
                   <p className="text-gray-600 mb-4">
-                    Need urgent computer repair? We provide emergency service for critical issues.
+                    Need urgent computer repair? We provide same-day service for critical issues.
                   </p>
-                  <Button className="w-full bg-red-600 hover:bg-red-700" asChild>
-                    <a href="tel:+919910836286">Call for Emergency Service</a>
+                  <Button className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-semibold transition-all duration-300" asChild>
+                    <a href="tel:+919910836286">Call for Urgent Service Now</a>
                   </Button>
                 </CardContent>
               </Card>
