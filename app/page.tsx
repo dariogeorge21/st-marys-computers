@@ -71,88 +71,116 @@ export default function HomePage() {
       />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+      <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 py-20 px-4 overflow-hidden">
+        {/* Animated background blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center px-4 sm:px-0">
+            <div className="animate-fade-in">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
                 Professional Computer Repair in New Delhi
               </h1>
-              <p className="text-xl text-gray-700 mb-8">
+              <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
                 Fast & reliable laptop, desktop and printer repair services. We come to you! 
                 Over 20 years of experience serving New Delhi with quality service guarantee.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
-                  <a href="tel:+919910836286" className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in animation-delay-100">
+                <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
+                  <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
                     <Phone className="w-5 h-5" />
-                    Call +91 99108 36286
+                    <span className="hidden sm:inline">Call +91 99108 36286</span>
+                    <span className="sm:hidden">Call Now</span>
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
                   <a 
                     href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2"
+                    className="flex items-center justify-center gap-2"
                   >
                     <MessageCircle className="w-5 h-5" />
-                    WhatsApp Chat
+                    <span>WhatsApp</span>
                   </a>
                 </Button>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-lg font-semibold mb-4">Why Choose St Mary&apos;s Computers?</h3>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="flex items-center gap-3">
-                    <Clock className="w-6 h-6 text-blue-600" />
-                    <span>Quick service</span>
+              <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/20 animate-fade-in animation-delay-200">
+                <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-6">Why Choose St Mary&apos;s Computers?</h3>
+                <div className="grid grid-cols-2 gap-4 sm:gap-5">
+                  <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors group">
+                    <Clock className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
+                    <span className="text-gray-700 font-medium text-sm">Quick service</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Home className="w-6 h-6 text-green-600" />
-                    <span>On-site repair available</span>
+                  <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-green-50 transition-colors group">
+                    <Home className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform" />
+                    <span className="text-gray-700 font-medium text-sm">On-site repair</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Monitor className="w-6 h-6 text-purple-600" />
-                    <span>Genuine parts only</span>
+                  <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-purple-50 transition-colors group">
+                    <Monitor className="w-5 h-5 text-purple-600 group-hover:scale-110 transition-transform" />
+                    <span className="text-gray-700 font-medium text-sm">Genuine parts</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Star className="w-6 h-6 text-yellow-500" />
-                    <span>4.8★ rating</span>
+                  <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-yellow-50 transition-colors group">
+                    <Star className="w-5 h-5 text-yellow-500 group-hover:scale-110 transition-transform" />
+                    <span className="text-gray-700 font-medium text-sm">4.8★ rating</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Service Request</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
-                  <span>Call: +91 99108 36286</span>
+            <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-white/20 hover:shadow-3xl transition-shadow duration-300 animate-fade-in animation-delay-300">
+              <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-8">Quick Service Request</h3>
+              <div className="space-y-5">
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors">
+                  <div className="p-3 bg-blue-600 rounded-lg">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Call us</p>
+                    <p className="font-semibold text-blue-600">+91 99108 36286</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <MessageCircle className="w-5 h-5 text-green-600" />
-                  <span>WhatsApp: Quick response</span>
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-green-50 hover:bg-green-100 transition-colors">
+                  <div className="p-3 bg-green-600 rounded-lg">
+                    <MessageCircle className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">WhatsApp message</p>
+                    <p className="font-semibold text-green-600">Quick response</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-red-600" />
-                  <span>Service Area: New Delhi</span>
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-purple-50 hover:bg-purple-100 transition-colors">
+                  <div className="p-3 bg-purple-600 rounded-lg">
+                    <MapPin className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Service area</p>
+                    <p className="font-semibold text-purple-600">All of New Delhi</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-purple-600" />
-                  <span>Hours: Mon-Sat 10AM-8PM</span>
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-yellow-50 hover:bg-yellow-100 transition-colors">
+                  <div className="p-3 bg-yellow-600 rounded-lg">
+                    <Clock className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Business hours</p>
+                    <p className="font-semibold text-yellow-600">Mon-Sat 10AM-8PM</p>
+                  </div>
                 </div>
               </div>
               
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-sm text-gray-600 mb-4">
-                  Quick repair service available for critical issues
+              <div className="mt-8 pt-8 border-t-2 border-gray-200">
+                <p className="text-sm text-gray-600 mb-4 font-medium">
+                  ⚡ Same-day service available for urgent issues
                 </p>
-                <Button className="w-full bg-red-600 hover:bg-red-700" asChild>
-                  <a href="tel:+919910836286">Call Now</a>
+                <Button className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all h-12 text-base" asChild>
+                  <a href="tel:+919910836286">Call for Urgent Service</a>
                 </Button>
               </div>
             </div>
@@ -161,168 +189,163 @@ export default function HomePage() {
       </section>
 
       {/* Products Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+      <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-20 left-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10 px-4 sm:px-0">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Products
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Quality computers, laptops, and accessories at competitive prices. All products are
               thoroughly tested and come with professional service support.
             </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* New Laptops */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '0ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Laptop className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">New Laptops</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">New Laptops</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 Latest laptop models from top brands including Dell, HP, Lenovo, ASUS. Perfect for students,
-                professionals, and gaming enthusiasts. We help you choose the right laptop for your needs
-                and budget.
+                professionals, and gaming enthusiasts. We help you choose the right laptop for your needs.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• Latest Intel & AMD processors</li>
-                <li>• Student-friendly options available</li>
-                <li>• Gaming laptops for enthusiasts</li>
-                <li>• Business laptops for professionals</li>
-                <li>• Complete setup & configuration</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Latest Intel & AMD processors</li>
+                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Student-friendly options</li>
+                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Gaming laptops available</li>
               </ul>
-              <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-blue-700 font-medium">
-                  ✓ Authorized dealer pricing<br/>
-                  ✓ Complete setup included<br/>
-                  ✓ Expert buying guidance
+              <div className="bg-blue-50 p-4 rounded-xl mb-6 border border-blue-100">
+                <p className="text-sm text-blue-700 font-semibold">
+                  ✓ Authorized pricing<br/>
+                  ✓ Complete setup<br/>
+                  ✓ Expert guidance
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" asChild>
+              <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
                 <a href="/products">View Laptops</a>
               </Button>
             </div>
 
             {/* Refurbished Laptops */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '100ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Monitor className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Refurbished Laptops</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Refurbished Laptops</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 Quality tested refurbished laptops at affordable prices. Perfect for students and budget-conscious
-                buyers. Each laptop is thoroughly inspected, cleaned, and tested to ensure reliable performance.
+                buyers. Each laptop is thoroughly inspected and tested.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• Thoroughly tested & certified</li>
-                <li>• Budget-friendly pricing</li>
-                <li>• Multiple condition grades available</li>
-                <li>• Ideal for students & basic use</li>
-                <li>• Quality assurance guarantee</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> Thoroughly tested</li>
+                <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> Budget-friendly pricing</li>
+                <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> Quality assurance</li>
               </ul>
-              <div className="bg-green-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-green-700 font-medium">
-                  ✓ Quality tested systems<br/>
+              <div className="bg-green-50 p-4 rounded-xl mb-6 border border-green-100">
+                <p className="text-sm text-green-700 font-semibold">
+                  ✓ Quality tested<br/>
                   ✓ Affordable pricing<br/>
-                  ✓ Service support included
+                  ✓ Support included
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" asChild>
+              <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
                 <a href="/products">Browse Refurbished</a>
               </Button>
             </div>
 
             {/* Desktop Systems */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '200ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Wrench className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Desktop Systems</h3>
-              <p className="text-gray-600 mb-4">
-                Complete desktop computer systems and custom builds. From basic office computers to high-performance
-                gaming rigs, we build systems tailored to your specific requirements and budget.
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Desktop Systems</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Complete desktop computer systems and custom builds. From office computers to high-performance
+                gaming rigs tailored to your needs.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• Custom PC builds available</li>
-                <li>• Office & business systems</li>
-                <li>• Gaming desktop configurations</li>
-                <li>• Complete setup with peripherals</li>
-                <li>• Performance optimization</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> Custom PC builds</li>
+                <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> Office & gaming systems</li>
+                <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> Complete setup</li>
               </ul>
-              <div className="bg-purple-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-purple-700 font-medium">
+              <div className="bg-purple-50 p-4 rounded-xl mb-6 border border-purple-100">
+                <p className="text-sm text-purple-700 font-semibold">
                   ✓ Custom configurations<br/>
                   ✓ Quality components<br/>
-                  ✓ Complete system setup
+                  ✓ System setup
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" asChild>
+              <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
                 <a href="/products">Build Desktop</a>
               </Button>
             </div>
 
             {/* Printers & Peripherals */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '300ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Shield className="w-6 h-6 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Printers & Peripherals</h3>
-              <p className="text-gray-600 mb-4">
-                Wide selection of printers, scanners, and computer peripherals from trusted brands. We help you
-                choose the right printing solution for your home or office needs with complete setup service.
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Printers & Peripherals</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Wide selection of printers, scanners, and peripherals from trusted brands with complete
+                setup service for your home or office.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• Inkjet & laser printers</li>
-                <li>• All-in-one printer solutions</li>
-                <li>• Scanners & document cameras</li>
-                <li>• Keyboards, mice & accessories</li>
-                <li>• Complete installation service</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-yellow-600 font-bold">✓</span> Inkjet & laser printers</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-600 font-bold">✓</span> All-in-one solutions</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-600 font-bold">✓</span> Installation service</li>
               </ul>
-              <div className="bg-yellow-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-yellow-700 font-medium">
-                  ✓ Major brands available<br/>
+              <div className="bg-yellow-50 p-4 rounded-xl mb-6 border border-yellow-100">
+                <p className="text-sm text-yellow-700 font-semibold">
+                  ✓ Major brands<br/>
                   ✓ Installation included<br/>
-                  ✓ Ongoing support provided
+                  ✓ Ongoing support
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" asChild>
+              <Button className="w-full bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
                 <a href="/products">Shop Printers</a>
               </Button>
             </div>
 
             {/* Accessories & Components */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '400ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <HardDrive className="w-6 h-6 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Accessories & Components</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Accessories & Components</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 Comprehensive range of computer accessories and components. From storage devices to networking
-                equipment, we stock everything you need to enhance and upgrade your computer systems.
+                equipment, we have everything you need.
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• RAM, SSD & storage devices</li>
-                <li>• Cables, adapters & connectors</li>
-                <li>• Networking equipment</li>
-                <li>• Computer speakers & webcams</li>
-                <li>• Professional installation available</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> RAM & SSD devices</li>
+                <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> Cables & adapters</li>
+                <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> Professional installation</li>
               </ul>
-              <div className="bg-indigo-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-indigo-700 font-medium">
+              <div className="bg-indigo-50 p-4 rounded-xl mb-6 border border-indigo-100">
+                <p className="text-sm text-indigo-700 font-semibold">
                   ✓ Quality components<br/>
                   ✓ Competitive pricing<br/>
                   ✓ Expert installation
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" asChild>
+              <Button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
                 <a href="/products">Browse Accessories</a>
               </Button>
             </div>
           </div>
 
-          <div className="text-center mt-12">
-            <Button size="lg" asChild>
+          <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '500ms'}}>
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl px-8" asChild>
               <a href="/products">View All Products</a>
             </Button>
           </div>
@@ -331,202 +354,189 @@ export default function HomePage() {
 
 
       {/* Services Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+      <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-20 left-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10 px-4 sm:px-0">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Computer Repair Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional computer repair services in Delhi. 
-              We come to you with fast, reliable, and affordable solutions for all your tech problems.
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Professional computer repair services in Delhi. We come to you with fast, reliable, and affordable solutions for all your tech problems.
             </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Laptop Repair */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '0ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Laptop className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Laptop Repair & Maintenance</h3>
-              <p className="text-gray-600 mb-4">
-                Expert laptop repair services for all brands including Dell, HP, Lenovo, ASUS. From screen 
-                replacement to motherboard repair, we handle all laptop issues with professional expertise 
-                and genuine parts.
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Laptop Repair & Maintenance</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Expert repair services for all laptop brands with genuine parts and warranty
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• Screen & LCD replacement</li>
-                <li>• Battery replacement & optimization</li>
-                <li>• Motherboard & component repair</li>
-                <li>• Keyboard & trackpad fixes</li>
-                <li>• Performance upgrades (RAM, SSD)</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Screen replacement</li>
+                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Battery issues</li>
+                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Motherboard repair</li>
+                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Performance upgrade</li>
               </ul>
-              <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-blue-700 font-medium">
-                  ✓ Same-day service available<br/>
-                  ✓ On-site repair option<br/>
-                  ✓ Quality service guarantee
+              <div className="bg-blue-50 p-4 rounded-xl mb-6 border border-blue-100">
+                <p className="text-xs sm:text-sm text-blue-700 font-semibold">
+                  ✓ Same-day service<br/>
+                  ✓ On-site option<br/>
+                  ✓ Quality guaranteed
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" asChild>
+              <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
                 <a href="/services/laptop-repair">Get Laptop Repair</a>
               </Button>
             </div>
 
             {/* Desktop Repair */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '100ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Wrench className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Desktop Computer Solutions</h3>
-              <p className="text-gray-600 mb-4">
-                Complete desktop computer repair, upgrades, and maintenance services. We diagnose hardware 
-                issues, replace faulty components, and optimize performance to get your desktop running 
-                like new again.
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Desktop Computer Solutions</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Complete desktop repair, upgrades, and maintenance with expert diagnostics
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• Hardware diagnostics & testing</li>
-                <li>• Component replacement & upgrades</li>
-                <li>• Virus removal & system cleanup</li>
-                <li>• Operating system installation</li>
-                <li>• Data recovery services</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> Hardware diagnostics</li>
+                <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> Component replacement</li>
+                <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> Virus removal</li>
+                <li className="flex items-center gap-2"><span className="text-green-600 font-bold">✓</span> OS installation</li>
               </ul>
-              <div className="bg-green-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-green-700 font-medium">
-                  ✓ Free diagnosis with repair<br/>
-                  ✓ Genuine parts only<br/>
-                  ✓ Performance optimization
+              <div className="bg-green-50 p-4 rounded-xl mb-6 border border-green-100">
+                <p className="text-xs sm:text-sm text-green-700 font-semibold">
+                  ✓ Free diagnosis<br/>
+                  ✓ Genuine parts<br/>
+                  ✓ Performance boost
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" variant="outline" asChild>
+              <Button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
                 <a href="/services/desktop-repair">Fix Desktop Issues</a>
               </Button>
             </div>
 
             {/* Printer Services */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '200ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Shield className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Printer & Scanner Services</h3>
-              <p className="text-gray-600 mb-4">
-                Professional printer installation, repair, and maintenance for home and office use. We work 
-                with all major brands including HP, Canon, Epson, Brother to ensure your printing needs 
-                are met efficiently.
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Printer & Scanner Services</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Professional printer setup, repair, and maintenance for all major brands
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• Printer installation & setup</li>
-                <li>• Network printer configuration</li>
-                <li>• Cartridge replacement & refilling</li>
-                <li>• Print quality troubleshooting</li>
-                <li>• Scanner setup & configuration</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> Installation & setup</li>
+                <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> Network configuration</li>
+                <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> Cartridge replacement</li>
+                <li className="flex items-center gap-2"><span className="text-purple-600 font-bold">✓</span> Troubleshooting</li>
               </ul>
-              <div className="bg-purple-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-purple-700 font-medium">
-                  ✓ All major brands supported<br/>
-                  ✓ Network setup included<br/>
-                  ✓ Quick response time
+              <div className="bg-purple-50 p-4 rounded-xl mb-6 border border-purple-100">
+                <p className="text-xs sm:text-sm text-purple-700 font-semibold">
+                  ✓ All brands supported<br/>
+                  ✓ Network setup<br/>
+                  ✓ Quick response
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" asChild>
+              <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
                 <a href="/services/printer-repair">Setup Printer</a>
               </Button>
             </div>
 
             {/* UPS Services */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '300ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Zap className="w-6 h-6 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">UPS & Power Solutions</h3>
-              <p className="text-gray-600 mb-4">
-                Comprehensive UPS sales, installation, and service solutions. Protect your valuable equipment 
-                from power fluctuations with our range of UPS systems and professional installation services 
-                across Delhi.
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">UPS & Power Solutions</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                UPS sales, installation, and maintenance to protect your valuable equipment
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• UPS sales & installation</li>
-                <li>• Battery replacement service</li>
-                <li>• Power backup solutions</li>
-                <li>• UPS repair & maintenance</li>
-                <li>• Emergency UPS service</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-yellow-600 font-bold">✓</span> UPS sales & installation</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-600 font-bold">✓</span> Battery replacement</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-600 font-bold">✓</span> Maintenance service</li>
+                <li className="flex items-center gap-2"><span className="text-yellow-600 font-bold">✓</span> Emergency support</li>
               </ul>
-              <div className="bg-yellow-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-yellow-700 font-medium">
-                  ✓ All major brands available<br/>
-                  ✓ Professional installation<br/>
+              <div className="bg-yellow-50 p-4 rounded-xl mb-6 border border-yellow-100">
+                <p className="text-xs sm:text-sm text-yellow-700 font-semibold">
+                  ✓ All brands available<br/>
+                  ✓ Professional install<br/>
                   ✓ Quality service
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" variant="outline" asChild>
+              <Button className="w-full bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
                 <a href="/services/ups-service">Get UPS Service</a>
               </Button>
             </div>
 
             {/* On-site Support */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '400ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-red-100 to-red-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Home className="w-6 h-6 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">On-site Technical Support</h3>
-              <p className="text-gray-600 mb-4">
-                Convenient on-site computer repair and technical support services. We come to your home or 
-                office with all necessary tools and expertise to solve your computer problems at your location, 
-                saving you time and hassle.
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">On-site Technical Support</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Convenient repair service at your home or office with professional expertise
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• Home computer repair visits</li>
-                <li>• Office IT support services</li>
-                <li>• Network setup & configuration</li>
-                <li>• Emergency repair service</li>
-                <li>• System setup & installation</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-red-600 font-bold">✓</span> Home repair visits</li>
+                <li className="flex items-center gap-2"><span className="text-red-600 font-bold">✓</span> Office IT support</li>
+                <li className="flex items-center gap-2"><span className="text-red-600 font-bold">✓</span> Emergency service</li>
+                <li className="flex items-center gap-2"><span className="text-red-600 font-bold">✓</span> Network setup</li>
               </ul>
-              <div className="bg-red-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-red-700 font-medium">
+              <div className="bg-red-50 p-4 rounded-xl mb-6 border border-red-100">
+                <p className="text-xs sm:text-sm text-red-700 font-semibold">
                   ✓ We come to you<br/>
-                  ✓ Same-day availability<br/>
-                  ✓ All of Delhi covered
+                  ✓ Same-day available<br/>
+                  ✓ All of Delhi
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" variant="outline" asChild>
+              <Button className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
                 <a href="/services/onsite-repair">Book On-site Service</a>
               </Button>
             </div>
 
             {/* Accessories & Upgrades */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '500ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <HardDrive className="w-6 h-6 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Computer Accessories & Upgrades</h3>
-              <p className="text-gray-600 mb-4">
-                Boost your computer&apos;s performance with our upgrade services and accessories. From RAM upgrades
-                to SSD installations, we help you get the most out of your existing hardware with professional 
-                upgrade services.
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Computer Accessories & Upgrades</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Boost performance with quality upgrades and accessories with professional installation
               </p>
-              <ul className="text-sm text-gray-500 space-y-1 mb-4">
-                <li>• RAM memory upgrades</li>
-                <li>• SSD installation & migration</li>
-                <li>• Graphics card upgrades</li>
-                <li>• Custom PC builds</li>
-                <li>• Accessories sales & installation</li>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> RAM upgrades</li>
+                <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> SSD installation</li>
+                <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> Graphics upgrade</li>
+                <li className="flex items-center gap-2"><span className="text-indigo-600 font-bold">✓</span> Custom builds</li>
               </ul>
-              <div className="bg-indigo-50 p-3 rounded-lg mb-4">
-                <p className="text-sm text-indigo-700 font-medium">
-                  ✓ Performance optimization<br/>
-                  ✓ Custom solutions available<br/>
-                  ✓ Quality components used
+              <div className="bg-indigo-50 p-4 rounded-xl mb-6 border border-indigo-100">
+                <p className="text-xs sm:text-sm text-indigo-700 font-semibold">
+                  ✓ Performance boost<br/>
+                  ✓ Custom solutions<br/>
+                  ✓ Quality components
                 </p>
               </div>
-              <Button className="w-full bg-white text-black" variant="outline" asChild>
+              <Button className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
                 <a href="/services/accessories">Upgrade Computer</a>
               </Button>
             </div>
           </div>
 
-          <div className="text-center mt-12">
-            <Button size="lg" asChild>
+          <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '600ms'}}>
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl px-8" asChild>
               <a href="/services">View All Services</a>
             </Button>
           </div>
@@ -534,74 +544,96 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+      <section className="relative py-20 px-4 bg-gradient-to-r from-green-600 via-indigo-600 to-green-600 text-white overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto text-center relative z-10 px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
             Need Computer Repair? Contact Us Today
           </h2>
+          <p className="text-lg sm:text-xl mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-100">
+            Get in touch with our expert technicians for fast, reliable, and affordable computer repair solutions.
+            Same-day service available for critical issues!
+          </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div>
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-blue-600" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 animate-fade-in animation-delay-200">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 sm:p-8 hover:bg-white/20 transition-all duration-300 hover:translate-y-[-4px]">
+              <div className="p-4 bg-white/20 rounded-xl w-fit mx-auto mb-6">
+                <Phone className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Call Us</h3>
-              <p className="text-gray-600 mb-3">Speak directly with us</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-3">Call Us</h3>
+              <p className="text-white/80 mb-4 text-sm sm:text-base">Speak directly with us</p>
               <a
                 href="tel:+919910836286"
-                className="text-blue-600 hover:text-blue-700 font-medium"
+                className="text-white font-bold text-lg hover:underline"
               >
                 +91 99108 36286
               </a>
-              <p className="text-sm text-gray-500 mt-2">
-                Mon - Sat: 10:00 AM - 7:00 PM
+              <p className="text-sm text-white/70 mt-3 font-medium">
+                Mon - Sat: 10:00 AM - 8:00 PM
               </p>
-              
             </div>
 
-            <div>
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MessageCircle className="w-8 h-8 text-green-600" />
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 sm:p-8 hover:bg-white/20 transition-all duration-300 hover:translate-y-[-4px]">
+              <div className="p-4 bg-white/20 rounded-xl w-fit mx-auto mb-6">
+                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
-              <p className="text-gray-600 mb-3">Quick response guaranteed</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-3">WhatsApp</h3>
+              <p className="text-white/80 mb-4 text-sm sm:text-base">Quick response guaranteed</p>
               <a
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-600 hover:text-green-700 font-medium"
+                className="text-white font-bold hover:underline inline-flex items-center gap-2"
               >
-                Chat Now
+                Chat Now <MessageCircle className="w-4 h-4" />
               </a>
+              <p className="text-sm text-white/70 mt-3 font-medium">
+                Available 24/7
+              </p>
             </div>
 
-            <div>
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-purple-600" />
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 sm:p-8 hover:bg-white/20 transition-all duration-300 hover:translate-y-[-4px]">
+              <div className="p-4 bg-white/20 rounded-xl w-fit mx-auto mb-6">
+                <MapPin className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-3">For general queries and feedback</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-3">Email Us</h3>
+              <p className="text-white/80 mb-4 text-sm sm:text-base">For general queries</p>
               <a
                 href="mailto:stmaryscomputers@gmail.com"
-                className="text-purple-600 hover:text-purple-700 font-medium"
+                className="text-white font-bold hover:underline"
               >
                 stmaryscomputers@gmail.com
               </a>
+              <p className="text-sm text-white/70 mt-3 font-medium">
+                We respond within 2 hours
+              </p>
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-8 shadow-lg">
-            <h3 className="text-xl font-semibold mb-4">On-site Repair Service</h3>
-            <p className="text-gray-600 mb-6">
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 sm:p-12 shadow-2xl max-w-2xl mx-auto mb-12 animate-fade-in animation-delay-300">
+            <div className="flex items-center justify-center mb-6">
+              <Zap className="w-8 h-8 text-yellow-300 mr-2" />
+              <h3 className="text-xl sm:text-2xl font-bold">Emergency Service Available</h3>
+            </div>
+            <p className="text-lg text-white/90 mb-8 leading-relaxed">
               Need urgent computer repair? We offer same-day on-site service for critical issues.
               Call us now for immediate assistance at your location.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">  
-              <Button size="lg" className="bg-red-600 hover:bg-red-700" asChild>
-                <a href="tel:+919910836286">Call for On-site Service</a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center"> 
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto text-base" asChild>
+                <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
+                  <Phone className="w-5 h-5" />
+                  Call for Emergency Service
+                </a>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="/contact">Request Service Online</a>
+              <Button size="lg" className="bg-white/20 border-2 border-white text-white hover:bg-white/30 font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto text-base" asChild>
+                <a href="/contact" className="flex items-center justify-center gap-2">
+                  Request Service Online
+                </a>
               </Button>
             </div>
           </div>
