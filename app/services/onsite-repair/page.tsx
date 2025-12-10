@@ -52,7 +52,7 @@ const areas = [
 const faqs = [
   {
     question: "Which areas in Delhi do you cover for on-site service?",
-    answer: "We provide on-site computer repair service across Delhi including Laxmi Nagar, East Delhi, Central Delhi, Shahdara, Preet Vihar, Mayur Vihar, and surrounding areas. Contact us to confirm service availability in your area."
+    answer: "We provide on-site computer repair service across Delhi, East Delhi, Central Delhi, Shahdara, Preet Vihar, Mayur Vihar, and surrounding areas. Contact us to confirm service availability in your area."
   },
   {
     question: "What are the charges for on-site computer repair?",

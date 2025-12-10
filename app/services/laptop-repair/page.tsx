@@ -7,9 +7,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Laptop Repair Services in Laxmi Nagar, New Delhi | St Mary's Computers",
-  description: "Professional laptop repair in Laxmi Nagar - screen replacement, battery issues, motherboard repair. Same-day service, quality guarantee. Call +91 99108 36286",
-  keywords: "laptop repair Laxmi Nagar, laptop screen replacement Delhi, laptop battery replacement, motherboard repair New Delhi",
+  title: "Laptop Repair Services in New Delhi & Delhi-NCR | St Mary's Computers",
+  description: "Professional laptop repair in New Delhi & Delhi-NCR - screen replacement, battery issues, motherboard repair. Same-day service, quality guarantee. Call +91 99108 36286",
+  keywords: "laptop repair New Delhi & Delhi-NCR, laptop screen replacement Delhi, laptop battery replacement, motherboard repair New Delhi",
 };
 
 const services = [
@@ -77,7 +77,7 @@ export default function LaptopRepairPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Laptop Repair Services",
-    "description": "Professional laptop repair services in Laxmi Nagar, New Delhi including screen replacement, battery replacement, and motherboard repair",
+    "description": "Professional laptop repair services in New Delhi & Delhi-NCR including screen replacement, battery replacement, and motherboard repair",
     "provider": {
       "@type": "LocalBusiness",
       "name": "St Mary's Computers",

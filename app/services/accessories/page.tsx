@@ -7,9 +7,9 @@ import { BrandLogos } from "@/components/brand-logos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Computer Accessories & Upgrades in Laxmi Nagar, New Delhi | St Mary's Computers",
-  description: "Computer accessories, hardware upgrades, RAM, SSD, graphics cards in Laxmi Nagar, New Delhi. Custom PC builds, performance upgrades. Call +91 99108 36286",
-  keywords: "computer accessories Laxmi Nagar, New Delhi, RAM upgrade Delhi, SSD installation, graphics card upgrade, custom PC build",
+  title: "Computer Accessories & Upgrades in New Delhi & Delhi-NCR | St Mary's Computers",
+  description: "Computer accessories, hardware upgrades, RAM, SSD, graphics cards in New Delhi & Delhi-NCR. Custom PC builds, performance upgrades. Call +91 99108 36286",
+  keywords: "computer accessories New Delhi & Delhi-NCR, RAM upgrade Delhi, SSD installation, graphics card upgrade, custom PC build",
 };
 
 const services = [

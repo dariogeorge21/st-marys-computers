@@ -1,84 +1,93 @@
-import { Monitor, Wrench, Printer, Zap, Home, HardDrive, Phone, MessageCircle, Mail } from "lucide-react";
+import { Phone, MessageCircle, Clock, Shield, Star, Zap, Home, HardDrive, Laptop, Wrench, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BrandLogos } from "@/components/brand-logos";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Computer Repair Services in Laxmi Nagar, Delhi-NCR | St Mary's Computers",
-  description: "Professional laptop, desktop, printer repair services in Delhi-NCR. On-site computer repair across Delhi. Diagnostics, genuine parts.",
-  keywords: "computer repair Laxmi Nagar, laptop repair Delhi, laptop repair Delhi-NCR, laptop repair Gurugram, printer repair Delhi, on-site computer repair, desktop repair services",
+  title: "Computer Repair Services in Delhi | St Mary's Computers",
+  description: "Professional laptop, desktop, printer repair & UPS services in Delhi. On-site repair available. Free diagnosis with repair. Call +91 99108 36286",
+  keywords: "computer repair Delhi, laptop repair Laxmi Nagar, desktop repair service, printer repair Delhi, on-site computer repair",
 };
 
-const services = [
-  {
-    icon: Monitor,
-    title: "Laptop Repair",
-    description: "Complete laptop repair services including screen replacement, battery issues, motherboard repair, and performance optimization.",
-    features: ["Screen & LCD replacement", "Battery replacement", "Motherboard repair", "Keyboard & trackpad fix", "Performance upgrades"],
-    href: "/services/laptop-repair",
-    color: "blue"
-  },
-  {
-    icon: Wrench,
-    title: "Desktop Repair",
-    description: "Professional desktop computer repair, hardware upgrades, and system optimization for home and office use.",
-    features: ["Hardware diagnostics", "Component replacement", "Performance upgrades", "Virus removal", "System optimization"],
-    href: "/services/desktop-repair",
-    color: "green"
-  },
-  {
-    icon: Printer,
-    title: "Printer & Scanner Setup",
-    description: "Printer installation, repair, and maintenance services for all major brands including HP, Canon, Epson.",
-    features: ["Printer installation", "Cartridge replacement", "Network setup", "Scanner configuration", "Maintenance service"],
-    href: "/services/printer-repair",
-    color: "purple"
-  },
-  {
-    icon: Zap,
-    title: "UPS Sales & Service",
-    description: "UPS sales, installation, and repair services to protect your computers from power fluctuations.",
-    features: ["UPS sales & installation", "Battery replacement", "Power backup solutions", "Maintenance service", "Emergency repairs"],
-    href: "/services/ups-service",
-    color: "yellow"
-  },
-  {
-    icon: Home,
-    title: "On-site Repairs",
-    description: "Convenient on-site computer repair services across Delhi. We come to your home or office.",
-    features: ["Home service", "Office visits", "Same-day service", "Emergency repairs", "Setup & installation"],
-    href: "/services/onsite-repair",
-    color: "red"
-  },
-  {
-    icon: HardDrive,
-    title: "Accessories & Upgrades",
-    description: "Computer accessories, hardware upgrades, and performance enhancement services.",
-    features: ["RAM upgrades", "SSD installation", "Graphics card upgrade", "Accessories sales", "Custom builds"],
-    href: "/services/accessories",
-    color: "indigo"
-  }
-];
+interface ServiceCard {
+  id: string;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  features: string[];
+  bgColor: string;
+  textColor: string;
+  borderColor: string;
+  href: string;
+}
 
-const faqs = [
+const services: ServiceCard[] = [
   {
-    question: "How long does a typical laptop repair take?",
-    answer: "Most laptop repairs are completed within 24-48 hours. Simple issues like software problems or battery replacement can often be done the same day. Complex repairs like motherboard issues may take 2-3 days."
+    id: "laptop-repair",
+    title: "Laptop Repair & Maintenance",
+    description: "Expert repair services for all laptop brands with genuine parts and warranty",
+    icon: <Laptop className="w-8 h-8" />,
+    features: ["Screen replacement", "Battery issues", "Motherboard repair", "Performance upgrade"],
+    bgColor: "bg-blue-50",
+    textColor: "text-blue-600",
+    borderColor: "border-blue-200",
+    href: "/services/laptop-repair"
   },
   {
-    question: "What areas do you cover for on-site service?",
-    answer: "We provide on-site computer repair services across Delhi-NCR, New Delhi, East Delhi, Central Delhi, and surrounding areas. Quick service is available for urgent issues."
+    id: "desktop-repair",
+    title: "Desktop Computer Solutions",
+    description: "Complete desktop repair, upgrades, and maintenance with expert diagnostics",
+    icon: <Wrench className="w-8 h-8" />,
+    features: ["Hardware diagnostics", "Component replacement", "Virus removal", "OS installation"],
+    bgColor: "bg-green-50",
+    textColor: "text-green-600",
+    borderColor: "border-green-200",
+    href: "/services/desktop-repair"
   },
   {
-    question: "Do you repair all computer brands?",
-    answer: "Yes, we repair all major computer brands including Dell, HP, Lenovo, ASUS, Acer, Samsung, and more. We have experience with both Windows and Mac systems."
+    id: "printer-repair",
+    title: "Printer & Scanner Services",
+    description: "Professional printer setup, repair, and maintenance for all major brands",
+    icon: <Shield className="w-8 h-8" />,
+    features: ["Installation & setup", "Network configuration", "Cartridge replacement", "Troubleshooting"],
+    bgColor: "bg-purple-50",
+    textColor: "text-purple-600",
+    borderColor: "border-purple-200",
+    href: "/services/printer-repair"
   },
   {
-    question: "How much do repairs typically cost?",
-    answer: "Repair costs vary depending on the issue and parts required. We provide good diagnostics and transparent pricing before starting any work. Contact us for a quote specific to your problem."
+    id: "ups-service",
+    title: "UPS & Power Solutions",
+    description: "UPS sales, installation, and maintenance to protect your valuable equipment",
+    icon: <Zap className="w-8 h-8" />,
+    features: ["UPS sales & installation", "Battery replacement", "Maintenance service", "Emergency support"],
+    bgColor: "bg-yellow-50",
+    textColor: "text-yellow-600",
+    borderColor: "border-yellow-200",
+    href: "/services/ups-service"
+  },
+  {
+    id: "onsite-repair",
+    title: "On-site Technical Support",
+    description: "Convenient repair service at your home or office with professional expertise",
+    icon: <Home className="w-8 h-8" />,
+    features: ["Home repair visits", "Office IT support", "Emergency service", "Network setup"],
+    bgColor: "bg-red-50",
+    textColor: "text-red-600",
+    borderColor: "border-red-200",
+    href: "/services/onsite-repair"
+  },
+  {
+    id: "accessories",
+    title: "Accessories & Upgrades",
+    description: "Boost performance with quality upgrades and accessories with professional installation",
+    icon: <HardDrive className="w-8 h-8" />,
+    features: ["RAM upgrades", "SSD installation", "Graphics upgrade", "Custom builds"],
+    bgColor: "bg-indigo-50",
+    textColor: "text-indigo-600",
+    borderColor: "border-indigo-200",
+    href: "/services/accessories"
   }
 ];
 
@@ -86,137 +95,190 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Computer & Accesories Repair Services across New Delhi
+      <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 py-20 px-4 overflow-hidden">
+        {/* Animated background blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto text-center relative z-10 px-4 sm:px-0">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-fade-in">
+            Professional Computer Repair Services in Delhi
           </h1>
-          <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            Professional laptop, desktop, and printer repair services with quick support. 
-            Personal service from St Mary&apos;s Computers in Delhi-NCR
+          <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-100">
+            Fast, reliable, and affordable solutions for all your computer repair needs. 
+            Expert technicians with 20+ years of experience serving Delhi NCR.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700" asChild>
-              <a href="tel:+919910836286" className="flex items-center gap-2">
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in animation-delay-200 px-4">
+            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
+              <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
-                Call Us
+                <span className="hidden sm:inline">Call +91 99108 36286</span>
+                <span className="sm:hidden">Call Now</span>
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
               <a 
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2"
+                className="flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-5 h-5" />
-                WhatsApp Chat
+                <span>WhatsApp</span>
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a 
-                href="mailto:stmaryscomputers@gmail.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Mail className="w-5 h-5" />
-                Email US
-              </a>
-            </Button>
+          </div>
+
+          <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-white/20 animate-fade-in animation-delay-300 px-4">
+            <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-6">What We Offer</h3>
+            <div className="grid grid-cols-2 gap-4 sm:gap-5">
+              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span className="text-gray-700 font-medium text-xs sm:text-sm">Quick service</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span className="text-gray-700 font-medium text-xs sm:text-sm">On-site repair</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span className="text-gray-700 font-medium text-xs sm:text-sm">Genuine parts</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span className="text-gray-700 font-medium text-xs sm:text-sm">Expert support</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className={`w-12 h-12 bg-${service.color}-100 rounded-lg flex items-center justify-center mb-4`}>
-                      <IconComponent className={`w-6 h-6 text-${service.color}-600`} />
+      {/* Services Grid Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-20 left-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Our Services
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              Comprehensive computer repair and maintenance solutions for every need
+            </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6"></div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {services.map((service, index) => (
+              <Link key={service.id} href={service.href}>
+                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden h-full cursor-pointer animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
+                  <CardHeader className={`${service.bgColor} pb-4 border-b`}>
+                    <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <div className={service.textColor}>{service.icon}</div>
                     </div>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
+                    <CardTitle className="text-lg sm:text-xl text-gray-900 group-hover:text-blue-600 transition-colors">{service.title}</CardTitle>
+                    <CardDescription className="text-gray-600 mt-2">{service.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2 mb-6">
+                  <CardContent className="pt-6">
+                    <ul className="space-y-3 mb-6">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="text-sm text-gray-600 flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                          {feature}
+                        <li key={idx} className="flex items-start gap-3">
+                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-gray-700">{feature}</span>
                         </li>
                       ))}
                     </ul>
-                    <Button asChild className="w-full">
-                      <Link href={service.href}>Learn More</Link>
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all group/btn" asChild>
+                      <span className="flex items-center justify-center gap-2">
+                        Learn More
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </span>
                     </Button>
                   </CardContent>
                 </Card>
-              );
-            })}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-       {/* Brand Logos Section */}
-            <section className="py-12 px-4 bg-gray-50">
-              <div className="max-w-6xl mx-auto">
-                <BrandLogos
-                  title="Brands We Use"
-                  brands={['Dell', 'HP', 'Lenovo', 'ASUS', 'Acer', 'Canon', 'Epson', 'Crucial', 'Samsung', 'Kingston', 'ADATA', 'SanDisk', 'WD', 'Seagate', 'Apple', 'MSI', 'Compaq', 'Nexus', 'APC', 'Microtek', 'Gigabyte', 'Intel', 'AMD', 'Toshiba',]}
-                  category="general"
-                />
-              </div>
-            </section>
-      
+      {/* Why Choose Us Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-0 right-0 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+        </div>
 
-      {/* FAQ Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
+        <div className="max-w-6xl mx-auto relative z-10 px-4 sm:px-0">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Why Choose Our Services?
             </h2>
-            <p className="text-lg text-gray-600">
-              Common questions about our computer repair services in Laxmi Nagar
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+              Experience quality repair service with professional expertise and genuine parts
             </p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6"></div>
           </div>
-          
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent>
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {[
+              { icon: <Star className="w-6 h-6 sm:w-8 sm:h-8" />, title: "Expert Technicians", desc: "20+ years of experience" },
+              { icon: <Zap className="w-6 h-6 sm:w-8 sm:h-8" />, title: "Fast Service", desc: "Same-day repair available" },
+              { icon: <Shield className="w-6 h-6 sm:w-8 sm:h-8" />, title: "Quality Guaranteed", desc: "Warranty on all repairs" },
+              { icon: <Home className="w-6 h-6 sm:w-8 sm:h-8" />, title: "On-site Service", desc: "We come to you" }
+            ].map((item, idx) => (
+              <div key={idx} className="group bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-gray-200 hover:border-blue-200 animate-fade-in" style={{animationDelay: `${idx * 100}ms`}}>
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors text-blue-600">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 text-center">{item.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 text-center">{item.desc}</p>
+              </div>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-blue-600 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Need Computer Repair? We&apos;re Here to Help!
+      <section className="relative py-20 px-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10 px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
+            Need Computer Repair Service?
           </h2>
-          <p className="text-xl mb-8">
-            Contact St Mary&apos;s Computers for fast, reliable computer repair services in Laxmi Nagar, New Delhi.
+          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-100">
+            Contact us today for quick assessment and affordable repair solutions. 
+            Expert service with guaranteed results.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
-              <a href="tel:+919910836286">Call +91 99108 36286</a>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-200">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto" asChild>
+              <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
+                <Phone className="w-5 h-5" />
+                <span>Call Now</span>
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="text-blue-600 border-white hover:bg-blue-100 hover:text-blue-600" asChild>
-              <Link href="/contact">Book Repair Online</Link>
+            <Button size="lg" className="bg-white/20 border-2 border-white text-white hover:bg-white/30 font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto" asChild>
+              <a 
+                href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>WhatsApp</span>
+              </a>
             </Button>
           </div>
         </div>

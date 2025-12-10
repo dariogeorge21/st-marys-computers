@@ -7,9 +7,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UPS Sales & Service in Laxmi Nagar, Delhi-NCR | St Mary's Computers",
-  description: "UPS sales, installation, repair & battery replacement in Laxmi Nagar. Power backup solutions for home & office. APC, Luminous, Microtek UPS service. Call +91 99108 36286",
-  keywords: "UPS repair Laxmi Nagar, UPS repair Gurugram, UPS repair Delhi-NCR, UPS battery replacement Delhi, power backup solutions, APC UPS service, Luminous UPS repair",
+  title: "UPS Sales & Service in Delhi-NCR | St Mary's Computers",
+  description: "UPS sales, installation, repair & battery replacement in Delhi-NCR. Power backup solutions for home & office. APC, Luminous, Microtek UPS service. Call +91 99108 36286",
+  keywords: "UPS repair New Delhi & Delhi-NCR, UPS repair Gurugram, UPS repair Delhi-NCR, UPS battery replacement Delhi, power backup solutions, APC UPS service, Luminous UPS repair",
 };
 
 const services = [

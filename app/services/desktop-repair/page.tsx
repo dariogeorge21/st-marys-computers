@@ -7,9 +7,9 @@ import { BrandLogos } from "@/components/brand-logos";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Desktop Computer Repair in Laxmi Nagar, New Delhi | St Mary's Computers",
-  description: "Professional desktop PC repair in Laxmi Nagar - hardware upgrades, virus removal, performance optimization. Same-day service. Call +91 99108 36286",
-  keywords: "desktop repair Laxmi Nagar, New Delhi, desktop PC repair New Delhi, computer hardware upgrade, virus removal Delhi",
+  title: "Desktop Computer Repair in New Delhi & Delhi-NCR | St Mary's Computers",
+  description: "Professional desktop PC repair in New Delhi & Delhi-NCR - hardware upgrades, virus removal, performance optimization. Same-day service. Call +91 99108 36286",
+  keywords: "desktop repair New Delhi & Delhi-NCR, desktop PC repair New Delhi, computer hardware upgrade, virus removal Delhi",
 };
 
 const services = [

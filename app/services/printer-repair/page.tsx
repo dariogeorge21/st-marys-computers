@@ -7,9 +7,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Printer Repair & Installation in Laxmi Nagar, New Delhi | St Mary's Computers",
-  description: "Professional printer repair, installation & setup in Laxmi Nagar, New Delhi, Delhi-NCR. HP, Canon, Epson printer service. Network setup, cartridge replacement. Call +91 99108 36286",
-  keywords: "printer repair Laxmi Nagar, printer installation Delhi, HP printer service, Canon printer repair, network printer setup",
+  title: "Printer Repair & Installation in New Delhi & Delhi-NCR | St Mary's Computers",
+  description: "Professional printer repair, installation & setup in New Delhi & Delhi-NCR. HP, Canon, Epson printer service. Network setup, cartridge replacement. Call +91 99108 36286",
+  keywords: "printer repair New Delhi & Delhi-NCR, printer installation Delhi, HP printer service, Canon printer repair, network printer setup",
 };
 
 const services = [
