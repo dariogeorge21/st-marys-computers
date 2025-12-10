@@ -17,16 +17,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "St Mary's Computers — Laptop & Desktop Repair | Laxmi Nagar, New Delhi",
-  description: "Fast & reliable laptop, desktop and printer repair in Laxmi Nagar. On-site service across Delhi. Call +91 99108 36286 for same-day support.",
-  keywords: "laptop repair new delhi, computer repair Laxmi Nagar, printer repair Delhi, buy second hand laptop Delhi, on-site computer repair Delhi",
+  title: "St Mary's Computers — Laptop & Desktop Repair | New Delhi & Delhi-NCR",
+  description: "Fast & reliable laptop, desktop and printer repair in New Delhi & Delhi-NCR. On-site service across Delhi. Call +91 99108 36286 for same-day support.",
+  keywords: "laptop repair New Delhi, computer repair New Delhi, printer repair New Delhi, buy second hand laptop New Delhi, on-site computer repair New Delhi",
   authors: [{ name: "George CV" }],
   creator: "St Mary's Computers",
   publisher: "St Mary's Computers",
   robots: "index, follow",
   openGraph: {
-    title: "St Mary's Computers — Laptop & Desktop Repair | Laxmi Nagar, New Delhi",
-    description: "Fast & reliable laptop, desktop and printer repair in Laxmi Nagar. On-site service across Delhi. Call +91 99108 36286 for same-day support.",
+    title: "St Mary's Computers — Laptop & Desktop Repair | New Delhi & Delhi-NCR",
+    description: "Fast & reliable laptop, desktop and printer repair in New Delhi & Delhi-NCR. On-site service across Delhi. Call +91 99108 36286 for same-day support.",
     url: "https://stmaryscomputers.com",
     siteName: "St Mary's Computers",
     locale: "en_IN",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "St Mary's Computers — Laptop & Desktop Repair | Laxmi Nagar, New Delhi",
-    description: "Fast & reliable laptop, desktop and printer repair in Laxmi Nagar. On-site service across Delhi. Call +91 99108 36286 for same-day support.",
+    title: "St Mary's Computers — Laptop & Desktop Repair | New Delhi & Delhi-NCR",
+    description: "Fast & reliable laptop, desktop and printer repair in New Delhi & Delhi-NCR. On-site service across Delhi. Call +91 99108 36286 for same-day support.",
   },
   verification: {
     google: "your-google-verification-code-here",
