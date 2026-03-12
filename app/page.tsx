@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, MapPin, Clock, Star, Shield, Wrench, Monitor, Laptop, Zap, Home, HardDrive } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Star, Shield, Wrench, Monitor, Laptop, Zap, Home, HardDrive, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
@@ -7,7 +7,7 @@ export default function HomePage() {
     "@type": "LocalBusiness",
     "name": "St Mary's Computers",
     "image": "https://stmaryscomputers.com/images/shop-front.jpg",
-    "description": "Fast & reliable laptop, desktop and printer repair in New Delhi & Delhi-NCR. On-site service across New Delhi.",
+    "description": "Fast & reliable laptop, desktop and printer repair in New Delhi & Delhi-NCR. Professional web development services. On-site service across New Delhi.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Laxmi Nagar",
@@ -57,6 +57,14 @@ export default function HomePage() {
             "@type": "Service",
             "name": "Printer Service",
             "description": "Printer installation, repair, and maintenance for home and office use"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Development",
+            "description": "Professional website development services — company websites, e-commerce platforms, booking systems with modern technologies"
           }
         }
       ]
@@ -533,9 +541,39 @@ export default function HomePage() {
                 <a href="/services/accessories">Upgrade Computer</a>
               </Button>
             </div>
+
+            {/* Web Development - NEW */}
+            <div className="group bg-white border-2 border-teal-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in ring-2 ring-teal-300 ring-offset-2 relative" style={{animationDelay: '600ms'}}>
+              <span className="absolute top-3 right-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full shadow-md animate-pulse">
+                NEW SERVICE
+              </span>
+              <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                <Globe className="w-6 h-6 text-teal-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Web Development Services</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Professional website development using modern technologies — from company sites to e-commerce platforms
+              </p>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> Company & personal websites</li>
+                <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> E-commerce & booking systems</li>
+                <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> Modern tech stack</li>
+                <li className="flex items-center gap-2"><span className="text-teal-600 font-bold">✓</span> Rapid delivery</li>
+              </ul>
+              <div className="bg-teal-50 p-4 rounded-xl mb-6 border border-teal-100">
+                <p className="text-xs sm:text-sm text-teal-700 font-semibold">
+                  ✓ Reasonable pricing<br/>
+                  ✓ SEO optimised<br/>
+                  ✓ Ongoing support
+                </p>
+              </div>
+              <Button className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
+                <a href="/services/web-development">Get a Website</a>
+              </Button>
+            </div>
           </div>
 
-          <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '600ms'}}>
+          <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '700ms'}}>
             <Button size="lg" className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl px-8" asChild>
               <a href="/services">View All Services</a>
             </Button>
