@@ -78,6 +78,32 @@ export const metadata: Metadata = {
 - `/app/services/page.tsx` - Main services overview
 - `/app/services/[service-name]/page.tsx` - Individual service pages
 
+#### Current Services:
+| Service | Overview Card | Dedicated Page |
+|---------|--------------|----------------|
+| Laptop Repair | ✅ | `/app/services/laptop-repair/page.tsx` |
+| Desktop Repair | ✅ | `/app/services/desktop-repair/page.tsx` |
+| Printer Repair | ✅ | `/app/services/printer-repair/page.tsx` |
+| UPS Service | ✅ | `/app/services/ups-service/page.tsx` |
+| On-site Repair | ✅ | `/app/services/onsite-repair/page.tsx` |
+| Accessories | ✅ | `/app/services/accessories/page.tsx` |
+| **Web Development** 🆕 | ✅ | `/app/services/web-development/page.tsx` |
+
+#### Web Development Service
+The **Web Development** service was added as a new offering. Key details:
+- **Page:** `/app/services/web-development/page.tsx`
+- **Color theme:** Teal / Emerald gradient
+- **Badge:** "NEW SERVICE" (shown on overview card)
+- **Services offered:** Company websites, personal sites, e-commerce, booking systems, redesigns, maintenance
+- **SEO keywords:** web development Delhi, website development Laxmi Nagar
+- **Structured data:** Service schema for local SEO
+
+**To update the Web Development page:**
+- Edit service listings in the `services` array (around line 15)
+- Edit FAQ questions/answers in the `faqs` array (around line 55)
+- Update pricing when ready by filling the `price` field in each service object
+- To remove the "NEW SERVICE" badge from the overview card, delete the `badge: "NEW SERVICE"` line in `/app/services/page.tsx`
+
 #### Common Updates:
 - **Pricing:** Update the `price` field in service arrays
 - **Service descriptions:** Modify the `description` text
