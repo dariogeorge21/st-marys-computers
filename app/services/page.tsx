@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, Clock, Shield, Star, Zap, Home, HardDrive, Laptop, Wrench, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, MessageCircle, Clock, Shield, Star, Zap, Home, HardDrive, Laptop, Wrench, CheckCircle, ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
@@ -20,6 +20,7 @@ interface ServiceCard {
   textColor: string;
   borderColor: string;
   href: string;
+  badge?: string;
 }
 
 const services: ServiceCard[] = [
@@ -88,6 +89,18 @@ const services: ServiceCard[] = [
     textColor: "text-indigo-600",
     borderColor: "border-indigo-200",
     href: "/services/accessories"
+  },
+  {
+    id: "web-development",
+    title: "Web Development Services",
+    description: "Professional website development using modern technologies — from company sites to e-commerce platforms",
+    icon: <Globe className="w-8 h-8" />,
+    features: ["Company & personal websites", "Booking & e-commerce systems", "Reasonable pricing", "Rapid delivery"],
+    bgColor: "bg-teal-50",
+    textColor: "text-teal-600",
+    borderColor: "border-teal-200",
+    href: "/services/web-development",
+    badge: "NEW SERVICE"
   }
 ];
 
@@ -178,8 +191,13 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <Link key={service.id} href={service.href}>
-                <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden h-full cursor-pointer animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
-                  <CardHeader className={`${service.bgColor} pb-4 border-b`}>
+                <Card className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden h-full cursor-pointer animate-fade-in ${service.badge ? 'ring-2 ring-teal-400 ring-offset-2' : ''}`} style={{animationDelay: `${index * 100}ms`}}>
+                  <CardHeader className={`${service.bgColor} pb-4 border-b relative`}>
+                    {service.badge && (
+                      <span className="absolute top-3 right-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full shadow-md animate-pulse">
+                        {service.badge}
+                      </span>
+                    )}
                     <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                       <div className={service.textColor}>{service.icon}</div>
                     </div>
