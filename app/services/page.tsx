@@ -5,9 +5,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Computer Repair Services in Delhi | St Mary's Computers",
-  description: "Professional laptop, desktop, printer repair & UPS services in Delhi. On-site repair available. Free diagnosis with repair. Call +91 99108 36286",
-  keywords: "computer repair Delhi, laptop repair Laxmi Nagar, desktop repair service, printer repair Delhi, on-site computer repair",
+  title: "Computer Repair & Web Development Services in Delhi | St Mary's Computers",
+  description: "Professional laptop, desktop, printer repair, UPS services & web development in Delhi. Modern websites, e-commerce & booking systems. On-site repair available. Call +91 99108 36286",
+  keywords: "computer repair Delhi, laptop repair Laxmi Nagar, desktop repair service, printer repair Delhi, on-site computer repair, web development Delhi, website development Laxmi Nagar, website developer Delhi",
 };
 
 interface ServiceCard {
