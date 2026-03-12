@@ -204,7 +204,7 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6 animate-fade-in" style={{animationDelay: '400ms'}}>
             <div className="text-center sm:text-left">
               <p className="text-gray-500 text-sm">
-                © 2025 St Mary&apos;s Computers. All rights reserved.
+                © 2026 St Mary&apos;s Computers. All rights reserved.
               </p>
               <p className="text-gray-600 text-xs mt-2">
                 Professional Computer Repair Services in New Delhi
