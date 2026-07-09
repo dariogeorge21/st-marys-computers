@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Monitor, Phone, MessageCircle, Star, Shield, CheckCircle, Mail, Grid, List } from "lucide-react";
+import { Monitor, Phone, MessageCircle, Star, Shield, CheckCircle, Mail, Grid, List, ShieldCheck, Key } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -171,6 +171,130 @@ const printers = [
   }
 ];
 
+interface SoftwareProduct {
+  id: number;
+  name: string;
+  brand: string;
+  category: "antivirus" | "office";
+  variants: string[];
+  features: string[];
+  bgColor: string;
+  textColor: string;
+  borderColor: string;
+  badgeBg: string;
+}
+
+const softwareProducts: SoftwareProduct[] = [
+  {
+    id: 1,
+    name: "Quick Heal Antivirus Pro",
+    brand: "Quick Heal",
+    category: "antivirus",
+    variants: ["1 Year – 1 User", "3 Years – 1 User"],
+    features: ["Real-time virus protection", "Web security & phishing protection", "Ransomware protection", "Lightweight on system resources"],
+    bgColor: "bg-orange-50",
+    textColor: "text-orange-600",
+    borderColor: "border-orange-200",
+    badgeBg: "bg-orange-100",
+  },
+  {
+    id: 2,
+    name: "Quick Heal Internet Security",
+    brand: "Quick Heal",
+    category: "antivirus",
+    variants: ["1 Year – 1 User", "3 Years – 1 User"],
+    features: ["Advanced internet threat protection", "Safe banking & browsing", "Parental controls", "Firewall protection"],
+    bgColor: "bg-orange-50",
+    textColor: "text-orange-600",
+    borderColor: "border-orange-200",
+    badgeBg: "bg-orange-100",
+  },
+  {
+    id: 3,
+    name: "Quick Heal Total Security",
+    brand: "Quick Heal",
+    category: "antivirus",
+    variants: ["1 Year – 1 User", "3 Years – 1 User", "Multi-User"],
+    features: ["All-in-one comprehensive protection", "PC tuner & optimizer", "Data backup & recovery", "Multi-device support"],
+    bgColor: "bg-orange-50",
+    textColor: "text-orange-600",
+    borderColor: "border-orange-200",
+    badgeBg: "bg-orange-100",
+  },
+  {
+    id: 4,
+    name: "Norton Antivirus Plus",
+    brand: "Norton",
+    category: "antivirus",
+    variants: ["1 Year – 1 Device"],
+    features: ["Award-winning antivirus protection", "Smart firewall", "Password Manager", "2GB cloud backup"],
+    bgColor: "bg-yellow-50",
+    textColor: "text-yellow-700",
+    borderColor: "border-yellow-200",
+    badgeBg: "bg-yellow-100",
+  },
+  {
+    id: 5,
+    name: "Norton 360 Standard",
+    brand: "Norton",
+    category: "antivirus",
+    variants: ["1 Year – 1 Device"],
+    features: ["Real-time threat protection", "VPN for private browsing", "10GB cloud PC backup", "Dark web monitoring"],
+    bgColor: "bg-yellow-50",
+    textColor: "text-yellow-700",
+    borderColor: "border-yellow-200",
+    badgeBg: "bg-yellow-100",
+  },
+  {
+    id: 6,
+    name: "Norton 360 Deluxe",
+    brand: "Norton",
+    category: "antivirus",
+    variants: ["1 Year – 3 Devices", "1 Year – 5 Devices"],
+    features: ["Protection for up to 5 devices", "VPN included", "50GB cloud PC backup", "Parental controls"],
+    bgColor: "bg-yellow-50",
+    textColor: "text-yellow-700",
+    borderColor: "border-yellow-200",
+    badgeBg: "bg-yellow-100",
+  },
+  {
+    id: 7,
+    name: "Microsoft Office 2024",
+    brand: "Microsoft",
+    category: "office",
+    variants: ["1 PC – One-time purchase"],
+    features: ["Word, Excel, PowerPoint & OneNote", "One-time purchase — no subscription", "Works offline on 1 PC or Mac", "Genuine activation included"],
+    bgColor: "bg-blue-50",
+    textColor: "text-blue-600",
+    borderColor: "border-blue-200",
+    badgeBg: "bg-blue-100",
+  },
+  {
+    id: 8,
+    name: "Microsoft 365 Personal",
+    brand: "Microsoft",
+    category: "office",
+    variants: ["1 Year – 1 User"],
+    features: ["Always up-to-date Office apps", "1TB OneDrive cloud storage", "Works on PC, Mac, phone & tablet", "Teams, Outlook & more included"],
+    bgColor: "bg-blue-50",
+    textColor: "text-blue-600",
+    borderColor: "border-blue-200",
+    badgeBg: "bg-blue-100",
+  },
+  {
+    id: 9,
+    name: "Microsoft 365 Family",
+    brand: "Microsoft",
+    category: "office",
+    variants: ["1 Year – Up to 6 Users"],
+    features: ["Up to 6 users on all their devices", "1TB OneDrive per user", "All premium Office apps", "Best value for families & teams"],
+    bgColor: "bg-blue-50",
+    textColor: "text-blue-600",
+    borderColor: "border-blue-200",
+    badgeBg: "bg-blue-100",
+  },
+];
+
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("brand");
@@ -247,7 +371,7 @@ export default function ProductsPage() {
             Quality Computer Products in Delhi-NCR
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-100 px-4">
-            Discover our comprehensive range of laptops, desktops, UPS systems, and accessories. 
+            Discover our comprehensive range of laptops, desktops, UPS systems, accessories, and licensed software.
             All products are quality tested with professional service support and expert guidance.
           </p>
           
@@ -381,12 +505,13 @@ export default function ProductsPage() {
           </div>
 
           <Tabs defaultValue="laptops" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 mb-8 bg-gradient-to-r from-gray-100 to-gray-50 p-1 gap-1 h-auto">
+            <TabsList className="grid w-full grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 mb-8 bg-gradient-to-r from-gray-100 to-gray-50 p-1 gap-1 h-auto">
               <TabsTrigger value="laptops" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm">Laptops</TabsTrigger>
               <TabsTrigger value="desktops" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm">Desktops</TabsTrigger>
               <TabsTrigger value="ups" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm">UPS</TabsTrigger>
-              <TabsTrigger value="accessories" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm hidden sm:block">Accessories</TabsTrigger>
-              <TabsTrigger value="printers" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm hidden lg:block">Printers</TabsTrigger>
+              <TabsTrigger value="accessories" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm">Accessories</TabsTrigger>
+              <TabsTrigger value="printers" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm hidden sm:block">Printers</TabsTrigger>
+              <TabsTrigger value="software" className="data-[state=active]:bg-white data-[state=active]:shadow-md transition-all text-xs sm:text-sm hidden lg:block">Software</TabsTrigger>
             </TabsList>
             
             <TabsContent value="laptops" className="mt-8">
@@ -461,6 +586,137 @@ export default function ProductsPage() {
                 {printers.map((printer) => (
                   <ProductCard key={printer.id} product={printer} type="printer" />
                 ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="software" className="mt-8">
+              <div className="mb-6">
+                <h3 className="text-2xl font-semibold mb-4">Software Products</h3>
+                <p className="text-gray-600 mb-2">
+                  Genuine licensed antivirus software and Microsoft Office products. Expert installation,
+                  activation, and support included with every purchase.
+                </p>
+                <p className="text-sm text-gray-500 mb-6">* Contact us for current pricing and availability.</p>
+              </div>
+
+              {/* Antivirus subsection */}
+              <div className="mb-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <ShieldCheck className="w-5 h-5 text-orange-500" />
+                  <h4 className="text-lg font-semibold text-gray-800">Antivirus Software</h4>
+                  <div className="flex-1 h-px bg-gray-200"></div>
+                </div>
+                <div className={`grid gap-6 ${viewMode === "grid" ? "md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"}`}>
+                  {softwareProducts.filter(p => p.category === "antivirus").map((software) => (
+                    <Card key={software.id} className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden border-t-4 ${software.borderColor}`}>
+                      <CardHeader className={`${software.bgColor} pb-4 border-b ${software.borderColor}`}>
+                        <div className="flex justify-between items-start gap-3">
+                          <div>
+                            <div className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full mb-2 ${software.badgeBg} ${software.textColor}`}>
+                              <ShieldCheck className="w-3 h-3" />
+                              {software.brand}
+                            </div>
+                            <CardTitle className="text-lg text-gray-900 group-hover:text-blue-600 transition-colors leading-snug">{software.name}</CardTitle>
+                          </div>
+                          <Badge className="bg-green-100 text-green-700 border-green-300 flex-shrink-0">
+                            Available
+                          </Badge>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="pt-5">
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                          {software.variants.map((v, vi) => (
+                            <span key={vi} className={`text-xs font-medium px-2.5 py-1 rounded-full ${software.badgeBg} ${software.textColor} border ${software.borderColor}`}>{v}</span>
+                          ))}
+                        </div>
+                        <ul className="space-y-2 mb-5">
+                          {software.features.map((f, fi) => (
+                            <li key={fi} className="flex items-start gap-2">
+                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-gray-700">{f}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="text-sm font-semibold text-blue-600 mb-3">Contact for Current Pricing</div>
+                        <div className="flex gap-2">
+                          <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
+                            <a href="tel:+919910836286">Call for Options</a>
+                          </Button>
+                          <Button variant="outline" size="sm" className="border-2 hover:bg-green-50 transition-colors" asChild>
+                            <a href={`https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20${encodeURIComponent(software.name)}`} target="_blank" rel="noopener noreferrer">
+                              <MessageCircle className="w-4 h-4" />
+                            </a>
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Microsoft Office subsection */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <Key className="w-5 h-5 text-blue-500" />
+                  <h4 className="text-lg font-semibold text-gray-800">Microsoft Office</h4>
+                  <div className="flex-1 h-px bg-gray-200"></div>
+                </div>
+                <div className={`grid gap-6 ${viewMode === "grid" ? "md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"}`}>
+                  {softwareProducts.filter(p => p.category === "office").map((software) => (
+                    <Card key={software.id} className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden border-t-4 ${software.borderColor}`}>
+                      <CardHeader className={`${software.bgColor} pb-4 border-b ${software.borderColor}`}>
+                        <div className="flex justify-between items-start gap-3">
+                          <div>
+                            <div className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full mb-2 ${software.badgeBg} ${software.textColor}`}>
+                              <Key className="w-3 h-3" />
+                              {software.brand}
+                            </div>
+                            <CardTitle className="text-lg text-gray-900 group-hover:text-blue-600 transition-colors leading-snug">{software.name}</CardTitle>
+                          </div>
+                          <Badge className="bg-green-100 text-green-700 border-green-300 flex-shrink-0">
+                            Available
+                          </Badge>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="pt-5">
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                          {software.variants.map((v, vi) => (
+                            <span key={vi} className={`text-xs font-medium px-2.5 py-1 rounded-full ${software.badgeBg} ${software.textColor} border ${software.borderColor}`}>{v}</span>
+                          ))}
+                        </div>
+                        <ul className="space-y-2 mb-5">
+                          {software.features.map((f, fi) => (
+                            <li key={fi} className="flex items-start gap-2">
+                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-gray-700">{f}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="text-sm font-semibold text-blue-600 mb-3">Contact for Current Pricing</div>
+                        <div className="flex gap-2">
+                          <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
+                            <a href="tel:+919910836286">Call for Options</a>
+                          </Button>
+                          <Button variant="outline" size="sm" className="border-2 hover:bg-green-50 transition-colors" asChild>
+                            <a href={`https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20${encodeURIComponent(software.name)}`} target="_blank" rel="noopener noreferrer">
+                              <MessageCircle className="w-4 h-4" />
+                            </a>
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 p-5 bg-orange-50 rounded-2xl border border-orange-100">
+                <div className="flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-gray-800 mb-1">Genuine Licensed Software — Installation & Support Included</p>
+                    <p className="text-sm text-gray-600">All software sold is 100% official and licensed. We handle installation, activation, and provide ongoing support after purchase. <a href="/services/software-solutions" className="text-orange-600 hover:underline font-medium">Learn more about our Software Solutions service →</a></p>
+                  </div>
+                </div>
               </div>
             </TabsContent>
           </Tabs>

@@ -217,7 +217,7 @@ export default function HomePage() {
               Our Products
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Quality computers, laptops, and accessories at competitive prices. All products are
+              Quality computers, laptops, accessories, and licensed software at competitive prices. All products are
               thoroughly tested and come with professional service support.
             </p>
             <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6"></div>
@@ -358,9 +358,36 @@ export default function HomePage() {
                 <a href="/products">Browse Accessories</a>
               </Button>
             </div>
+
+            {/* Software — Antivirus & Office */}
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '500ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                <ShieldCheck className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Software — Antivirus & Office</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Genuine licensed antivirus and Microsoft Office products with expert installation,
+                activation, and ongoing support.
+              </p>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> Quick Heal & Norton antivirus</li>
+                <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> Microsoft Office 2024 / 365</li>
+                <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> 1-Year & multi-year plans</li>
+              </ul>
+              <div className="bg-orange-50 p-4 rounded-xl mb-6 border border-orange-100">
+                <p className="text-sm text-orange-700 font-semibold">
+                  ✓ 100% genuine licenses<br/>
+                  ✓ Installation included<br/>
+                  ✓ Expert support
+                </p>
+              </div>
+              <Button className="w-full bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
+                <a href="/products">Browse Software</a>
+              </Button>
+            </div>
           </div>
 
-          <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '500ms'}}>
+          <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '600ms'}}>
             <Button size="lg" className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl px-8" asChild>
               <a href="/products">View All Products</a>
             </Button>
