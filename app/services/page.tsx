@@ -1,13 +1,13 @@
-import { Phone, MessageCircle, Clock, Shield, Star, Zap, Home, HardDrive, Laptop, Wrench, CheckCircle, ArrowRight, Globe } from "lucide-react";
+import { Phone, MessageCircle, Clock, Shield, Star, Zap, Home, HardDrive, Laptop, Wrench, CheckCircle, ArrowRight, Globe, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Computer Repair & Web Development Services in Delhi | St Mary's Computers",
-  description: "Professional laptop, desktop, printer repair, UPS services & web development in Delhi. Modern websites, e-commerce & booking systems. On-site repair available. Call +91 99108 36286",
-  keywords: "computer repair Delhi, laptop repair Laxmi Nagar, desktop repair service, printer repair Delhi, on-site computer repair, web development Delhi, website development Laxmi Nagar, website developer Delhi",
+  title: "Computer Repair, Software Solutions & Web Development Services in Delhi | St Mary's Computers",
+  description: "Professional laptop, desktop, printer repair, UPS services, software solutions (antivirus, Microsoft Office) & web development in Delhi. On-site repair available. Call +91 99108 36286",
+  keywords: "computer repair Delhi, laptop repair Laxmi Nagar, desktop repair service, printer repair Delhi, on-site computer repair, web development Delhi, antivirus software Delhi, Quick Heal antivirus, Norton antivirus, Microsoft Office Delhi, software installation Delhi",
 };
 
 interface ServiceCard {
@@ -99,8 +99,18 @@ const services: ServiceCard[] = [
     bgColor: "bg-teal-50",
     textColor: "text-teal-600",
     borderColor: "border-teal-200",
-    href: "/services/web-development",
-    badge: "NEW SERVICE"
+    href: "/services/web-development"
+  },
+  {
+    id: "software-solutions",
+    title: "Software Solutions",
+    description: "Licensed antivirus, Microsoft Office products & expert software support for homes and businesses",
+    icon: <ShieldCheck className="w-8 h-8" />,
+    features: ["Quick Heal & Norton antivirus", "Microsoft Office 2024 / 365", "Software installation & activation", "License renewal & support"],
+    bgColor: "bg-orange-50",
+    textColor: "text-orange-600",
+    borderColor: "border-orange-200",
+    href: "/services/software-solutions"
   }
 ];
 

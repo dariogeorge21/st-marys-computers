@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, MapPin, Clock, Star, Shield, Wrench, Monitor, Laptop, Zap, Home, HardDrive, Globe } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Star, Shield, Wrench, Monitor, Laptop, Zap, Home, HardDrive, Globe, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
@@ -65,6 +65,14 @@ export default function HomePage() {
             "@type": "Service",
             "name": "Web Development",
             "description": "Professional website development services — company websites, e-commerce platforms, booking systems with modern technologies"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Software Solutions",
+            "description": "Genuine antivirus software (Quick Heal, Norton) and Microsoft Office products with installation, activation, license renewal and technical support"
           }
         }
       ]
@@ -542,11 +550,8 @@ export default function HomePage() {
               </Button>
             </div>
 
-            {/* Web Development - NEW */}
-            <div className="group bg-white border-2 border-teal-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in ring-2 ring-teal-300 ring-offset-2 relative" style={{animationDelay: '600ms'}}>
-              <span className="absolute top-3 right-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full shadow-md animate-pulse">
-                NEW SERVICE
-              </span>
+            {/* Web Development */}
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '600ms'}}>
               <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Globe className="w-6 h-6 text-teal-600" />
               </div>
@@ -569,6 +574,33 @@ export default function HomePage() {
               </div>
               <Button className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
                 <a href="/services/web-development">Get a Website</a>
+              </Button>
+            </div>
+
+            {/* Software Solutions */}
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '700ms'}}>
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                <ShieldCheck className="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Software Solutions</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Licensed antivirus, Microsoft Office products & expert software support for homes and businesses
+              </p>
+              <ul className="text-sm text-gray-600 space-y-2 mb-6 font-medium">
+                <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> Quick Heal & Norton antivirus</li>
+                <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> Microsoft Office 2024 / 365</li>
+                <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> Software installation & activation</li>
+                <li className="flex items-center gap-2"><span className="text-orange-600 font-bold">✓</span> License renewal & support</li>
+              </ul>
+              <div className="bg-orange-50 p-4 rounded-xl mb-6 border border-orange-100">
+                <p className="text-xs sm:text-sm text-orange-700 font-semibold">
+                  ✓ Genuine licensed software<br/>
+                  ✓ Fast activation<br/>
+                  ✓ Expert guidance
+                </p>
+              </div>
+              <Button className="w-full bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-semibold shadow-md hover:shadow-lg transition-all text-sm" asChild>
+                <a href="/services/software-solutions">Get Software Help</a>
               </Button>
             </div>
           </div>

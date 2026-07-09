@@ -109,7 +109,13 @@ export function Footer() {
                 <li>
                   <Link href="/services/web-development" className="text-gray-400 hover:text-teal-400 transition-colors flex items-center gap-2 group">
                     <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1" />
-                    <span className="flex items-center gap-2">Web Development <span className="text-[10px] font-bold bg-teal-500 text-white px-1.5 py-0.5 rounded-full">NEW</span></span>
+                    <span>Web Development</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/software-solutions" className="text-gray-400 hover:text-orange-400 transition-colors flex items-center gap-2 group">
+                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1" />
+                    <span>Software Solutions</span>
                   </Link>
                 </li>
               </ul>

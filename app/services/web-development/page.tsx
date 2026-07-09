@@ -147,10 +147,6 @@ export default function WebDevelopmentPage() {
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                {/* NEW badge */}
-                <span className="inline-block bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-md animate-pulse">
-                  ✨ NEW SERVICE
-                </span>
 
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                   Professional{" "}
