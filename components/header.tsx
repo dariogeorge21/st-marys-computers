@@ -1,171 +1,201 @@
 "use client";
 
-import { useState } from "react";
-import { Phone, MessageCircle, Menu, X, MapPin, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "Products", href: "/products" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Products", href: "/products" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ];
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="bg-white sticky top-0 z-40 shadow-md hover:shadow-lg transition-shadow duration-300">
-      {/* Top bar with contact info */}
-      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-3 px-4 border-b border-gray-700">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6">
-            <div className="flex items-center gap-2 hover:text-blue-300 transition-colors">
-              <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
-              <span>Laxmi Nagar, New Delhi</span>
-            </div>
-            <div className="hidden sm:block w-px h-4 bg-gray-600"></div>
-            <div className="flex items-center gap-2 hover:text-yellow-300 transition-colors">
-              <Clock className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-              <span>Mon-Sat: 10AM-8PM</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <a 
-              href="tel:+919910836286" 
-              className="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-green-600 hover:bg-green-700 transition-all duration-300 transform hover:scale-105 font-medium"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">+91 99108 36286</span>
-              <span className="sm:hidden">Call</span>
-            </a>
-            <a 
-              href="https://wa.me/919910836286" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-green-700 hover:bg-green-800 transition-all duration-300 transform hover:scale-105 font-medium"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span className="hidden sm:inline">WhatsApp</span>
-              <span className="sm:hidden">Chat</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main navigation */}
-      <div className="px-4 py-4 sm:py-5">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 relative group-hover:scale-110 transition-transform duration-300">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-sm"
+          : "bg-white border-b border-gray-100"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16 sm:h-[68px]">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-lg"
+            aria-label="St Mary's Computers — Home"
+          >
+            <div className="w-8 h-8 sm:w-9 sm:h-9 relative flex-shrink-0 group-hover:opacity-85 transition-opacity">
               <Image
                 src="/NewLogo.png"
                 alt="St Mary's Computers Logo"
-                width={48}
-                height={48}
+                width={36}
+                height={36}
                 className="object-contain"
               />
             </div>
-            <div className="flex flex-col">
-              <div className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 group-hover:from-blue-700 group-hover:to-indigo-700 transition-all duration-300">
+            <div className="flex flex-col leading-none">
+              <span className="text-[15px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 tracking-[-0.01em]">
                 St Mary&apos;s Computers
-              </div>
-              <div className="text-xs text-gray-500 font-medium">Expert Repair Services</div>
+              </span>
+              <span className="text-[11px] text-gray-500 font-medium mt-0.5">
+                Expert Repair Services
+              </span>
             </div>
           </Link>
 
           {/* Desktop navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="relative px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 group"
+                className="relative px-3.5 py-2 text-sm text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200
+                  rounded-lg hover:bg-blue-50
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>
 
-          {/* Desktop CTA buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold transition-all duration-300"
-              asChild
+          {/* Desktop CTAs */}
+          <div className="hidden lg:flex items-center gap-2">
+            <a
+              href="https://wa.me/919910836286"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
+                text-gray-700 hover:text-gray-900
+                bg-gray-100 hover:bg-green-50 border border-gray-200 hover:border-green-300
+                transition-all duration-200
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2"
+              aria-label="WhatsApp St Mary's Computers"
             >
-              <a href="tel:+919910836286" className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                Call Now
-              </a>
-            </Button>
-            <Button 
-              size="sm" 
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              asChild
+              <MessageCircle className="w-4 h-4 text-green-600" aria-hidden="true" />
+              WhatsApp
+            </a>
+            <a
+              href="tel:+919910836286"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold
+                text-white bg-gradient-to-r from-blue-600 to-indigo-600
+                hover:from-blue-700 hover:to-indigo-700
+                shadow-sm hover:shadow-md hover:shadow-blue-500/20
+                transition-all duration-200
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              aria-label="Call St Mary's Computers"
             >
-              <a href="/contact" className="flex items-center gap-2">
-                Book Repair
-              </a>
-            </Button>
+              <Phone className="w-4 h-4" aria-hidden="true" />
+              Call Now
+            </a>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu toggle */}
           <button
-            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300"
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
           >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-gray-700" />
-            ) : (
-              <Menu className="w-6 h-6 text-gray-700" />
-            )}
+            <AnimatePresence mode="wait" initial={false}>
+              {isMenuOpen ? (
+                <motion.span
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <X className="w-5 h-5" aria-hidden="true" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="open"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <Menu className="w-5 h-5" aria-hidden="true" />
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
         </div>
 
-        {/* Mobile navigation */}
-        {isMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4 animate-fade-in">
-            <div className="flex flex-col space-y-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-4 rounded-lg transition-all duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="flex gap-3 pt-4 border-t border-gray-200 mt-4">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="flex-1 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold"
-                  asChild
-                >
-                  <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
-                    <Phone className="w-4 h-4" />
+        {/* Mobile nav drawer */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.nav
+              id="mobile-nav"
+              key="mobile-nav"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="lg:hidden overflow-hidden border-t border-gray-100"
+              aria-label="Mobile navigation"
+            >
+              <div className="py-3 flex flex-col gap-1">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="px-4 py-2.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50
+                      font-medium rounded-lg transition-colors duration-150
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <div className="flex gap-2 pt-3 mt-2 border-t border-gray-100">
+                  <a
+                    href="https://wa.me/919910836286"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-medium
+                      text-gray-700 bg-gray-100 hover:bg-green-50 border border-gray-200 hover:border-green-300
+                      transition-all duration-200
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400"
+                    aria-label="WhatsApp"
+                  >
+                    <MessageCircle className="w-4 h-4 text-green-600" aria-hidden="true" />
+                    WhatsApp
+                  </a>
+                  <a
+                    href="tel:+919910836286"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-semibold
+                      text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700
+                      shadow-sm transition-all duration-200
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                    aria-label="Call Now"
+                  >
+                    <Phone className="w-4 h-4" aria-hidden="true" />
                     Call Now
                   </a>
-                </Button>
-                <Button 
-                  size="sm" 
-                  className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold"
-                  asChild
-                >
-                  <a href="/contact">Book Repair</a>
-                </Button>
+                </div>
               </div>
-            </div>
-          </nav>
-        )}
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );

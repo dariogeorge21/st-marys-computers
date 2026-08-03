@@ -1,6 +1,7 @@
-import { Phone, MessageCircle, MapPin, Clock, Star, Shield, Wrench, Monitor, Laptop, Zap, Home, HardDrive, Globe, ShieldCheck } from "lucide-react";
+import { Shield, Wrench, Monitor, Laptop, Zap, Home, HardDrive, Globe, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactSection } from "@/components/contact-section";
+import { Hero } from "@/components/hero/Hero";
 
 export default function HomePage() {
   const structuredData = {
@@ -86,124 +87,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 py-20 px-4 overflow-hidden">
-        {/* Animated background blobs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center px-4 sm:px-0">
-            <div className="animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
-                Professional Computer Repair in New Delhi
-              </h1>
-              <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
-                Fast & reliable laptop, desktop and printer repair services. We come to you! 
-                Over 20 years of experience serving New Delhi with quality service guarantee.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in animation-delay-100">
-                <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
-                  <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
-                    <Phone className="w-5 h-5" />
-                    <span className="hidden sm:inline">Call +91 99108 36286</span>
-                    <span className="sm:hidden">Call Now</span>
-                  </a>
-                </Button>
-                <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
-                  <a 
-                    href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    <span>WhatsApp</span>
-                  </a>
-                </Button>
-              </div>
-
-              <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/20 animate-fade-in animation-delay-200">
-                <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-6">Why Choose St Mary&apos;s Computers?</h3>
-                <div className="grid grid-cols-2 gap-4 sm:gap-5">
-                  <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors group">
-                    <Clock className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-700 font-medium text-sm">Quick service</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-green-50 transition-colors group">
-                    <Home className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-700 font-medium text-sm">On-site repair</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-purple-50 transition-colors group">
-                    <Monitor className="w-5 h-5 text-purple-600 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-700 font-medium text-sm">Genuine parts</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-yellow-50 transition-colors group">
-                    <Star className="w-5 h-5 text-yellow-500 group-hover:scale-110 transition-transform" />
-                    <span className="text-gray-700 font-medium text-sm">4.8★ rating</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-white/20 hover:shadow-3xl transition-shadow duration-300 animate-fade-in animation-delay-300">
-              <h3 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-8">Quick Service Request</h3>
-              <div className="space-y-5">
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors">
-                  <div className="p-3 bg-blue-600 rounded-lg">
-                    <Phone className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Call us</p>
-                    <p className="font-semibold text-blue-600">+91 99108 36286</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-green-50 hover:bg-green-100 transition-colors">
-                  <div className="p-3 bg-green-600 rounded-lg">
-                    <MessageCircle className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">WhatsApp message</p>
-                    <p className="font-semibold text-green-600">Quick response</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-purple-50 hover:bg-purple-100 transition-colors">
-                  <div className="p-3 bg-purple-600 rounded-lg">
-                    <MapPin className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Service area</p>
-                    <p className="font-semibold text-purple-600">All of New Delhi</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-yellow-50 hover:bg-yellow-100 transition-colors">
-                  <div className="p-3 bg-yellow-600 rounded-lg">
-                    <Clock className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600">Business hours</p>
-                    <p className="font-semibold text-yellow-600">Mon-Sat 10AM-8PM</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-8 pt-8 border-t-2 border-gray-200">
-                <p className="text-sm text-gray-600 mb-4 font-medium">
-                  ⚡ Same-day service available for urgent issues
-                </p>
-                <Button className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all h-12 text-base" asChild>
-                  <a href="tel:+919910836286">Call for Urgent Service</a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* Products Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
