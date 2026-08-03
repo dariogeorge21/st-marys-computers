@@ -8,7 +8,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "St Mary's Computers",
-    "image": "https://stmaryscomputers.com/images/shop-front.jpg",
+    "image": "https://stmaryscomputers.com/favicon.ico",
     "description": "Fast & reliable laptop, desktop and printer repair in New Delhi & Delhi-NCR. Professional web development services. On-site service across New Delhi.",
     "address": {
       "@type": "PostalAddress",
@@ -110,7 +110,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* New Laptops */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '0ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '0ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Laptop className="w-6 h-6 text-blue-600" />
               </div>
@@ -126,8 +126,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-blue-50 p-4 rounded-xl mb-6 border border-blue-100">
                 <p className="text-sm text-blue-700 font-semibold">
-                  ✓ Authorized pricing<br/>
-                  ✓ Complete setup<br/>
+                  ✓ Authorized pricing<br />
+                  ✓ Complete setup<br />
                   ✓ Expert guidance
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function HomePage() {
             </div>
 
             {/* Refurbished Laptops */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '100ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '100ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Monitor className="w-6 h-6 text-green-600" />
               </div>
@@ -153,8 +153,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-green-50 p-4 rounded-xl mb-6 border border-green-100">
                 <p className="text-sm text-green-700 font-semibold">
-                  ✓ Quality tested<br/>
-                  ✓ Affordable pricing<br/>
+                  ✓ Quality tested<br />
+                  ✓ Affordable pricing<br />
                   ✓ Support included
                 </p>
               </div>
@@ -164,7 +164,7 @@ export default function HomePage() {
             </div>
 
             {/* Desktop Systems */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '200ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '200ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Wrench className="w-6 h-6 text-purple-600" />
               </div>
@@ -180,8 +180,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-purple-50 p-4 rounded-xl mb-6 border border-purple-100">
                 <p className="text-sm text-purple-700 font-semibold">
-                  ✓ Custom configurations<br/>
-                  ✓ Quality components<br/>
+                  ✓ Custom configurations<br />
+                  ✓ Quality components<br />
                   ✓ System setup
                 </p>
               </div>
@@ -191,7 +191,7 @@ export default function HomePage() {
             </div>
 
             {/* Printers & Peripherals */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '300ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '300ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Shield className="w-6 h-6 text-yellow-600" />
               </div>
@@ -207,8 +207,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-yellow-50 p-4 rounded-xl mb-6 border border-yellow-100">
                 <p className="text-sm text-yellow-700 font-semibold">
-                  ✓ Major brands<br/>
-                  ✓ Installation included<br/>
+                  ✓ Major brands<br />
+                  ✓ Installation included<br />
                   ✓ Ongoing support
                 </p>
               </div>
@@ -218,7 +218,7 @@ export default function HomePage() {
             </div>
 
             {/* Accessories & Components */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '400ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '400ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <HardDrive className="w-6 h-6 text-indigo-600" />
               </div>
@@ -234,8 +234,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-indigo-50 p-4 rounded-xl mb-6 border border-indigo-100">
                 <p className="text-sm text-indigo-700 font-semibold">
-                  ✓ Quality components<br/>
-                  ✓ Competitive pricing<br/>
+                  ✓ Quality components<br />
+                  ✓ Competitive pricing<br />
                   ✓ Expert installation
                 </p>
               </div>
@@ -245,7 +245,7 @@ export default function HomePage() {
             </div>
 
             {/* Software — Antivirus & Office */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '500ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '500ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <ShieldCheck className="w-6 h-6 text-orange-600" />
               </div>
@@ -261,8 +261,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-orange-50 p-4 rounded-xl mb-6 border border-orange-100">
                 <p className="text-sm text-orange-700 font-semibold">
-                  ✓ 100% genuine licenses<br/>
-                  ✓ Installation included<br/>
+                  ✓ 100% genuine licenses<br />
+                  ✓ Installation included<br />
                   ✓ Expert support
                 </p>
               </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '600ms'}}>
+          <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '600ms' }}>
             <Button size="lg" className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl px-8" asChild>
               <a href="/products">View All Products</a>
             </Button>
@@ -301,7 +301,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Laptop Repair */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '0ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '0ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Laptop className="w-6 h-6 text-blue-600" />
               </div>
@@ -317,8 +317,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-blue-50 p-4 rounded-xl mb-6 border border-blue-100">
                 <p className="text-xs sm:text-sm text-blue-700 font-semibold">
-                  ✓ Same-day service<br/>
-                  ✓ On-site option<br/>
+                  ✓ Same-day service<br />
+                  ✓ On-site option<br />
                   ✓ Quality guaranteed
                 </p>
               </div>
@@ -328,7 +328,7 @@ export default function HomePage() {
             </div>
 
             {/* Desktop Repair */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '100ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '100ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Wrench className="w-6 h-6 text-green-600" />
               </div>
@@ -344,8 +344,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-green-50 p-4 rounded-xl mb-6 border border-green-100">
                 <p className="text-xs sm:text-sm text-green-700 font-semibold">
-                  ✓ Free diagnosis<br/>
-                  ✓ Genuine parts<br/>
+                  ✓ Free diagnosis<br />
+                  ✓ Genuine parts<br />
                   ✓ Performance boost
                 </p>
               </div>
@@ -355,7 +355,7 @@ export default function HomePage() {
             </div>
 
             {/* Printer Services */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '200ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '200ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Shield className="w-6 h-6 text-purple-600" />
               </div>
@@ -371,8 +371,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-purple-50 p-4 rounded-xl mb-6 border border-purple-100">
                 <p className="text-xs sm:text-sm text-purple-700 font-semibold">
-                  ✓ All brands supported<br/>
-                  ✓ Network setup<br/>
+                  ✓ All brands supported<br />
+                  ✓ Network setup<br />
                   ✓ Quick response
                 </p>
               </div>
@@ -382,7 +382,7 @@ export default function HomePage() {
             </div>
 
             {/* UPS Services */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '300ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '300ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Zap className="w-6 h-6 text-yellow-600" />
               </div>
@@ -398,8 +398,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-yellow-50 p-4 rounded-xl mb-6 border border-yellow-100">
                 <p className="text-xs sm:text-sm text-yellow-700 font-semibold">
-                  ✓ All brands available<br/>
-                  ✓ Professional install<br/>
+                  ✓ All brands available<br />
+                  ✓ Professional install<br />
                   ✓ Quality service
                 </p>
               </div>
@@ -409,7 +409,7 @@ export default function HomePage() {
             </div>
 
             {/* On-site Support */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '400ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '400ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-red-100 to-red-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Home className="w-6 h-6 text-red-600" />
               </div>
@@ -425,8 +425,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-red-50 p-4 rounded-xl mb-6 border border-red-100">
                 <p className="text-xs sm:text-sm text-red-700 font-semibold">
-                  ✓ We come to you<br/>
-                  ✓ Same-day available<br/>
+                  ✓ We come to you<br />
+                  ✓ Same-day available<br />
                   ✓ All of Delhi
                 </p>
               </div>
@@ -436,7 +436,7 @@ export default function HomePage() {
             </div>
 
             {/* Accessories & Upgrades */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '500ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '500ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <HardDrive className="w-6 h-6 text-indigo-600" />
               </div>
@@ -452,8 +452,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-indigo-50 p-4 rounded-xl mb-6 border border-indigo-100">
                 <p className="text-xs sm:text-sm text-indigo-700 font-semibold">
-                  ✓ Performance boost<br/>
-                  ✓ Custom solutions<br/>
+                  ✓ Performance boost<br />
+                  ✓ Custom solutions<br />
                   ✓ Quality components
                 </p>
               </div>
@@ -463,7 +463,7 @@ export default function HomePage() {
             </div>
 
             {/* Web Development */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '600ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '600ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <Globe className="w-6 h-6 text-teal-600" />
               </div>
@@ -479,8 +479,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-teal-50 p-4 rounded-xl mb-6 border border-teal-100">
                 <p className="text-xs sm:text-sm text-teal-700 font-semibold">
-                  ✓ Reasonable pricing<br/>
-                  ✓ SEO optimised<br/>
+                  ✓ Reasonable pricing<br />
+                  ✓ SEO optimised<br />
                   ✓ Ongoing support
                 </p>
               </div>
@@ -490,7 +490,7 @@ export default function HomePage() {
             </div>
 
             {/* Software Solutions */}
-            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{animationDelay: '700ms'}}>
+            <div className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden animate-fade-in" style={{ animationDelay: '700ms' }}>
               <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
                 <ShieldCheck className="w-6 h-6 text-orange-600" />
               </div>
@@ -506,8 +506,8 @@ export default function HomePage() {
               </ul>
               <div className="bg-orange-50 p-4 rounded-xl mb-6 border border-orange-100">
                 <p className="text-xs sm:text-sm text-orange-700 font-semibold">
-                  ✓ Genuine licensed software<br/>
-                  ✓ Fast activation<br/>
+                  ✓ Genuine licensed software<br />
+                  ✓ Fast activation<br />
                   ✓ Expert guidance
                 </p>
               </div>
@@ -517,7 +517,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '700ms'}}>
+          <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '700ms' }}>
             <Button size="lg" className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl px-8" asChild>
               <a href="/services">View All Services</a>
             </Button>
