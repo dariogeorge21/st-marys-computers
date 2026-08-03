@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, MapPin, Clock, Star, Shield, Wrench, Monitor, Laptop, Zap, Home, HardDrive, Globe, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ContactSection } from "@/components/contact-section";
 
 export default function HomePage() {
   const structuredData = {
@@ -640,102 +641,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-r from-green-600 via-indigo-600 to-green-600 text-white overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        </div>
-
-        <div className="max-w-6xl mx-auto text-center relative z-10 px-4 sm:px-0">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-            Need Computer Repair? Contact Us Today
-          </h2>
-          <p className="text-lg sm:text-xl mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-100">
-            Get in touch with our expert technicians for fast, reliable, and affordable computer repair solutions.
-            Same-day service available for critical issues!
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 animate-fade-in animation-delay-200">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 sm:p-8 hover:bg-white/20 transition-all duration-300 hover:translate-y-[-4px]">
-              <div className="p-4 bg-white/20 rounded-xl w-fit mx-auto mb-6">
-                <Phone className="w-6 h-6 sm:w-8 sm:h-8" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3">Call Us</h3>
-              <p className="text-white/80 mb-4 text-sm sm:text-base">Speak directly with us</p>
-              <a
-                href="tel:+919910836286"
-                className="text-white font-bold text-lg hover:underline"
-              >
-                +91 99108 36286
-              </a>
-              <p className="text-sm text-white/70 mt-3 font-medium">
-                Mon - Sat: 10:00 AM - 8:00 PM
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 sm:p-8 hover:bg-white/20 transition-all duration-300 hover:translate-y-[-4px]">
-              <div className="p-4 bg-white/20 rounded-xl w-fit mx-auto mb-6">
-                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3">WhatsApp</h3>
-              <p className="text-white/80 mb-4 text-sm sm:text-base">Quick response guaranteed</p>
-              <a
-                href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white font-bold hover:underline inline-flex items-center gap-2"
-              >
-                Chat Now <MessageCircle className="w-4 h-4" />
-              </a>
-              <p className="text-sm text-white/70 mt-3 font-medium">
-                Available 24/7
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 sm:p-8 hover:bg-white/20 transition-all duration-300 hover:translate-y-[-4px]">
-              <div className="p-4 bg-white/20 rounded-xl w-fit mx-auto mb-6">
-                <MapPin className="w-6 h-6 sm:w-8 sm:h-8" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3">Email Us</h3>
-              <p className="text-white/80 mb-4 text-sm sm:text-base">For general queries</p>
-              <a
-                href="mailto:stmaryscomputers@gmail.com"
-                className="text-white font-bold hover:underline"
-              >
-                stmaryscomputers@gmail.com
-              </a>
-              <p className="text-sm text-white/70 mt-3 font-medium">
-                We respond within 2 hours
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 sm:p-12 shadow-2xl max-w-2xl mx-auto mb-12 animate-fade-in animation-delay-300">
-            <div className="flex items-center justify-center mb-6">
-              <Zap className="w-8 h-8 text-yellow-300 mr-2" />
-              <h3 className="text-xl sm:text-2xl font-bold">Emergency Service Available</h3>
-            </div>
-            <p className="text-lg text-white/90 mb-8 leading-relaxed">
-              Need urgent computer repair? We offer same-day on-site service for critical issues.
-              Call us now for immediate assistance at your location.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center"> 
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto text-base" asChild>
-                <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  Call for Emergency Service
-                </a>
-              </Button>
-              <Button size="lg" className="bg-white/20 border-2 border-white text-white hover:bg-white/30 font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto text-base" asChild>
-                <a href="/contact" className="flex items-center justify-center gap-2">
-                  Request Service Online
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </>
   );
 }
