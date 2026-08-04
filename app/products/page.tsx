@@ -302,45 +302,47 @@ export default function ProductsPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const ProductCard = ({ product, type }: { product: Product; type: string }) => (
-    <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden">
-      <CardHeader className="pb-4">
+    <Card className="flex flex-col border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-md group hover:-translate-y-1 overflow-hidden h-full">
+      <CardHeader className="pb-4 relative z-10 bg-gradient-to-b from-white to-transparent">
         <div className="flex justify-between items-start gap-3">
           <div>
-            <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors">{product.brand}</CardTitle>
-            <CardDescription className="mt-2 text-gray-600">{type.charAt(0).toUpperCase() + type.slice(1)} Solutions</CardDescription>
+            <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">{product.brand}</CardTitle>
+            <CardDescription className="mt-1.5 text-gray-600 font-medium">{type.charAt(0).toUpperCase() + type.slice(1)} Solutions</CardDescription>
           </div>
-          <Badge className="bg-green-100 text-green-700 border-green-300">
+          <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-sm shadow-green-500/20">
             Available
           </Badge>
         </div>
       </CardHeader>
-      <CardContent>
-        <div className="relative overflow-hidden rounded-xl mb-4 bg-gradient-to-br from-gray-100 to-gray-50 h-48">
+      <CardContent className="flex flex-col flex-grow pt-0">
+        <div className="relative overflow-hidden rounded-xl mb-5 bg-gradient-to-br from-gray-50 to-gray-100 h-48 border border-gray-100 shadow-inner group-hover:shadow-blue-500/10 transition-shadow duration-300">
           <Image
             src={product.image}
             alt={`${product.brand} ${type}`}
             width={400}
             height={192}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </div>
-        <div className="space-y-3">
-          <div className="flex items-start gap-3 p-3 rounded-lg bg-green-50 group-hover:bg-green-100 transition-colors">
-            <Shield className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-            <span className="text-sm text-gray-700">{product.serviceGuarantee}</span>
+        <div className="space-y-3 mb-6 flex-grow">
+          <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-green-50/50 transition-colors border border-transparent hover:border-green-100">
+            <Shield className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-sm text-gray-700 font-medium">{product.serviceGuarantee}</span>
           </div>
-          <div className="flex items-start gap-3 p-3 rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors">
-            <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-            <span className="text-sm text-gray-700">Custom configurations available</span>
+          <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100">
+            <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-sm text-gray-700 font-medium">Custom configurations available</span>
           </div>
-          <div className="text-lg font-semibold text-blue-600 mb-4 mt-3">
-            Contact for Current Options & Pricing
+        </div>
+        <div className="mt-auto">
+          <div className="text-[15px] font-semibold text-blue-600 mb-3 text-center">
+            Contact for Current Options
           </div>
           <div className="flex gap-2">
-            <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
-              <a href="tel:+919910836286">Call for Options</a>
+            <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5" asChild>
+              <a href="tel:+919910836286">Call Options</a>
             </Button>
-            <Button variant="outline" size="sm" className="border-2 hover:bg-green-50 transition-colors" asChild>
+            <Button variant="outline" size="icon" className="w-10 flex-shrink-0 border-2 border-gray-200 hover:border-green-200 hover:bg-green-50 text-gray-600 hover:text-green-600 transition-all duration-300 hover:-translate-y-0.5" asChild title="WhatsApp">
               <a 
                 href={`https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20${product.brand}%20${type}%20options`}
                 target="_blank"
@@ -367,7 +369,7 @@ export default function ProductsPage() {
         </div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 tracking-tight mb-6 pb-2 animate-fade-in">
             Quality Computer Products in Delhi-NCR
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-100 px-4">
@@ -375,56 +377,57 @@ export default function ProductsPage() {
             All products are quality tested with professional service support and expert guidance.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 animate-fade-in animation-delay-200 px-4">
-            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in animation-delay-200 px-4">
+            <Button size="lg" className="h-12 px-8 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto group" asChild>
               <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 <span className="hidden sm:inline">Call +91 99108 36286</span>
                 <span className="sm:hidden">Call Now</span>
               </a>
             </Button>
-            <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
+            <Button size="lg" className="h-12 px-8 bg-white border-2 border-indigo-100 text-indigo-700 hover:border-indigo-200 hover:bg-indigo-50/50 font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto group" asChild>
               <a 
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20your%20products" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300 text-indigo-600" />
                 <span>WhatsApp</span>
               </a>
             </Button>
-            <Button size="lg" className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
+            <Button size="lg" className="h-12 px-8 bg-white border-2 border-purple-100 text-purple-700 hover:border-purple-200 hover:bg-purple-50/50 font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto group" asChild>
               <a 
                 href="mailto:stmaryscomputers@gmail.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform duration-300 text-purple-600" />
                 <span>Email</span>
               </a>
             </Button>
           </div>
 
-          <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-white/20 animate-fade-in animation-delay-300 px-4">
-            <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-6">Why Buy From Us?</h3>
-            <div className="grid grid-cols-2 gap-4 sm:gap-5">
-              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-xs sm:text-sm">Quality tested products</span>
+          <div className="bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-xl max-w-2xl mx-auto border border-white/40 animate-fade-in animation-delay-300 px-4 relative overflow-hidden group/offer">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 opacity-0 group-hover/offer:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700 mb-6 relative z-10">Why Buy From Us?</h3>
+            <div className="grid grid-cols-2 gap-4 sm:gap-5 relative z-10">
+              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-800 font-medium text-xs sm:text-sm">Quality tested products</span>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-xs sm:text-sm">Service support included</span>
+              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-800 font-medium text-xs sm:text-sm">Service support included</span>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-xs sm:text-sm">Expert guidance</span>
+              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-800 font-medium text-xs sm:text-sm">Expert guidance</span>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-xs sm:text-sm">Complete setup service</span>
+              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-800 font-medium text-xs sm:text-sm">Complete setup service</span>
               </div>
             </div>
           </div>
@@ -608,45 +611,47 @@ export default function ProductsPage() {
                 </div>
                 <div className={`grid gap-6 ${viewMode === "grid" ? "md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"}`}>
                   {softwareProducts.filter(p => p.category === "antivirus").map((software) => (
-                    <Card key={software.id} className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden border-t-4 ${software.borderColor}`}>
-                      <CardHeader className={`${software.bgColor} pb-4 border-b ${software.borderColor}`}>
+                    <Card key={software.id} className={`flex flex-col border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-md group hover:-translate-y-1 overflow-hidden h-full border-t-4 ${software.borderColor}`}>
+                      <CardHeader className={`${software.bgColor} pb-5 border-b border-white/50 relative transition-colors duration-300`}>
                         <div className="flex justify-between items-start gap-3">
                           <div>
-                            <div className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full mb-2 ${software.badgeBg} ${software.textColor}`}>
-                              <ShieldCheck className="w-3 h-3" />
+                            <div className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full mb-3 ${software.badgeBg} ${software.textColor} shadow-sm border border-white/50 group-hover:scale-105 transition-transform origin-left`}>
+                              <ShieldCheck className="w-3.5 h-3.5" />
                               {software.brand}
                             </div>
-                            <CardTitle className="text-lg text-gray-900 group-hover:text-blue-600 transition-colors leading-snug">{software.name}</CardTitle>
+                            <CardTitle className={`text-xl font-bold text-gray-900 group-hover:${software.textColor.replace('-600', '-700')} transition-colors duration-300 leading-tight`}>{software.name}</CardTitle>
                           </div>
-                          <Badge className="bg-green-100 text-green-700 border-green-300 flex-shrink-0">
+                          <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-sm shadow-green-500/20 flex-shrink-0">
                             Available
                           </Badge>
                         </div>
                       </CardHeader>
-                      <CardContent className="pt-5">
-                        <div className="flex flex-wrap gap-1.5 mb-4">
+                      <CardContent className="pt-6 flex flex-col flex-grow">
+                        <div className="flex flex-wrap gap-2 mb-5">
                           {software.variants.map((v, vi) => (
-                            <span key={vi} className={`text-xs font-medium px-2.5 py-1 rounded-full ${software.badgeBg} ${software.textColor} border ${software.borderColor}`}>{v}</span>
+                            <span key={vi} className={`text-xs font-semibold px-3 py-1 rounded-full ${software.badgeBg} ${software.textColor} border ${software.borderColor} shadow-sm`}>{v}</span>
                           ))}
                         </div>
-                        <ul className="space-y-2 mb-5">
+                        <ul className="space-y-3 mb-6 flex-grow">
                           {software.features.map((f, fi) => (
-                            <li key={fi} className="flex items-start gap-2">
-                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-gray-700">{f}</span>
+                            <li key={fi} className="flex items-start gap-3">
+                              <CheckCircle className={`w-4 h-4 ${software.textColor} flex-shrink-0 mt-0.5 opacity-80 group-hover:scale-110 transition-transform`} />
+                              <span className="text-sm text-gray-700 font-medium">{f}</span>
                             </li>
                           ))}
                         </ul>
-                        <div className="text-sm font-semibold text-blue-600 mb-3">Contact for Current Pricing</div>
-                        <div className="flex gap-2">
-                          <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
-                            <a href="tel:+919910836286">Call for Options</a>
-                          </Button>
-                          <Button variant="outline" size="sm" className="border-2 hover:bg-green-50 transition-colors" asChild>
-                            <a href={`https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20${encodeURIComponent(software.name)}`} target="_blank" rel="noopener noreferrer">
-                              <MessageCircle className="w-4 h-4" />
-                            </a>
-                          </Button>
+                        <div className="mt-auto">
+                          <div className="text-[15px] font-semibold text-blue-600 mb-3 text-center">Contact for Pricing</div>
+                          <div className="flex gap-2">
+                            <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5" asChild>
+                              <a href="tel:+919910836286">Call Options</a>
+                            </Button>
+                            <Button variant="outline" size="icon" className="w-10 flex-shrink-0 border-2 border-gray-200 hover:border-green-200 hover:bg-green-50 text-gray-600 hover:text-green-600 transition-all duration-300 hover:-translate-y-0.5" asChild title="WhatsApp">
+                              <a href={`https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20${encodeURIComponent(software.name)}`} target="_blank" rel="noopener noreferrer">
+                                <MessageCircle className="w-4 h-4" />
+                              </a>
+                            </Button>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -663,45 +668,47 @@ export default function ProductsPage() {
                 </div>
                 <div className={`grid gap-6 ${viewMode === "grid" ? "md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"}`}>
                   {softwareProducts.filter(p => p.category === "office").map((software) => (
-                    <Card key={software.id} className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden border-t-4 ${software.borderColor}`}>
-                      <CardHeader className={`${software.bgColor} pb-4 border-b ${software.borderColor}`}>
+                    <Card key={software.id} className={`flex flex-col border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-md group hover:-translate-y-1 overflow-hidden h-full border-t-4 ${software.borderColor}`}>
+                      <CardHeader className={`${software.bgColor} pb-5 border-b border-white/50 relative transition-colors duration-300`}>
                         <div className="flex justify-between items-start gap-3">
                           <div>
-                            <div className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full mb-2 ${software.badgeBg} ${software.textColor}`}>
-                              <Key className="w-3 h-3" />
+                            <div className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full mb-3 ${software.badgeBg} ${software.textColor} shadow-sm border border-white/50 group-hover:scale-105 transition-transform origin-left`}>
+                              <Key className="w-3.5 h-3.5" />
                               {software.brand}
                             </div>
-                            <CardTitle className="text-lg text-gray-900 group-hover:text-blue-600 transition-colors leading-snug">{software.name}</CardTitle>
+                            <CardTitle className={`text-xl font-bold text-gray-900 group-hover:${software.textColor.replace('-600', '-700')} transition-colors duration-300 leading-tight`}>{software.name}</CardTitle>
                           </div>
-                          <Badge className="bg-green-100 text-green-700 border-green-300 flex-shrink-0">
+                          <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 shadow-sm shadow-green-500/20 flex-shrink-0">
                             Available
                           </Badge>
                         </div>
                       </CardHeader>
-                      <CardContent className="pt-5">
-                        <div className="flex flex-wrap gap-1.5 mb-4">
+                      <CardContent className="pt-6 flex flex-col flex-grow">
+                        <div className="flex flex-wrap gap-2 mb-5">
                           {software.variants.map((v, vi) => (
-                            <span key={vi} className={`text-xs font-medium px-2.5 py-1 rounded-full ${software.badgeBg} ${software.textColor} border ${software.borderColor}`}>{v}</span>
+                            <span key={vi} className={`text-xs font-semibold px-3 py-1 rounded-full ${software.badgeBg} ${software.textColor} border ${software.borderColor} shadow-sm`}>{v}</span>
                           ))}
                         </div>
-                        <ul className="space-y-2 mb-5">
+                        <ul className="space-y-3 mb-6 flex-grow">
                           {software.features.map((f, fi) => (
-                            <li key={fi} className="flex items-start gap-2">
-                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-gray-700">{f}</span>
+                            <li key={fi} className="flex items-start gap-3">
+                              <CheckCircle className={`w-4 h-4 ${software.textColor} flex-shrink-0 mt-0.5 opacity-80 group-hover:scale-110 transition-transform`} />
+                              <span className="text-sm text-gray-700 font-medium">{f}</span>
                             </li>
                           ))}
                         </ul>
-                        <div className="text-sm font-semibold text-blue-600 mb-3">Contact for Current Pricing</div>
-                        <div className="flex gap-2">
-                          <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all" asChild>
-                            <a href="tel:+919910836286">Call for Options</a>
-                          </Button>
-                          <Button variant="outline" size="sm" className="border-2 hover:bg-green-50 transition-colors" asChild>
-                            <a href={`https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20${encodeURIComponent(software.name)}`} target="_blank" rel="noopener noreferrer">
-                              <MessageCircle className="w-4 h-4" />
-                            </a>
-                          </Button>
+                        <div className="mt-auto">
+                          <div className="text-[15px] font-semibold text-blue-600 mb-3 text-center">Contact for Pricing</div>
+                          <div className="flex gap-2">
+                            <Button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5" asChild>
+                              <a href="tel:+919910836286">Call Options</a>
+                            </Button>
+                            <Button variant="outline" size="icon" className="w-10 flex-shrink-0 border-2 border-gray-200 hover:border-green-200 hover:bg-green-50 text-gray-600 hover:text-green-600 transition-all duration-300 hover:-translate-y-0.5" asChild title="WhatsApp">
+                              <a href={`https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20${encodeURIComponent(software.name)}`} target="_blank" rel="noopener noreferrer">
+                                <MessageCircle className="w-4 h-4" />
+                              </a>
+                            </Button>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -758,67 +765,67 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="group bg-blue-50 hover:bg-blue-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-blue-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl text-center transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border border-blue-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors text-blue-600 shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <CheckCircle className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Quality Testing & Assurance</h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-700 transition-colors">Quality Testing & Assurance</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                 Every product undergoes rigorous testing to ensure optimal performance. We stand
                 behind the quality of everything we sell with comprehensive service support.
               </p>
             </div>
 
-            <div className="group bg-green-50 hover:bg-green-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-green-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 group-hover:bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl text-center transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border border-green-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-50 to-emerald-50 group-hover:from-green-100 group-hover:to-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors text-green-600 shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <Shield className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Expert Guidance & Support</h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-gray-900 group-hover:text-green-700 transition-colors">Expert Guidance & Support</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                 Our experienced team helps you choose the right products for your needs and budget.
                 Ongoing technical support ensures you get maximum value from your purchase.
               </p>
             </div>
 
-            <div className="group bg-purple-50 hover:bg-purple-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-purple-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 group-hover:bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl text-center transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border border-purple-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-50 to-fuchsia-50 group-hover:from-purple-100 group-hover:to-fuchsia-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors text-purple-600 shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <Phone className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Complete Setup Service</h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors">Complete Setup Service</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                 Professional installation and setup service included. We ensure your new equipment
                 is properly configured and optimized for your specific requirements.
               </p>
             </div>
 
-            <div className="group bg-yellow-50 hover:bg-yellow-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-yellow-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 group-hover:bg-yellow-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <Star className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl text-center transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border border-yellow-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-yellow-50 to-amber-50 group-hover:from-yellow-100 group-hover:to-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors text-yellow-600 shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <Star className="w-8 h-8 text-yellow-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Competitive Pricing</h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-gray-900 group-hover:text-yellow-700 transition-colors">Competitive Pricing</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                 Fair and transparent pricing with no hidden costs. We work with you to find
                 solutions that fit your budget without compromising on quality.
               </p>
             </div>
 
-            <div className="group bg-red-50 hover:bg-red-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-red-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 group-hover:bg-red-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-red-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl text-center transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border border-red-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-50 to-rose-50 group-hover:from-red-100 group-hover:to-rose-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors text-red-600 shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <MessageCircle className="w-8 h-8 text-red-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Local Service & Support</h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-gray-900 group-hover:text-red-700 transition-colors">Local Service & Support</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                 Based in Laxmi Nagar with deep understanding of local needs. Quick response times
                 and personalized service you can count on.
               </p>
             </div>
 
-            <div className="group bg-indigo-50 hover:bg-indigo-100 rounded-2xl p-6 sm:p-8 text-center transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px] border border-indigo-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-indigo-100 group-hover:bg-indigo-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <Monitor className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl text-center transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border border-indigo-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-50 to-violet-50 group-hover:from-indigo-100 group-hover:to-violet-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors text-indigo-600 shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <Monitor className="w-8 h-8 text-indigo-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-900">Upgrade & Trade-in Options</h3>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-gray-900 group-hover:text-indigo-700 transition-colors">Upgrade & Trade-in Options</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                 Flexible upgrade paths and trade-in options for your existing equipment. We help
                 you stay current with technology while maximizing your investment.
               </p>
@@ -835,71 +842,75 @@ export default function ProductsPage() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10 px-4 sm:px-0">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-700 tracking-tight mb-6 pb-2 animate-fade-in">
             Ready to Find Your Perfect Computer Solution?
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-12 animate-fade-in animation-delay-100">
+          <p className="text-base sm:text-lg text-gray-600 mb-12 animate-fade-in animation-delay-100 font-medium">
             Contact us today for personalized product recommendations and competitive pricing.
             Our experts are ready to help you find exactly what you need.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 animate-fade-in animation-delay-200">
-            <div className="group bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-blue-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-blue-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <Phone className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-900">Call for Pricing</h3>
-              <p className="text-gray-600 mb-4 text-sm">Speak with our product experts</p>
+              <h3 className="text-lg font-bold mb-3 text-gray-900 group-hover:text-blue-700 transition-colors">Call for Pricing</h3>
+              <p className="text-gray-600 mb-4 text-sm font-medium">Speak with our product experts</p>
               <a
                 href="tel:+919910836286"
-                className="text-blue-600 hover:text-blue-700 font-medium text-base"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-base group/link"
               >
                 +91 99108 36286
+                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
 
-            <div className="group bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-green-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 group-hover:bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-green-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-50 to-emerald-50 group-hover:from-green-100 group-hover:to-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <MessageCircle className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-900">WhatsApp Inquiry</h3>
-              <p className="text-gray-600 mb-4 text-sm">Quick product information</p>
+              <h3 className="text-lg font-bold mb-3 text-gray-900 group-hover:text-green-700 transition-colors">WhatsApp Inquiry</h3>
+              <p className="text-gray-600 mb-4 text-sm font-medium">Quick product information</p>
               <a
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20want%20to%20know%20about%20your%20products"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-600 hover:text-green-700 font-medium text-base"
+                className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold text-base group/link"
               >
                 Chat Now
+                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
 
-            <div className="group bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-purple-100">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 group-hover:bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors">
-                <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600" />
+            <div className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-purple-100">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-50 to-fuchsia-50 group-hover:from-purple-100 group-hover:to-fuchsia-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
+                <Mail className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-900">Email Inquiry</h3>
-              <p className="text-gray-600 mb-4 text-sm">Detailed product information</p>
+              <h3 className="text-lg font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors">Email Inquiry</h3>
+              <p className="text-gray-600 mb-4 text-sm font-medium">Detailed product information</p>
               <a
                 href="mailto:stmaryscomputers@gmail.com"
-                className="text-purple-600 hover:text-purple-700 font-medium text-base"
+                className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 font-semibold text-base group/link"
               >
                 Send Email
+                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-blue-200 animate-fade-in animation-delay-300">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-gray-900">Product Consultation Service</h3>
-            <p className="text-gray-600 mb-8 text-base">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 sm:p-10 shadow-lg border border-blue-100 animate-fade-in animation-delay-300 relative overflow-hidden group/consult">
+            <div className="absolute inset-0 bg-white/40 opacity-0 group-hover/consult:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 relative z-10">Product Consultation Service</h3>
+            <p className="text-gray-600 mb-8 text-lg max-w-2xl mx-auto font-medium relative z-10">
               Not sure which product is right for you? Schedule a free consultation with us.
               We&apos;ll help you choose the perfect solution for your needs and budget.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all w-full sm:w-auto" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+              <Button size="lg" className="h-12 px-8 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto" asChild>
                 <a href="tel:+919910836286">Call Now</a>
               </Button>
-              <Button size="lg" className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold shadow-md hover:shadow-lg transition-all w-full sm:w-auto" asChild>
+              <Button size="lg" className="h-12 px-8 bg-white border-2 border-indigo-100 text-indigo-700 hover:border-indigo-200 hover:bg-indigo-50/50 font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto" asChild>
                 <a href="/contact">Contact Us</a>
               </Button>
             </div>
