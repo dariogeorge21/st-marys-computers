@@ -127,7 +127,7 @@ export default function ServicesPage() {
         </div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10 px-4 sm:px-0">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 tracking-tight mb-6 pb-2 animate-fade-in">
             Professional Computer Repair Services in Delhi
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-100">
@@ -136,44 +136,45 @@ export default function ServicesPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in animation-delay-200 px-4">
-            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
+            <Button size="lg" className="h-12 px-8 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto group" asChild>
               <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 <span className="hidden sm:inline">Call +91 99108 36286</span>
                 <span className="sm:hidden">Call Now</span>
               </a>
             </Button>
-            <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto" asChild>
+            <Button size="lg" className="h-12 px-8 bg-white border-2 border-indigo-100 text-indigo-700 hover:border-indigo-200 hover:bg-indigo-50/50 font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto group" asChild>
               <a 
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300 text-indigo-600" />
                 <span>WhatsApp</span>
               </a>
             </Button>
           </div>
 
-          <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-white/20 animate-fade-in animation-delay-300 px-4">
-            <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-6">What We Offer</h3>
-            <div className="grid grid-cols-2 gap-4 sm:gap-5">
-              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-xs sm:text-sm">Quick service</span>
+          <div className="bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-xl max-w-2xl mx-auto border border-white/40 animate-fade-in animation-delay-300 px-4 relative overflow-hidden group/offer">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 opacity-0 group-hover/offer:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <h3 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700 mb-6 relative z-10">What We Offer</h3>
+            <div className="grid grid-cols-2 gap-4 sm:gap-5 relative z-10">
+              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-800 font-medium text-xs sm:text-sm">Quick service</span>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-xs sm:text-sm">On-site repair</span>
+              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-800 font-medium text-xs sm:text-sm">On-site repair</span>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-xs sm:text-sm">Genuine parts</span>
+              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-800 font-medium text-xs sm:text-sm">Genuine parts</span>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
-                <span className="text-gray-700 font-medium text-xs sm:text-sm">Expert support</span>
+              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-gray-800 font-medium text-xs sm:text-sm">Expert support</span>
               </div>
             </div>
           </div>
@@ -195,40 +196,40 @@ export default function ServicesPage() {
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Comprehensive computer repair and maintenance solutions for every need
             </p>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6"></div>
+            <div className="h-1.5 w-24 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full opacity-80"></div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <Link key={service.id} href={service.href}>
-                <Card className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-4px] overflow-hidden h-full cursor-pointer animate-fade-in ${service.badge ? 'ring-2 ring-teal-400 ring-offset-2' : ''}`} style={{animationDelay: `${index * 100}ms`}}>
-                  <CardHeader className={`${service.bgColor} pb-4 border-b relative`}>
+              <Link key={service.id} href={service.href} className="block group/link h-full">
+                <Card className={`flex flex-col border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-md group-hover/link:-translate-y-1 overflow-hidden h-full cursor-pointer animate-fade-in ${service.badge ? 'ring-2 ring-teal-400 ring-offset-2' : ''}`} style={{animationDelay: `${index * 100}ms`}}>
+                  <CardHeader className={`${service.bgColor} pb-6 border-b border-gray-100/50 relative transition-colors duration-300`}>
                     {service.badge && (
-                      <span className="absolute top-3 right-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full shadow-md animate-pulse">
+                      <span className="absolute top-4 right-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full shadow-md animate-pulse">
                         {service.badge}
                       </span>
                     )}
-                    <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <div className={`w-14 h-14 ${service.bgColor} rounded-2xl flex items-center justify-center mb-4 group-hover/link:scale-110 group-hover/link:-rotate-3 transition-all duration-300 shadow-sm border border-white/50`}>
                       <div className={service.textColor}>{service.icon}</div>
                     </div>
-                    <CardTitle className="text-lg sm:text-xl text-gray-900 group-hover:text-blue-600 transition-colors">{service.title}</CardTitle>
-                    <CardDescription className="text-gray-600 mt-2">{service.description}</CardDescription>
+                    <CardTitle className={`text-xl font-bold text-gray-900 group-hover/link:${service.textColor} transition-colors duration-300 leading-tight`}>{service.title}</CardTitle>
+                    <CardDescription className="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">{service.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-6">
-                    <ul className="space-y-3 mb-6">
+                  <CardContent className="pt-6 flex-grow flex flex-col">
+                    <ul className="space-y-3.5 mb-8 flex-grow">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-700">{feature}</span>
+                          <CheckCircle className={`w-4 h-4 ${service.textColor} flex-shrink-0 mt-0.5 opacity-80`} />
+                          <span className="text-sm text-gray-700 font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md hover:shadow-lg transition-all group/btn" asChild>
-                      <span className="flex items-center justify-center gap-2">
+                    <div className="pt-4 border-t border-gray-50 mt-auto">
+                      <span className={`inline-flex items-center gap-2 text-sm font-semibold ${service.textColor} group-hover/link:gap-3 transition-all duration-300`}>
                         Learn More
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4" />
                       </span>
-                    </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </Link>
@@ -252,7 +253,7 @@ export default function ServicesPage() {
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Experience quality repair service with professional expertise and genuine parts
             </p>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6"></div>
+            <div className="h-1.5 w-24 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full opacity-80"></div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -262,12 +263,12 @@ export default function ServicesPage() {
               { icon: <Shield className="w-6 h-6 sm:w-8 sm:h-8" />, title: "Quality Guaranteed", desc: "Warranty on all repairs" },
               { icon: <Home className="w-6 h-6 sm:w-8 sm:h-8" />, title: "On-site Service", desc: "We come to you" }
             ].map((item, idx) => (
-              <div key={idx} className="group bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px] border border-gray-200 hover:border-blue-200 animate-fade-in" style={{animationDelay: `${idx * 100}ms`}}>
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 group-hover:bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6 transition-colors text-blue-600">
+              <div key={idx} className="group bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 hover:border-blue-200 animate-fade-in" style={{animationDelay: `${idx * 100}ms`}}>
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors text-blue-600 shadow-sm group-hover:scale-110 group-hover:-rotate-3 duration-300 border border-white">
                   {item.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 text-center">{item.title}</h3>
-                <p className="text-sm sm:text-base text-gray-600 text-center">{item.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 text-gray-900 text-center group-hover:text-blue-700 transition-colors">{item.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 text-center font-medium">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -291,20 +292,20 @@ export default function ServicesPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-200">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto" asChild>
+            <Button size="lg" className="h-12 px-8 bg-white text-blue-700 hover:bg-gray-50 hover:text-blue-800 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto group" asChild>
               <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 <span>Call Now</span>
               </a>
             </Button>
-            <Button size="lg" className="bg-white/20 border-2 border-white text-white hover:bg-white/30 font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto" asChild>
+            <Button size="lg" className="h-12 px-8 bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 w-full sm:w-auto group" asChild>
               <a 
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 <span>WhatsApp</span>
               </a>
             </Button>
