@@ -66,60 +66,61 @@ export default function AboutPage() {
         <div className="relative max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+              <h1 className="text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 tracking-tight mb-6 pb-2">
                 Trusted Computer Repair for Over 20 Years
               </h1>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
                 With over 20 years of professional expertise, George CV has been the trusted technician for thousands of customers across Delhi. From simple software issues to complex hardware repairs, we handle every challenge with dedication and integrity.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+                <Button size="lg" className="h-12 px-8 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 group" asChild>
                   <a href="tel:+919910836286" className="flex items-center gap-2">
-                    <Phone className="w-5 h-5" />
+                    <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                     Call George Now
                   </a>
                 </Button>
-                <Button size="lg" className="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+                <Button size="lg" className="h-12 px-8 bg-white border-2 border-indigo-100 text-indigo-700 hover:border-indigo-200 hover:bg-indigo-50/50 font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 group" asChild>
                   <a 
                     href="https://wa.me/919910836286?text=Hi%20George%2C%20I%20need%20computer%20repair%20service" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
-                    <MessageCircle className="w-5 h-5" />
+                    <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300 text-indigo-600" />
                     WhatsApp Chat
                   </a>
                 </Button>
               </div>
             </div>
             
-            <div className="animate-fade-in animation-delay-300 bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-white/20 hover:shadow-2xl transition-all duration-300">
-              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-8">Quick Facts</h3>
-              <div className="space-y-5">
-                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+            <div className="animate-fade-in animation-delay-300 bg-white/90 backdrop-blur-md p-8 sm:p-10 rounded-3xl shadow-xl border border-white/40 hover:shadow-2xl transition-all duration-500 relative overflow-hidden group/facts">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 opacity-0 group-hover/facts:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700 mb-8 relative z-10">Quick Facts</h3>
+              <div className="space-y-4 relative z-10">
+                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-blue-100 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 rounded-xl flex items-center justify-center transition-colors">
+                    <MapPin className="w-5 h-5 text-blue-600 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300" />
                   </div>
-                  <span className="text-gray-700 font-medium">Based in Laxmi Nagar, New Delhi</span>
+                  <span className="text-gray-800 font-medium">Based in Laxmi Nagar, New Delhi</span>
                 </div>
-                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-green-50 transition-colors">
-                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-green-600" />
+                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-green-100 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-50 to-emerald-50 group-hover:from-green-100 group-hover:to-emerald-100 rounded-xl flex items-center justify-center transition-colors">
+                    <Clock className="w-5 h-5 text-green-600 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300" />
                   </div>
-                  <span className="text-gray-700 font-medium">Mon-Sat: 10AM-8PM</span>
+                  <span className="text-gray-800 font-medium">Mon-Sat: 10AM-8PM</span>
                 </div>
-                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-purple-50 transition-colors">
-                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-purple-600" />
+                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-purple-100 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-50 to-fuchsia-50 group-hover:from-purple-100 group-hover:to-fuchsia-100 rounded-xl flex items-center justify-center transition-colors">
+                    <Phone className="w-5 h-5 text-purple-600 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300" />
                   </div>
-                  <span className="text-gray-700 font-medium">+91 99108 36286</span>
+                  <span className="text-gray-800 font-medium">+91 99108 36286</span>
                 </div>
-                <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-yellow-50 transition-colors">
-                  <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
-                    <Award className="w-5 h-5 text-yellow-600" />
+                <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white transition-colors duration-300 shadow-sm hover:shadow-md border border-transparent hover:border-yellow-100 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-50 to-amber-50 group-hover:from-yellow-100 group-hover:to-amber-100 rounded-xl flex items-center justify-center transition-colors">
+                    <Award className="w-5 h-5 text-yellow-600 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300" />
                   </div>
-                  <span className="text-gray-700 font-medium">20+ Years Experience</span>
+                  <span className="text-gray-800 font-medium">20+ Years Experience</span>
                 </div>
               </div>
             </div>
@@ -136,13 +137,13 @@ export default function AboutPage() {
         
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Story</h2>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto"></div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-700 tracking-tight mb-4 pb-2">Our Story</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
           </div>
           
-          <div className="space-y-8">
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100/50 animate-fade-in animation-delay-100">
-              <p className="text-lg text-gray-700 leading-relaxed">
+          <div className="space-y-6">
+            <div className="group bg-white/90 backdrop-blur-md p-8 sm:p-10 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-blue-100 animate-fade-in animation-delay-100">
+              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-medium">
                 St Mary&apos;s Computers was founded by George CV with a simple mission: to provide
                 honest, reliable, and professional computer repair services to the people of Delhi. 
                 What started as a small repair service in Laxmi Nagar has grown into one of the most 
@@ -150,8 +151,8 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-indigo-100/50 animate-fade-in animation-delay-200">
-              <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="group bg-white/90 backdrop-blur-md p-8 sm:p-10 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-indigo-100 animate-fade-in animation-delay-200">
+              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-medium">
                 St Mary&apos;s Computers&apos; journey in technology began in the early 2000s when computers were just becoming
                 common in Indian households. Recognizing the growing need for reliable repair services, 
                 the team dedicated themselves to mastering every aspect of computer hardware and software. Their
@@ -159,8 +160,8 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-purple-100/50 animate-fade-in animation-delay-300">
-              <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="group bg-white/90 backdrop-blur-md p-8 sm:p-10 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-purple-100 animate-fade-in animation-delay-300">
+              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-medium">
                 Over the years, St Mary&apos;s Computers has evolved from a traditional repair shop to a
                 comprehensive computer service provider. We now offer on-site repairs, bringing our 
                 expertise directly to your home or office. This approach ensures your convenience while 
@@ -168,8 +169,8 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-green-100/50 animate-fade-in animation-delay-400">
-              <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="group bg-white/90 backdrop-blur-md p-8 sm:p-10 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-green-100 animate-fade-in animation-delay-400">
+              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-medium">
                 St Mary&apos;s Computers continues to serve the community with the same dedication and
                 integrity that built our reputation. Whether you&apos;re a student needing a laptop repair,
                 a business requiring IT support, or a family dealing with a computer emergency, we&apos;re
@@ -190,22 +191,22 @@ export default function AboutPage() {
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose St Mary&apos;s Computers</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Proven expertise and dedication to excellence</p>
-            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-4"></div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-700 tracking-tight mb-4 pb-2">Why Choose St Mary&apos;s Computers</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-medium">Proven expertise and dedication to excellence</p>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-6 rounded-full"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group hover:translate-y-[-8px] overflow-hidden animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <achievement.icon className="w-8 h-8 text-blue-600" />
+              <Card key={index} className="flex flex-col border border-white shadow-md hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-md group hover:-translate-y-2 overflow-hidden animate-fade-in rounded-3xl h-full" style={{animationDelay: `${index * 100}ms`}}>
+                <CardHeader className="text-center pb-4 pt-8">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-white group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300">
+                    <achievement.icon className="w-10 h-10 text-blue-600" />
                   </div>
-                  <CardTitle className="text-lg font-bold text-gray-900">{achievement.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">{achievement.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 text-center leading-relaxed">{achievement.description}</p>
+                <CardContent className="flex-grow flex flex-col justify-center">
+                  <p className="text-gray-600 font-medium text-center leading-relaxed">{achievement.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -222,19 +223,19 @@ export default function AboutPage() {
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Values & Principles</h2>
-            <p className="text-xl text-gray-600">The foundation of our service excellence</p>
-            <div className="h-1 w-20 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mt-4"></div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-700 tracking-tight mb-4 pb-2">Our Values & Principles</h2>
+            <p className="text-lg sm:text-xl text-gray-600 font-medium">The foundation of our service excellence</p>
+            <div className="h-1 w-20 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mt-6 rounded-full"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/95 backdrop-blur-sm group overflow-hidden animate-fade-in hover:translate-y-[-4px]" style={{animationDelay: `${index * 100}ms`}}>
-                <CardHeader className="bg-gradient-to-r from-indigo-50 to-purple-50 border-b">
-                  <CardTitle className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">{value.title}</CardTitle>
+              <Card key={index} className="flex flex-col border border-white shadow-md hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-md group overflow-hidden animate-fade-in hover:-translate-y-1 rounded-3xl h-full" style={{animationDelay: `${index * 100}ms`}}>
+                <CardHeader className="bg-gradient-to-r from-indigo-50/50 to-purple-50/50 border-b border-white/50 group-hover:from-indigo-100/50 group-hover:to-purple-100/50 transition-colors duration-500 pb-5 pt-6 px-8">
+                  <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-purple-700">{value.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="pt-6">
-                  <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                <CardContent className="pt-6 px-8 pb-8 flex-grow">
+                  <p className="text-gray-600 font-medium leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -270,27 +271,27 @@ export default function AboutPage() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in">Ready to Experience the Difference?</h2>
-          <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto animate-fade-in animation-delay-100">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-700 tracking-tight mb-6 pb-2 animate-fade-in">Ready to Experience the Difference?</h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-3xl mx-auto animate-fade-in animation-delay-100 font-medium">
             Join thousands of satisfied customers who trust St Mary&apos;s Computers for all their
             computer repair and service needs. Contact us today for professional, reliable service.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-200">
-            <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+            <Button size="lg" className="h-12 px-8 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 group" asChild>
               <a href="tel:+919910836286" className="flex items-center gap-2">
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 Call +91 99108 36286
               </a>
             </Button>
-            <Button size="lg" className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+            <Button size="lg" className="h-12 px-8 bg-white border-2 border-blue-100 text-blue-700 hover:border-blue-200 hover:bg-blue-50/50 font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 group" asChild>
               <a 
                 href="https://wa.me/919910836286?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300 text-blue-600" />
                 Start WhatsApp Chat
               </a>
             </Button>
