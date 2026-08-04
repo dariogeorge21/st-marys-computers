@@ -42,10 +42,10 @@ export default function ContactPage() {
         </div>
 
         <div className="relative max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 tracking-tight mb-6 pb-2">
             Contact St Mary&apos;s Computers
           </h1>
-          <p className="text-xl text-gray-700 mb-8">
+          <p className="text-lg lg:text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
             Get in touch for computer repair, laptop service, or any technical support. 
             We&apos;re here to help with fast and reliable service.
           </p>
@@ -63,28 +63,29 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <Card className="border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:shadow-2xl transition-shadow">
-                <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b">
-                  <CardTitle className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">Send us a Message</CardTitle>
-                  <CardDescription className="text-gray-600">
+              <Card className="border border-white/20 shadow-xl bg-white/90 backdrop-blur-md hover:shadow-2xl transition-all duration-300">
+                <CardHeader className="bg-gradient-to-r from-blue-50/50 to-indigo-50/50 border-b border-gray-100/50 pb-6">
+                  <CardTitle className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-700">Send us a Message</CardTitle>
+                  <CardDescription className="text-gray-600 text-base mt-2">
                     Fill out the form below and we&apos;ll get back to you as soon as possible.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6 mt-6">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name">Full Name *</Label>
+                  <form onSubmit={handleSubmit} className="space-y-6 mt-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="name" className="text-sm font-semibold text-gray-700">Full Name <span className="text-red-500">*</span></Label>
                         <Input
                           id="name"
                           value={formData.name}
                           onChange={(e) => handleInputChange("name", e.target.value)}
                           required
                           placeholder="Your full name"
+                          className="bg-white/50 focus:bg-white transition-colors duration-200"
                         />
                       </div>
-                      <div>
-                        <Label htmlFor="phone">Phone Number *</Label>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone" className="text-sm font-semibold text-gray-700">Phone Number <span className="text-red-500">*</span></Label>
                         <Input
                           id="phone"
                           type="tel"
@@ -92,25 +93,27 @@ export default function ContactPage() {
                           onChange={(e) => handleInputChange("phone", e.target.value)}
                           required
                           placeholder="+91 XXXXX XXXXX"
+                          className="bg-white/50 focus:bg-white transition-colors duration-200"
                         />
                       </div>
                     </div>
                     
-                    <div>
-                      <Label htmlFor="email">Email Address</Label>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-sm font-semibold text-gray-700">Email Address</Label>
                       <Input
                         id="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
                         placeholder="your.email@example.com"
+                        className="bg-white/50 focus:bg-white transition-colors duration-200"
                       />
                     </div>
                     
-                    <div>
-                      <Label htmlFor="service">Service Required *</Label>
+                    <div className="space-y-2">
+                      <Label htmlFor="service" className="text-sm font-semibold text-gray-700">Service Required <span className="text-red-500">*</span></Label>
                       <Select onValueChange={(value) => handleInputChange("service", value)} required>
-                        <SelectTrigger>
+                        <SelectTrigger className="bg-white/50 focus:bg-white transition-colors duration-200">
                           <SelectValue placeholder="Select service type" />
                         </SelectTrigger>
                         <SelectContent>
@@ -126,8 +129,8 @@ export default function ContactPage() {
                       </Select>
                     </div>
                     
-                    <div>
-                      <Label htmlFor="message">Message *</Label>
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-sm font-semibold text-gray-700">Message <span className="text-red-500">*</span></Label>
                       <Textarea
                         id="message"
                         value={formData.message}
@@ -135,11 +138,16 @@ export default function ContactPage() {
                         required
                         placeholder="Describe your computer issue or requirements..."
                         rows={4}
+                        className="bg-white/50 focus:bg-white transition-colors duration-200 resize-none"
                       />
                     </div>
                     
-                    <Button type="submit" className="w-full" size="lg">
-                      <Send className="w-5 h-5 mr-2" />
+                    <Button 
+                      type="submit" 
+                      className="w-full h-12 text-base font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 group" 
+                      size="lg"
+                    >
+                      <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                       Send Message via WhatsApp
                     </Button>
                   </form>
@@ -149,98 +157,103 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div className="space-y-8">
-              <Card className="border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:shadow-2xl transition-shadow">
-                <CardHeader className="bg-gradient-to-r from-indigo-50 to-purple-50 border-b">
-                  <CardTitle className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Get in Touch</CardTitle>
-                  <CardDescription className="text-gray-600">
+              <Card className="border border-white/20 shadow-xl bg-white/90 backdrop-blur-md hover:shadow-2xl transition-all duration-300 h-fit">
+                <CardHeader className="bg-gradient-to-r from-indigo-50/50 to-purple-50/50 border-b border-gray-100/50 pb-6">
+                  <CardTitle className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 to-purple-700">Get in Touch</CardTitle>
+                  <CardDescription className="text-gray-600 text-base mt-2">
                     Multiple ways to reach us for computer repair and support
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-center gap-4 mt-6">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-green-600" />
+                <CardContent className="space-y-8 mt-6">
+                  <a href="tel:+919910836286" className="flex items-start gap-4 group p-3 -m-3 rounded-xl hover:bg-green-50/50 transition-colors">
+                    <div className="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-green-200 transition-all duration-300 shadow-sm">
+                      <Phone className="w-7 h-7 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Call Us</h3>
-                      <p className="text-gray-600">Speak with our expert</p>
-                      <a href="tel:+919910836286" className="text-green-600 hover:text-green-700 font-medium">
+                      <h3 className="font-semibold text-lg text-gray-900 group-hover:text-green-700 transition-colors">Call Us</h3>
+                      <p className="text-gray-600 mb-1">Speak with our expert</p>
+                      <span className="text-green-600 font-semibold group-hover:underline decoration-2 underline-offset-4">
                         +91 99108 36286
-                      </a>
+                      </span>
                     </div>
-                  </div>
+                  </a>
                   
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MessageCircle className="w-6 h-6 text-blue-600" />
+                  <a href="https://wa.me/919910836286" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group p-3 -m-3 rounded-xl hover:bg-blue-50/50 transition-colors">
+                    <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-blue-200 transition-all duration-300 shadow-sm">
+                      <MessageCircle className="w-7 h-7 text-blue-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">WhatsApp</h3>
-                      <p className="text-gray-600">Quick response guaranteed</p>
-                      <a 
-                        href="https://wa.me/919910836286" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700 font-medium"
-                      >
+                      <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-700 transition-colors">WhatsApp</h3>
+                      <p className="text-gray-600 mb-1">Quick response guaranteed</p>
+                      <span className="text-blue-600 font-semibold group-hover:underline decoration-2 underline-offset-4">
                         Chat on WhatsApp
-                      </a>
+                      </span>
                     </div>
-                  </div>
+                  </a>
                   
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-purple-600" />
+                  <a href="mailto:stmaryscomputers@gmail.com" className="flex items-start gap-4 group p-3 -m-3 rounded-xl hover:bg-purple-50/50 transition-colors">
+                    <div className="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-purple-200 transition-all duration-300 shadow-sm">
+                      <Mail className="w-7 h-7 text-purple-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Email</h3>
-                      <p className="text-gray-600">Send us your queries</p>
-                      <a 
-                        href="mailto:stmaryscomputers@gmail.com"
-                        className="text-purple-600 hover:text-purple-700 font-medium"
-                      >
+                      <h3 className="font-semibold text-lg text-gray-900 group-hover:text-purple-700 transition-colors">Email</h3>
+                      <p className="text-gray-600 mb-1">Send us your queries</p>
+                      <span className="text-purple-600 font-semibold group-hover:underline decoration-2 underline-offset-4 break-all">
                         stmaryscomputers@gmail.com
-                      </a>
+                      </span>
+                    </div>
+                  </a>
+                  
+                  <div className="flex items-start gap-4 p-3 -m-3">
+                    <div className="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center shrink-0 shadow-sm">
+                      <MapPin className="w-7 h-7 text-red-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg text-gray-900">Service Areas</h3>
+                      <p className="text-gray-600 font-medium">New Delhi & NCR</p>
+                      <p className="text-sm text-gray-500 mt-1">We come to you for service</p>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-red-600" />
+                  <div className="flex items-start gap-4 p-3 -m-3">
+                    <div className="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center shrink-0 shadow-sm">
+                      <Clock className="w-7 h-7 text-yellow-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Service Areas</h3>
-                      <p className="text-gray-600">New Delhi & NCR</p>
-                      <p className="text-sm text-gray-500">We come to you for service</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
-                      <Clock className="w-6 h-6 text-yellow-600" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Business Hours</h3>
-                      <p className="text-gray-600">Monday - Saturday: 10:00 AM - 8:00 PM</p>
-                      <p className="text-sm text-gray-500">Sunday: Closed (Urgent services available)</p>
+                      <h3 className="font-semibold text-lg text-gray-900">Business Hours</h3>
+                      <p className="text-gray-600 font-medium">Mon - Sat: 10:00 AM - 8:00 PM</p>
+                      <p className="text-sm text-gray-500 mt-1">Sunday: Closed (Urgent services available)</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:shadow-2xl transition-shadow overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-red-50 to-orange-50 border-b">
-                  <CardTitle className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-600">Urgent Service Available</CardTitle>
-                  <CardDescription className="text-gray-600">
+              <Card className="border border-red-100 shadow-xl bg-white/90 backdrop-blur-md hover:shadow-2xl transition-all duration-300 overflow-hidden relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-orange-50 opacity-50 pointer-events-none"></div>
+                <CardHeader className="relative border-b border-red-100/50 pb-6">
+                  <CardTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-orange-600 flex items-center gap-2">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    Urgent Service
+                  </CardTitle>
+                  <CardDescription className="text-gray-700 font-medium mt-2">
                     Same-day emergency support for critical issues
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="pt-6">
-                  <p className="text-gray-600 mb-4">
-                    Need urgent computer repair? We provide same-day service for critical issues.
+                <CardContent className="relative pt-6">
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    Need urgent computer repair? We provide rapid, same-day service to get your system back up and running.
                   </p>
-                  <Button className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-semibold transition-all duration-300" asChild>
-                    <a href="tel:+919910836286">Call for Urgent Service Now</a>
+                  <Button 
+                    className="w-full h-12 text-base bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 group-hover:shadow-red-500/25" 
+                    asChild
+                  >
+                    <a href="tel:+919910836286" className="flex items-center justify-center gap-2">
+                      <Phone className="w-4 h-4" />
+                      Call for Urgent Service
+                    </a>
                   </Button>
                 </CardContent>
               </Card>

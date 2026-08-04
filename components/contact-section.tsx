@@ -3,14 +3,14 @@
 import { motion, Variants } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { 
-  PhoneCall, 
-  MessageCircleMore, 
-  Mail, 
-  ShieldCheck, 
-  Clock3, 
-  Sparkles, 
-  Zap, 
+import {
+  PhoneCall,
+  MessageCircleMore,
+  Mail,
+  ShieldCheck,
+  Clock3,
+  Sparkles,
+  Zap,
   MapPin,
   CheckCircle2,
   MessageCircle
@@ -40,12 +40,12 @@ export function ContactSection() {
         <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-blue-600/10 rounded-full mix-blend-screen filter blur-[100px] opacity-50 animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-slate-600/10 rounded-full mix-blend-screen filter blur-[80px] opacity-40" />
         {/* Grid Texture */}
-        <div 
-          className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" 
+        <div
+          className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
         />
       </div>
 
-      <motion.div 
+      <motion.div
         className="max-w-6xl mx-auto relative z-10"
         variants={containerVariants}
         initial="hidden"
@@ -58,16 +58,16 @@ export function ContactSection() {
             <Sparkles className="w-4 h-4 text-blue-400" />
             <span className="text-sm font-medium text-slate-300">Premium Tech Support</span>
           </motion.div>
-          
-          <motion.h2 
-            variants={itemVariants} 
+
+          <motion.h2
+            variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight max-w-[650px] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60"
           >
             Need Your Computer Fixed?
           </motion.h2>
-          
-          <motion.p 
-            variants={itemVariants} 
+
+          <motion.p
+            variants={itemVariants}
             className="text-lg sm:text-xl text-slate-400 max-w-[600px] leading-relaxed font-light"
           >
             Professional Computer Repair & Home Service in New Delhi & NCR. Fast service, expert technicians, and transparent pricing.
@@ -95,7 +95,7 @@ export function ContactSection() {
           <div className="relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl shadow-2xl hover:shadow-[0_0_40px_-10px_rgba(59,130,246,0.15)] transition-all duration-500 p-8 sm:p-12 group">
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
+
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 tracking-tight">Emergency Service</h3>
@@ -107,7 +107,7 @@ export function ContactSection() {
                   <span className="flex items-center gap-1.5"><Clock3 className="w-4 h-4 text-blue-400" /> Fast Response</span>
                 </div>
               </div>
-              
+
               <div className="flex flex-col w-full md:w-auto gap-4">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow-[0_0_20px_-5px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_-5px_rgba(37,99,235,0.6)] transition-all h-14 px-8 text-lg font-medium group/btn" asChild>
                   <a href="tel:+919910836286">
@@ -151,9 +151,9 @@ export function ContactSection() {
             <h4 className="text-xl font-semibold mb-2 text-white">WhatsApp</h4>
             <p className="text-slate-400 text-sm mb-6">Quick response guaranteed</p>
             <div className="mb-6">
-              <a 
-                href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service" 
-                target="_blank" 
+              <a
+                href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-lg font-medium text-white hover:text-green-400 transition-colors"
               >
