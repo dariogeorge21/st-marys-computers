@@ -1,26 +1,27 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useInView, useReducedMotion } from "framer-motion";
 
-interface Stat {
+interface StatItem {
   value: number;
   suffix: string;
   prefix?: string;
   label: string;
+  subtext: string;
 }
 
-const stats: Stat[] = [
-  { value: 20, suffix: "+", label: "Years Experience" },
-  { value: 10, suffix: "K+", label: "Repairs Done" },
-  { value: 4.9, suffix: "★", label: "Customer Rating" },
-  { value: 30, suffix: " min", label: "Avg. Response" },
+const stats: StatItem[] = [
+  { value: 18, suffix: "+", label: "Years Experience", subtext: "Serving Delhi since 2007" },
+  { value: 10, suffix: "k+", label: "Devices Repaired", subtext: "Laptops, PCs & Printers" },
+  { value: 4.9, suffix: "★", label: "Google Rating", subtext: "127+ verified reviews" },
+  { value: 30, suffix: "m", prefix: "<", label: "Avg. Response", subtext: "Fast doorstep pickup" },
 ];
 
 function AnimatedCounter({ value, suffix, prefix = "" }: { value: number; suffix: string; prefix?: string }) {
   const [display, setDisplay] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
   const prefersReduced = useReducedMotion();
 
   useEffect(() => {
@@ -30,13 +31,12 @@ function AnimatedCounter({ value, suffix, prefix = "" }: { value: number; suffix
       return;
     }
     const isDecimal = value % 1 !== 0;
-    const duration = 1400;
+    const duration = 1200;
     const startTime = performance.now();
 
     const tick = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = isDecimal
         ? parseFloat((eased * value).toFixed(1))
@@ -56,24 +56,20 @@ function AnimatedCounter({ value, suffix, prefix = "" }: { value: number; suffix
 }
 
 export function HeroStats() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-40px" });
-
   return (
-    <div ref={containerRef} className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5">
-      {stats.map((stat, i) => (
-        <motion.div
-          key={stat.label}
-          className="flex flex-col gap-0.5"
-          initial={{ opacity: 0, y: 12 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-        >
-          <span className="text-2xl font-bold text-blue-700 tracking-tight leading-none">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-4 border-t border-slate-200/80">
+      {stats.map((stat) => (
+        <div key={stat.label} className="flex flex-col">
+          <span className="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
             <AnimatedCounter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
           </span>
-          <span className="text-xs text-gray-500 font-medium leading-tight">{stat.label}</span>
-        </motion.div>
+          <span className="text-xs font-semibold text-slate-800 mt-1">
+            {stat.label}
+          </span>
+          <span className="text-[11px] text-slate-500 hidden sm:block">
+            {stat.subtext}
+          </span>
+        </div>
       ))}
     </div>
   );

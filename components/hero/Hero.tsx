@@ -2,26 +2,19 @@
 
 import { FloatingBackground } from "./FloatingBackground";
 import { HeroContent } from "./HeroContent";
-import { QuickServicePanel } from "./QuickServicePanel";
 
 export function Hero() {
   return (
     <section
-      className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20 px-4 sm:px-6 overflow-hidden"
+      className="relative min-h-[82vh] sm:min-h-[86vh] lg:min-h-[88vh] flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 overflow-hidden border-b border-slate-100"
       aria-label="Hero section"
     >
+      {/* Radiant perspective wave lines background — Replicating reference image */}
       <FloatingBackground />
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_460px] gap-12 lg:gap-16 items-center">
-          {/* Left: Content */}
-          <HeroContent />
-
-          {/* Right: Live Service Panel */}
-          <div className="w-full lg:max-w-none">
-            <QuickServicePanel />
-          </div>
-        </div>
+      {/* Centered Large Typography Content */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center justify-center">
+        <HeroContent />
       </div>
     </section>
   );

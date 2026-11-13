@@ -90,4 +90,32 @@
   .glow-blue:hover {
     box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.6), 0 4px 32px rgba(59, 130, 246, 0.45);
   }
+
+  .brand-text-shine {
+    background: linear-gradient(
+      90deg,
+      #090d16 0%,
+      #1d4ed8 25%,
+      #60a5fa 50%,
+      #1d4ed8 75%,
+      #090d16 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: text-shimmer 7s ease-in-out infinite;
+  }
+
+  @keyframes text-shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }

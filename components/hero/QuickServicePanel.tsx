@@ -1,218 +1,221 @@
 "use client";
 
-import { motion } from "framer-motion";
-import type { Variants } from "framer-motion";
-import { Phone, MessageCircle, MapPin, Clock, Zap, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Laptop, Monitor, Apple, Printer, Phone, MessageCircle, Clock, ShieldCheck, Check } from "lucide-react";
 
-function LiveDot() {
-  return (
-    <span className="relative inline-flex h-2.5 w-2.5" aria-label="Live — available now">
-      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
-    </span>
-  );
+type DeviceCategory = "laptop" | "desktop" | "mac" | "printer";
+
+interface ServiceOption {
+  id: string;
+  name: string;
+  turnaround: string;
+  warranty: string;
+  badge: string;
 }
 
-function PanelRow({
-  icon: Icon,
-  label,
-  value,
-  href,
-  iconBg = "bg-blue-50",
-  iconColor = "text-blue-600",
-  valueColor = "text-gray-900",
-  isLink = false,
-}: {
-  icon: React.ElementType;
-  label: string;
-  value: string;
-  href?: string;
-  iconBg?: string;
-  iconColor?: string;
-  valueColor?: string;
-  isLink?: boolean;
-}) {
-  const inner = (
-    <div className="flex items-center justify-between gap-3 w-full">
-      <div className="flex items-center gap-3 min-w-0">
-        <span className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center ${iconBg} ${iconColor}`}>
-          <Icon className="w-4 h-4" aria-hidden="true" />
-        </span>
-        <div className="min-w-0">
-          <p className="text-xs text-gray-500 font-medium leading-none mb-1">{label}</p>
-          <p className={`text-sm font-semibold ${valueColor} truncate`}>{value}</p>
-        </div>
-      </div>
-      {isLink && (
-        <ChevronRight className="w-4 h-4 text-gray-300 flex-shrink-0 group-hover:text-gray-500 transition-colors" aria-hidden="true" />
-      )}
-    </div>
-  );
-
-  if (href) {
-    return (
-      <a
-        href={href}
-        target={href.startsWith("http") ? "_blank" : undefined}
-        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-        className="group flex items-center px-4 py-3.5 rounded-xl hover:bg-gray-50 transition-colors duration-150 cursor-pointer"
-        aria-label={`${label}: ${value}`}
-      >
-        {inner}
-      </a>
-    );
-  }
-
-  return (
-    <div className="flex items-center px-4 py-3.5">
-      {inner}
-    </div>
-  );
-}
-
-const panelVariants: Variants = {
-  hidden: { opacity: 0, x: 30, y: 10 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut", delay: 0.3 },
+const servicesByDevice: Record<DeviceCategory, { label: string; icon: React.ElementType; options: ServiceOption[] }> = {
+  laptop: {
+    label: "Laptop",
+    icon: Laptop,
+    options: [
+      { id: "screen", name: "Screen Replacement", turnaround: "Same-Day (2-3 hrs)", warranty: "90-Day Warranty", badge: "Most Common" },
+      { id: "motherboard", name: "Motherboard / No Power", turnaround: "24-48 hrs (Chip-Level)", warranty: "90-Day Warranty", badge: "Expert Fix" },
+      { id: "battery", name: "Battery & Charging", turnaround: "1-2 hrs", warranty: "6-Month Warranty", badge: "Genuine Parts" },
+      { id: "ssd", name: "SSD Speed Upgrade", turnaround: "Same-Day (1 hr)", warranty: "3-5 Yr Brand Warranty", badge: "Instant Speed" },
+      { id: "liquid", name: "Water / Liquid Damage", turnaround: "Same-Day Diagnosis", warranty: "Component Guarantee", badge: "Urgent Care" },
+      { id: "hinge", name: "Hinge & Body Repair", turnaround: "Same-Day", warranty: "Durability Tested", badge: "Physical Repair" },
+    ],
+  },
+  desktop: {
+    label: "Desktop PC",
+    icon: Monitor,
+    options: [
+      { id: "nopower", name: "No Power / SMPS Fault", turnaround: "Same-Day Doorstep", warranty: "1-Yr OEM Warranty", badge: "Home Visit" },
+      { id: "display", name: "No Display / Beep Code", turnaround: "1-2 hrs", warranty: "Full Diagnosis", badge: "Hardware Check" },
+      { id: "cleanup", name: "Thermal Paste & Deep Clean", turnaround: "1 hr", warranty: "Performance Tested", badge: "Cooling Fix" },
+      { id: "storage", name: "SSD / RAM Upgrade", turnaround: "Under 1 hr", warranty: "Brand Warranty", badge: "Speed Boost" },
+      { id: "os", name: "OS & Data Recovery", turnaround: "Same-Day", warranty: "Secure Backup", badge: "Safe & Private" },
+      { id: "custom", name: "Custom PC Assembly", turnaround: "24 hrs", warranty: "Full Setup", badge: "Gaming / Office" },
+    ],
+  },
+  mac: {
+    label: "MacBook",
+    icon: Apple,
+    options: [
+      { id: "macscreen", name: "Retina Display Replacement", turnaround: "Same-Day", warranty: "OEM Grade Screen", badge: "Air & Pro" },
+      { id: "macbattery", name: "MacBook Battery Service", turnaround: "Same-Day", warranty: "OEM Replacement", badge: "Original Spec" },
+      { id: "logicboard", name: "Logic Board Diagnostics", turnaround: "24-48 hrs", warranty: "Chip-Level Fix", badge: "Specialist" },
+      { id: "keyboard", name: "Keyboard & Trackpad Repair", turnaround: "Same-Day", warranty: "OEM Grade", badge: "Full Assembly" },
+    ],
+  },
+  printer: {
+    label: "Printer & UPS",
+    icon: Printer,
+    options: [
+      { id: "jam", name: "Paper Jam & Roller Service", turnaround: "Same-Day Doorstep", warranty: "Service Guarantee", badge: "Home & Office" },
+      { id: "cartridge", name: "Cartridge & Ink System", turnaround: "Same-Day", warranty: "Clean Output", badge: "Laser & Inkjet" },
+      { id: "upsbattery", name: "UPS Battery Replacement", turnaround: "Same-Day Doorstep", warranty: "1-Yr Battery Warranty", badge: "Power Backup" },
+      { id: "network", name: "WiFi & Network Printing", turnaround: "On-Site Visit", warranty: "Multi-Device Config", badge: "Office Setup" },
+    ],
   },
 };
 
 export function QuickServicePanel() {
-  return (
-    <motion.div
-      className="relative w-full"
-      variants={panelVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      {/* Subtle glow behind panel */}
-      <div
-        className="absolute -inset-4 rounded-3xl opacity-30"
-        style={{
-          background: "radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15), transparent 70%)",
-          filter: "blur(20px)",
-        }}
-        aria-hidden="true"
-      />
+  const [device, setDevice] = useState<DeviceCategory>("laptop");
+  const currentCategory = servicesByDevice[device];
+  const [selectedIssueId, setSelectedIssueId] = useState<string>(currentCategory.options[0].id);
 
-      {/* Main panel — white card */}
-      <div
-        className="relative rounded-2xl border border-gray-200 overflow-hidden
-          bg-white/95 backdrop-blur-sm
-          shadow-[0_4px_6px_-1px_rgba(0,0,0,0.07),0_20px_50px_-10px_rgba(0,0,0,0.12)]"
-        role="complementary"
-        aria-label="Quick service contact panel"
-      >
-        {/* Panel header */}
-        <div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-blue-50 to-indigo-50">
-          <div className="flex items-center gap-2.5">
-            <LiveDot />
-            <span className="text-sm font-semibold text-gray-900">Live Service Status</span>
+  const selectedService =
+    currentCategory.options.find((opt) => opt.id === selectedIssueId) || currentCategory.options[0];
+
+  const handleDeviceChange = (newDevice: DeviceCategory) => {
+    setDevice(newDevice);
+    setSelectedIssueId(servicesByDevice[newDevice].options[0].id);
+  };
+
+  const whatsappMessage = encodeURIComponent(
+    `Hi George, I need repair service for ${currentCategory.label} - ${selectedService.name} in Delhi.`
+  );
+
+  return (
+    <div className="relative w-full">
+      {/* Subtle outer backdrop shadow */}
+      <div className="relative rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.08),0_1px_2px_rgba(15,23,42,0.04)] overflow-hidden">
+        {/* Terminal Header */}
+        <div className="px-5 py-3.5 bg-slate-50/90 border-b border-slate-200/80 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+            </span>
+            <span className="text-xs font-semibold text-slate-800 tracking-tight">
+              Live Dispatch Desk
+            </span>
           </div>
-          <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-green-100 text-green-700 border border-green-200">
-            Open Now
+          <span className="text-[11px] font-medium text-slate-500">
+            Laxmi Nagar · East Delhi
           </span>
         </div>
 
-        {/* Status row */}
-        <div className="px-5 py-4 border-b border-gray-100 bg-gray-50/50">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs text-gray-500 mb-1">Technician Status</p>
-              <p className="text-sm font-semibold text-green-600">🟢 Available — Ready to Help</p>
-            </div>
-            <div className="text-right">
-              <p className="text-xs text-gray-500 mb-1">Est. Response</p>
-              <p className="text-sm font-bold text-gray-900">15–30 min</p>
+        {/* Device Category Tabs */}
+        <div className="p-4 sm:p-5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2.5">
+            Select Your Device
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 p-1 bg-slate-100 rounded-xl">
+            {(Object.keys(servicesByDevice) as DeviceCategory[]).map((key) => {
+              const item = servicesByDevice[key];
+              const Icon = item.icon;
+              const isActive = device === key;
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => handleDeviceChange(key)}
+                  className={`flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg text-xs font-medium transition-all duration-150 select-none ${
+                    isActive
+                      ? "bg-white text-slate-900 shadow-sm font-semibold"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-white/50"
+                  }`}
+                  aria-pressed={isActive}
+                >
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? "text-blue-600" : "text-slate-400"}`} />
+                  <span className="truncate">{item.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Issue Selector Chips */}
+          <div className="mt-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2.5">
+              Select Common Issue
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {currentCategory.options.map((option) => {
+                const isSelected = selectedIssueId === option.id;
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => setSelectedIssueId(option.id)}
+                    className={`flex items-center justify-between p-2.5 rounded-xl border text-left transition-all duration-150 select-none ${
+                      isSelected
+                        ? "bg-blue-50/60 border-blue-500/80 text-blue-950 shadow-xs"
+                        : "bg-white border-slate-200/80 text-slate-700 hover:border-slate-300 hover:bg-slate-50/70"
+                    }`}
+                  >
+                    <div className="min-w-0 pr-2">
+                      <p className={`text-xs font-medium leading-tight truncate ${isSelected ? "text-blue-950 font-semibold" : "text-slate-800"}`}>
+                        {option.name}
+                      </p>
+                      <p className="text-[10px] text-slate-500 mt-0.5 truncate">
+                        {option.turnaround}
+                      </p>
+                    </div>
+                    {isSelected ? (
+                      <Check className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
+                    ) : (
+                      <span className="w-3.5 h-3.5 rounded-full border border-slate-300 flex-shrink-0" />
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
-        </div>
 
-        {/* Contact rows */}
-        <div className="py-1">
-          <PanelRow
-            icon={Phone}
-            label="One-Click Call"
-            value="+91 99108 36286"
-            href="tel:+919910836286"
-            iconBg="bg-blue-50"
-            iconColor="text-blue-600"
-            valueColor="text-blue-700"
-            isLink
-          />
-          <div className="mx-4 h-px bg-gray-100" />
-          <PanelRow
-            icon={MessageCircle}
-            label="WhatsApp Chat"
-            value="Instant response"
-            href="https://wa.me/919910836286?text=Hi%2C%20I%20need%20computer%20repair%20service"
-            iconBg="bg-green-50"
-            iconColor="text-green-600"
-            valueColor="text-green-700"
-            isLink
-          />
-        </div>
+          {/* Dynamic Service Diagnostic Box */}
+          <div className="mt-4 p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 space-y-2">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-slate-500 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-slate-400" /> Turnaround:
+              </span>
+              <span className="font-semibold text-slate-800">
+                {selectedService.turnaround}
+              </span>
+            </div>
 
-        {/* Info rows */}
-        <div className="border-t border-gray-100 py-1">
-          <PanelRow
-            icon={MapPin}
-            label="Service Area"
-            value="New Delhi & Delhi-NCR"
-            iconBg="bg-violet-50"
-            iconColor="text-violet-600"
-          />
-          <div className="mx-4 h-px bg-gray-100" />
-          <PanelRow
-            icon={Clock}
-            label="Business Hours"
-            value="Mon–Sat · 10 AM – 8 PM"
-            iconBg="bg-amber-50"
-            iconColor="text-amber-600"
-          />
-          <div className="mx-4 h-px bg-gray-100" />
-          <PanelRow
-            icon={Zap}
-            label="Emergency Support"
-            value="Same-day service available"
-            iconBg="bg-orange-50"
-            iconColor="text-orange-600"
-            valueColor="text-orange-700"
-          />
-        </div>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-slate-500 flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-slate-400" /> Coverage:
+              </span>
+              <span className="font-semibold text-slate-800">
+                {selectedService.warranty}
+              </span>
+            </div>
 
-        {/* Bottom CTA strip */}
-        <div className="p-4 border-t border-gray-100 bg-gray-50/50">
-          <a
-            href="tel:+919910836286"
-            className="block w-full text-center py-3.5 px-4 rounded-xl font-semibold text-sm text-white
-              bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700
-              shadow-md hover:shadow-lg hover:shadow-blue-500/20
-              transition-all duration-200
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-            aria-label="Call now for urgent computer repair service"
-          >
-            Call for Urgent Service
-          </a>
+            <div className="pt-2 border-t border-slate-200/70 flex items-center justify-between text-[11px] text-slate-500">
+              <span>Technician: <strong>George CV</strong></span>
+              <span className="text-emerald-700 font-medium">Free Store Diagnosis</span>
+            </div>
+          </div>
+
+          {/* Action Pathways */}
+          <div className="mt-4 grid grid-cols-2 gap-2.5">
+            <a
+              href={`https://wa.me/919910836286?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-3 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs sm:text-sm transition-all shadow-xs text-center"
+            >
+              <MessageCircle className="w-4 h-4 flex-shrink-0" />
+              <span>Get WhatsApp Quote</span>
+            </a>
+
+            <a
+              href="tel:+919910836286"
+              className="inline-flex items-center justify-center gap-2 px-3 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm transition-all shadow-xs text-center"
+            >
+              <Phone className="w-3.5 h-3.5 flex-shrink-0" />
+              <span>Call Technician</span>
+            </a>
+          </div>
+
+          <p className="mt-3 text-center text-[11px] text-slate-400">
+            Workshop: St Mary&apos;s Computers, Laxmi Nagar · Open Mon–Sat 10:00–20:00
+          </p>
         </div>
       </div>
-
-      {/* Decorative floating elements */}
-      <motion.div
-        className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-blue-400/20 border border-blue-300/50"
-        animate={{ y: [0, -6, 0], opacity: [0.6, 1, 0.6] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        aria-hidden="true"
-      />
-      <motion.div
-        className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-indigo-400/20 border border-indigo-300/40"
-        animate={{ y: [0, 5, 0], opacity: [0.5, 0.9, 0.5] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        aria-hidden="true"
-      />
-    </motion.div>
+    </div>
   );
 }
